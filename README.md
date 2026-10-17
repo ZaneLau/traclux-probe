@@ -19,7 +19,17 @@ python3 -m traclux_probe \
 
 ## 使用自己的问题与回答
 
-按 `examples/fictional-brand/questions.json` 导入每个问题的 `id`、`text` 与显式 D1–D6 标签。标签由用户填写，本社区版进行约束校验；生产系统的 LLM 类别翻译并未包含在这里。可按 `responses.json` 格式导入你**有权保存**的回答，要求写明 `question_id`、`answer`、`citations`、`entrypoint`、`captured_at`（带时区）和 `source`。本工具不请求模型、网页或客户端，也不会自动购买或抓取问题数据。`--brand` 仅进行示例性的字面提及匹配。
+把你有权使用的问题一行一条写入 UTF-8 文本文件（参考 `examples/fictional-brand/raw-questions.txt`），运行交互式标注：
+
+```bash
+python3 -m traclux_probe annotate \
+  --input examples/fictional-brand/raw-questions.txt \
+  --output reports/my-questions.json
+python3 -m traclux_probe --questions reports/my-questions.json \
+  --budget 2 --output reports/my-report.json
+```
+
+向导逐维提供合法状态；少量词形匹配只作为**未经验证的建议**，每维都必须由使用者明确选择或确认，不会静默“预测”意图。也可按 `examples/fictional-brand/questions.json` 直接导入带 D1–D6 标签的 JSON。本社区版仅做标注约束校验；生产系统的 LLM 类别翻译并未包含在这里。按 `responses.json` 格式导入你**有权保存**的回答，要求写明 `question_id`、`answer`、`citations`、`entrypoint`、`captured_at`（带时区）和 `source`。本工具不请求模型、网页或客户端，也不会自动购买或抓取问题数据。`--brand` 仅进行示例性的字面提及匹配。
 
 ## 公开与商业边界
 

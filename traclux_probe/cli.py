@@ -74,6 +74,7 @@ def main(argv=None):
         for q in chosen:
             response = responses.get(q["id"])
             entries.append({"question_id": q["id"], "text": q["text"], "state": q["state"],
+                            "annotation_source": q.get("annotation_source", "unspecified"),
                             "response": response, "brand_mentioned": (
                                 args.brand.casefold() in response["answer"].casefold()
                                 if args.brand and response else None)})
