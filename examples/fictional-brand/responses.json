@@ -1,0 +1,14 @@
+{
+  "description": "Synthetic offline captures. These are invented answers and must not be reported as a live engine's output.",
+  "responses": [
+    {"question_id":"q01","answer":"这是虚构品牌星屿的示例回答；实际购买前应核对产品材料。","citations":["https://example.com/fictional-brand"],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q05","answer":"对照容量、材料与保温实验的条件，不要仅依赖广告语。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q06","answer":"先核实材料说明；紧急选择时注意适用场景。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q07","answer":"可以比较收礼人的使用习惯与颜色偏好。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q08","answer":"先列出容量和使用场景，再找不同款式。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q09","answer":"从造型与颜色寻找灵感。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q10","answer":"先对照材质、容量与清洗难度。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q11","answer":"现货需要以当地商家当时的库存为准。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"},
+    {"question_id":"q12","answer":"先判断水杯重量与开盖方式是否方便。","citations":[],"entrypoint":"synthetic-fixture","captured_at":"2026-10-17T00:00:00Z","source":"fictional-offline-example"}
+  ]
+}

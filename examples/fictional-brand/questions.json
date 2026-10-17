@@ -1,0 +1,17 @@
+{
+  "description": "Invented brand 星屿. Six-state labels were manually assigned as an illustrative fixture, not inferred from real users.",
+  "questions": [
+    {"id":"q01","text":"星屿水杯好不好？","state":{"D1":"verification","D2":"informational_directed","D3":"understanding_competence","D4":"optimal","D5":"reflective","D6":"specification"}},
+    {"id":"q02","text":"星屿水杯值得买吗？","state":{"D1":"verification","D2":"informational_directed","D3":"understanding_competence","D4":"optimal","D5":"reflective","D6":"specification"}},
+    {"id":"q03","text":"星屿杯子能买吗？","state":{"D1":"verification","D2":"informational_directed","D3":"understanding_competence","D4":"optimal","D5":"reflective","D6":"specification"}},
+    {"id":"q04","text":"星屿的水杯靠谱吗？","state":{"D1":"verification","D2":"informational_directed","D3":"understanding_competence","D4":"optimal","D5":"reflective","D6":"specification"}},
+    {"id":"q05","text":"怎么比较两种保温杯的保温性能？","state":{"D1":"exploration","D2":"instructional_active","D3":"understanding_competence","D4":"moderate_strain","D5":"anticipatory_constraint","D6":"dialogic"}},
+    {"id":"q06","text":"出门前急着买个安全的水杯，该避开什么材料？","state":{"D1":"initiation","D2":"resource_acquisition","D3":"subsistence_protection","D4":"severely_depleted","D5":"acute_emergency","D6":"specification"}},
+    {"id":"q07","text":"有没有适合送朋友的杯子风格灵感？","state":{"D1":"exploration","D2":"informational_undirected","D3":"affection_belonging_participation","D4":"optimal","D5":"reflective","D6":"recognition"}},
+    {"id":"q08","text":"我想设计有自己风格的随身杯，怎么开始？","state":{"D1":"formulation","D2":"instructional_active","D3":"identity_freedom","D4":"moderate_strain","D5":"reflective","D6":"dialogic"}},
+    {"id":"q09","text":"午休随便看看有趣的杯子造型？","state":{"D1":"initiation","D2":"informational_undirected","D3":"creation_idleness","D4":"moderate_strain","D5":"reflective","D6":"recognition"}},
+    {"id":"q10","text":"星屿和其他水杯比，选购时应该先检查什么？","state":{"D1":"formulation","D2":"instructional_active","D3":"subsistence_protection","D4":"optimal","D5":"anticipatory_constraint","D6":"dialogic"}},
+    {"id":"q11","text":"今天必须买到旅行杯，有哪些现货选择？","state":{"D1":"formulation","D2":"resource_acquisition","D3":"identity_freedom","D4":"moderate_strain","D5":"acute_emergency","D6":"specification"}},
+    {"id":"q12","text":"朋友推荐的杯子是否适合第一次使用保温杯的人？","state":{"D1":"verification","D2":"informational_directed","D3":"affection_belonging_participation","D4":"moderate_strain","D5":"anticipatory_constraint","D6":"recognition"}}
+  ]
+}
