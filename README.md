@@ -39,6 +39,8 @@ python3 -m traclux_probe --questions reports/my-questions.json \
 
 English summary: Standalone, offline CSSM-HI six-state pair coverage selection with imported response provenance. Run the example above without API keys; synthetic captures do not represent consumer visibility. See [methodology](docs/methodology.md), [contributing](CONTRIBUTING.md) and [security](SECURITY.md).
 
+要在外部 GEO 问题集上做下一轮可复现的准备，见 [公开测评来源和固定样本](docs/benchmark-sources.md)。复现脚本会下载上游文件并核验哈希，候选题文本只留在被 `.gitignore` 排除的本地报告目录；它们尚无六维人工真值或真实模型答案。
+
 ## 发布状态
 
 这是尚未对外发布的本地候选。首次公开前，须确认版权归属与商标权、样例和依赖许可，审查拟公开的 Git 提交内容，提供真正可用的私密安全报告渠道，然后才创建 Public 仓库。现有私有后端、前端、官网及其 Git 历史不属于本仓。
