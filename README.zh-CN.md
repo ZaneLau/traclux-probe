@@ -1,63 +1,47 @@
-# Traclux Probe · 探镜社区版
+# Traclux · 探镜社区版
 
-**为 GEO 测试选择问题，看清选择理由，并保留回答证据。**
+**用 CSSM-HI 生成探针，接入模型执行，再在现有用户工作台中查看和分析结果。**
 
-[Traclux 官网](https://www.traclux.com/) · [English](README.md) · [在线演示](https://zanelau.github.io/traclux-probe/demo/) · [方法与限制](docs/methodology.md)
+[English](README.md) · [启动与功能说明](docs/community/README.md) · [来源清单](docs/community/source-manifest.json) · [安全政策](SECURITY.md)
 
-当你有一批候选问题，但预算只够测试其中一部分时，本工具根据你提供的六维标签选择问题，显示选题覆盖的状态组合，并支持回查导入的答案、来源和时间。
+这个分支是**尚未发布的完整系统候选版**，复用原来的 Spring Boot 后端和 Nuxt 用户工作台。你自己用的运营后台不在开源范围内。当前已发布的 v0.1.0 和静态选题演示仍属于旧范围，不能当作本工作台的演示。
 
-**Python 3.9+，零第三方依赖，无需账户或模型密钥，Apache-2.0。**
+| 用户要做的事 | 开源内容 |
+| --- | --- |
+| 配置品牌 | 品牌识别、品牌空间、主题、固定问题及设置 |
+| 生成探针方案 | CSSM-HI 状态建模、覆盖选点、问句生成、质量控制 |
+| 执行探针 | 方案确认、手动执行、模型适配、回答保存及失败记录 |
+| 分析结果 | 可见度总览、品牌表现、引用来源、问题分析、已有溯源与解释入口 |
+| 跟踪执行 | 运行进度、事件、历史批次与详情 |
+| 独立部署 | 普通用户认证、数据访问隔离、MySQL、Redis、知识资产 PostgreSQL、Docker Compose |
 
-如果对你有帮助，欢迎在 [GitHub 留一个 Star](https://github.com/ZaneLau/traclux-probe)。有可复现的问题，或想反馈自己的选题场景，可以[提交 Issue](https://github.com/ZaneLau/traclux-probe/issues)。
+内部 `/admin` 页面和管理接口、用户运营管理、管理重跑、计费配置、供应商额度管理，以及作者账号、密钥和线上数据保留私有。用户执行所依赖的内部计量仍保留；本地初始化的额度不要求向 Traclux 购买订阅。
 
-![选题对照、问题列表与回答证据](docs/demo/preview.png)
+## 本地启动
 
-## 先看演示
-
-**[点击打开交互演示 →](https://zanelau.github.io/traclux-probe/demo/)** 无需安装、登录或模型密钥。
-
-也可以下载仓库后，用浏览器打开 [`docs/demo/index.html`](docs/demo/index.html)。全部数据已包含在文件内，可以离线使用。GitHub 上直接点 HTML 会看到源码，需要下载后打开。[详细打开方式与操作动图](docs/demo/README.md)。
-
-- 上方查看相同预算下的两组选题。
-- 点选问题，右侧查看选择时新增的覆盖、标签和回答证据。
-- 切换“Input order”或“All questions”，可以看到未选中的问题；搜索筛选、JSON 下载均可直接使用。
-
-示例品牌“星屿”、问题和答案全部虚构。五道选题覆盖 72 个状态对，原始顺序的前五题覆盖 30 个；候选池共有 112 个状态对。样例刻意把相似问题排在开头以展示机制，**这个差异不能证明算法效果优越，也不代表真实客户端曝光率**。
-
-## 自己生成同一份报告
-
-在仓库根目录运行：
+需要 Docker Compose 和 Python 3；构建使用 Java 21 和仓库锁定的 Nuxt 依赖。
 
 ```bash
-python3 -m traclux_probe \
-  --questions examples/fictional-brand/questions.json \
-  --responses examples/fictional-brand/responses.json \
-  --brand 星屿 --budget 5 \
-  --output reports/example.json --html reports/example.html
+python3 scripts/community_init.py
+# 私下编辑 .env 中的 MODEL_BASE_URL、MODEL_API_KEY、MODEL_NAME。
+docker compose up --build -d
 ```
 
-用浏览器打开 `reports/example.html` 即可。原有 JSON 报告保留，`--html` 为可选参数。生成、查看都不需要数据库、服务器或模型调用。
-
-## 使用自己的问题
-
-将你有权使用的问题写入 UTF-8 文本，一行一题，逐维人工确认标签：
+打开 **http://localhost:3100/login**。用户名和随机密码见你自己生成的 `.env` 中的 `COMMUNITY_USERNAME` / `COMMUNITY_PASSWORD`。不要提交或分享此文件。默认模型地址为本机关闭的端口，不会调用作者账号。可用 `SAMPLING_*` 单独配置被测模型；具体适配限制见[启动说明](docs/community/README.md)。
 
 ```bash
-python3 -m traclux_probe annotate \
-  --input examples/fictional-brand/raw-questions.txt \
-  --output reports/my-questions.json
-python3 -m traclux_probe --questions reports/my-questions.json \
-  --budget 2 --output reports/my-report.json --html reports/my-report.html
+python3 scripts/community_smoke.py
+docker compose stop
 ```
 
-少量词形匹配只提供未经验证的建议，不会静默推断用户心理状态。也可以直接导入[带六维标签的 JSON](examples/fictional-brand/questions.json)。
+检查脚本只验证登录、用户接口与管理接口不可用，不调用模型。社区配置默认关闭后台定时执行和供应商联网搜索；手动执行同样会消耗你自己的模型额度。
 
-回答可按[示例格式](examples/fictional-brand/responses.json)导入，保留问题 ID、入口、来源、带时区的时间、原文和引用；工具不自动采集答案。缺少回答保持未导入，不计作采样。`--brand` 只在 JSON 中进行示例性的字面匹配。
+## 当前验证到哪里
 
-**分享前检查内容：**HTML 包含完整候选池和全部导入回答，方便离线查看未选中的题；页面内下载的 JSON 沿用 CLI 的选中题报告。两种文件都需检查后再分享。
+已验证构建、原有自动测试、空库迁移、包内提示词加载，以及普通用户接口路径。详细证据见[验证记录](docs/community/validation.md)。
 
-## 开源与商业边界
+**真实模型的“生成 → 执行 → 有数据的分析页面”仍待验收。** 本轮开发没有已核实的免费额度账号，因此没有发起真实供应商调用。模型端点的兼容性需要逐个核实，不能承诺任意模型直接支持全部能力。API 回答也不能等同于消费端客户端的回答；算法生成的探针不是购买的真实用户搜索日志，当前不宣称已证明算法优越性。
 
-社区版完整提供基础状态定义、互斥校验、覆盖选点、人工标注、回答导入和离线报告。商业产品可另外提供授权数据、自动领域映射、持续采样、跨入口校准、托管与团队服务。商业服务不是社区版运行的前提。
+Python 选题器、虚构示例和[旧静态演示](https://zanelau.github.io/traclux-probe/demo/)保留为历史辅助材料，不再代表本项目的主要产品。
 
-首个社区版本为 **v0.1.0**，这是独立基础实现，并非完整生产引擎。真实需求上的算法效果尚未验证。详见[更新记录](CHANGELOG.md)、[方法](docs/methodology.md)、[许可证](LICENSE)、[商标政策](TRADEMARK.md)和[安全政策](SECURITY.md)。
+项目代码采用 [Apache-2.0](LICENSE)，保留的前端模板、字体等第三方文件遵守各自许可证。问题反馈请提供对应页面、预期行为及脱敏复现，不附带密钥、会话、私有回答或数据库导出。

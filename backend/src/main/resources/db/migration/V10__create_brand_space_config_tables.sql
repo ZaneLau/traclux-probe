@@ -1,0 +1,41 @@
+CREATE TABLE IF NOT EXISTS brand_space_topics (
+    id VARCHAR(36) PRIMARY KEY,
+    organization_id VARCHAR(36) NOT NULL,
+    brand_id VARCHAR(36) NOT NULL,
+    brand_scope_id VARCHAR(36) NOT NULL,
+    seq_no INT NOT NULL DEFAULT 1,
+    name VARCHAR(120) NOT NULL,
+    description VARCHAR(500) NULL,
+    source_code TINYINT NOT NULL DEFAULT 0 COMMENT '0=SYSTEM_GENERATED,1=USER_EDITED',
+    status_code TINYINT NOT NULL DEFAULT 1 COMMENT '0=DISABLED,1=ENABLED',
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY uk_brand_space_topics_scope_seq (brand_scope_id, seq_no),
+    INDEX idx_brand_space_topics_scope_status (brand_scope_id, status_code),
+    CONSTRAINT fk_brand_space_topics_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
+    CONSTRAINT fk_brand_space_topics_brand FOREIGN KEY (brand_id) REFERENCES brands(id) ON DELETE CASCADE,
+    CONSTRAINT fk_brand_space_topics_scope FOREIGN KEY (brand_scope_id) REFERENCES brand_scopes(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS brand_space_prompts (
+    id VARCHAR(36) PRIMARY KEY,
+    organization_id VARCHAR(36) NOT NULL,
+    brand_id VARCHAR(36) NOT NULL,
+    brand_scope_id VARCHAR(36) NOT NULL,
+    topic_id VARCHAR(36) NULL,
+    seq_no INT NOT NULL DEFAULT 1,
+    prompt_text TEXT NOT NULL,
+    region_code VARCHAR(16) NOT NULL DEFAULT 'CN',
+    locale VARCHAR(32) NOT NULL DEFAULT 'zh-CN',
+    language VARCHAR(32) NOT NULL DEFAULT 'zh-CN',
+    source_code TINYINT NOT NULL DEFAULT 0 COMMENT '0=SYSTEM_GENERATED,1=USER_EDITED',
+    status_code TINYINT NOT NULL DEFAULT 1 COMMENT '0=DISABLED,1=ENABLED',
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE KEY uk_brand_space_prompts_scope_seq (brand_scope_id, seq_no),
+    INDEX idx_brand_space_prompts_scope_status (brand_scope_id, status_code),
+    CONSTRAINT fk_brand_space_prompts_org FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE,
+    CONSTRAINT fk_brand_space_prompts_brand FOREIGN KEY (brand_id) REFERENCES brands(id) ON DELETE CASCADE,
+    CONSTRAINT fk_brand_space_prompts_scope FOREIGN KEY (brand_scope_id) REFERENCES brand_scopes(id) ON DELETE CASCADE,
+    CONSTRAINT fk_brand_space_prompts_topic FOREIGN KEY (topic_id) REFERENCES brand_space_topics(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

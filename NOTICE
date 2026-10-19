@@ -8,3 +8,9 @@ own interface and fictional data. Promptfoo and Langfuse are design references;
 their code, logos and screenshots are not included in this distribution.
 Optional benchmark preparation downloads upstream text into ignored local
 reports only. That text is not distributed or relicensed by this repository.
+
+The unreleased full-system candidate reuses the project's original Java backend
+and Nuxt user workbench from the source commits recorded in
+ docs/community/source-manifest.json. The internal operations console is excluded.
+The frontend retains the upstream Nuxt UI template license in frontend/LICENSE.
+Bundled fonts retain their OFL notices in frontend/public/landing-nexus/fonts/.

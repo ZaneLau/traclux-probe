@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS provider_quota_snapshot_sync_records (
+    id VARCHAR(36) PRIMARY KEY,
+    trigger_type_code VARCHAR(64) NOT NULL,
+    status_code VARCHAR(32) NOT NULL,
+    actor_user_id VARCHAR(36) NULL,
+    server_node_label VARCHAR(128) NULL,
+    snapshot_path VARCHAR(512) NULL,
+    snapshot_version VARCHAR(128) NULL,
+    fetched_at DATETIME NULL,
+    model_count INT NULL,
+    total_remaining_tokens BIGINT NULL,
+    total_consumed_tokens_since_sync BIGINT NULL,
+    total_estimated_remaining_tokens BIGINT NULL,
+    reason VARCHAR(255) NULL,
+    message VARCHAR(1000) NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_provider_quota_snapshot_sync_created (created_at),
+    INDEX idx_provider_quota_snapshot_sync_status (status_code, created_at),
+    CONSTRAINT fk_provider_quota_snapshot_sync_actor_user FOREIGN KEY (actor_user_id) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

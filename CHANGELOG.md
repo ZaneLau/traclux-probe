@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — full-system candidate
+
+- Reuse the original CSSM-HI backend and Nuxt user workbench, with self-hosted storage, packaged prompts and generated local credentials.
+- Exclude the internal operations console and management APIs.
+- Fresh-install and ordinary-user checks are recorded separately from the pending real-provider execution acceptance.
+
+
 ## 0.1.0 — 2026-10-19
 
 First standalone community release, licensed under Apache-2.0.

@@ -1,0 +1,111 @@
+[
+  {
+    "caseId": "tier1-hidden-brand-urgent",
+    "variables": {
+      "brandName": "美厨物语",
+      "category": "儿童餐具",
+      "competitors": "竞品甲,竞品乙",
+      "categoryAnchors": "儿童餐具,不锈钢餐盘",
+      "brandInjectionPolicy": "BRAND_HIDDEN",
+      "simulationProfile": "理性比较",
+      "mustSemantics": "体现选择与比较",
+      "softHints": "避免模板味",
+      "behaviorRules": "只输出一句问题"
+    },
+    "expectedSystemContains": [
+      "约束清单",
+      "输出格式规范"
+    ],
+    "expectedUserContains": [
+      "品牌：美厨物语",
+      "品类：儿童餐具"
+    ]
+  },
+  {
+    "caseId": "tier2-brand-open-discovery",
+    "variables": {
+      "brandName": "洛斐",
+      "category": "机械键盘",
+      "competitors": "Keychron,Akko",
+      "categoryAnchors": "机械键盘,客制化",
+      "brandInjectionPolicy": "BRAND_VISIBLE",
+      "simulationProfile": "开放探索",
+      "mustSemantics": "体现选择意图",
+      "softHints": "更像真人",
+      "behaviorRules": "只输出一句问题"
+    },
+    "expectedSystemContains": [
+      "约束清单"
+    ],
+    "expectedUserContains": [
+      "品牌：洛斐",
+      "竞品：Keychron,Akko"
+    ]
+  },
+  {
+    "caseId": "explicit-competitor-retention-kitchen-storage",
+    "variables": {
+      "brandName": "美厨物语",
+      "category": "厨房收纳",
+      "competitors": "懒角落,纳川",
+      "categoryAnchors": "厨房收纳,抽屉分隔",
+      "brandInjectionPolicy": "BRAND_HIDDEN",
+      "simulationProfile": "购买前确认",
+      "mustSemantics": "保留竞品显式比较",
+      "softHints": "不要泛化成这几家",
+      "behaviorRules": "保留1到2个真实竞品名"
+    },
+    "expectedSystemContains": [
+      "约束清单"
+    ],
+    "expectedUserContains": [
+      "竞品：懒角落,纳川",
+      "必须语义：保留竞品显式比较",
+      "行为约束：保留1到2个真实竞品名"
+    ]
+  },
+  {
+    "caseId": "official-cue-retention",
+    "variables": {
+      "brandName": "美厨物语",
+      "category": "厨房收纳",
+      "competitors": "懒角落,纳川",
+      "categoryAnchors": "厨房收纳,官网信息",
+      "brandInjectionPolicy": "BRAND_HIDDEN",
+      "simulationProfile": "理性比较",
+      "mustSemantics": "保留官网信息与可信来源对象",
+      "softHints": "不要改写成泛浏览句",
+      "behaviorRules": "官网对象词必须保留"
+    },
+    "expectedSystemContains": [
+      "输出格式规范"
+    ],
+    "expectedUserContains": [
+      "锚词：厨房收纳,官网信息",
+      "必须语义：保留官网信息与可信来源对象",
+      "行为约束：官网对象词必须保留"
+    ]
+  },
+  {
+    "caseId": "brand-visible-open-search",
+    "variables": {
+      "brandName": "徕芬",
+      "category": "吹风机",
+      "competitors": "追觅,戴森",
+      "categoryAnchors": "吹风机,高速吹风机",
+      "brandInjectionPolicy": "BRAND_VISIBLE",
+      "simulationProfile": "开放探索",
+      "mustSemantics": "允许品牌显式进入问题",
+      "softHints": "更像真人开场",
+      "behaviorRules": "只输出一句问题"
+    },
+    "expectedSystemContains": [
+      "约束清单"
+    ],
+    "expectedUserContains": [
+      "品牌：徕芬",
+      "品牌注入许可：BRAND_VISIBLE",
+      "必须语义：允许品牌显式进入问题"
+    ]
+  }
+]

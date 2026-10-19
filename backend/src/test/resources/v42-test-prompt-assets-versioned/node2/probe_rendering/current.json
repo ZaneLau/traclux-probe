@@ -1,0 +1,22 @@
+{
+  "version": "node2-v2026-05-10",
+  "systemMessage": "你是版本化测试版探针渲染器。只输出一句自然问题。",
+  "userMessage": "品牌：{{brandName}}\\n品类：{{category}}\\n竞品：{{competitors}}\\n锚词：{{categoryAnchors}}\\n品牌注入许可：{{brandInjectionPolicy}}\\n交流姿态：{{simulationProfile}}\\n必须语义：{{mustSemantics}}\\n软提示：{{softHints}}\\n行为约束：{{behaviorRules}}",
+  "fewShotExamples": [
+    {
+      "userMessage": "品牌：示例品牌\\n品类：示例品类\\n竞品：竞品A\\n锚词：示例锚词\\n品牌注入许可：BRAND_HIDDEN\\n交流姿态：冷静比较\\n必须语义：体现对比\\n软提示：减少模板味\\n行为约束：只输出一句问题",
+      "assistantMessage": "如果预算差不多，这个和竞品A到底哪个更适合日常用？"
+    }
+  ],
+  "constraints": [
+    "只输出一句中文问题",
+    "不要解释生成规则"
+  ],
+  "outputFormat": "仅输出一句中文问题。",
+  "changelog": [
+    {
+      "version": "node2-v2026-05-10",
+      "summary": "当前版本"
+    }
+  ]
+}

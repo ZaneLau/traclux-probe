@@ -1,7 +1,17 @@
 # 参与贡献
 
-欢迎针对六维标签定义、选择算法、数据校验和匿名基准提出可复现 issue 或 pull request。请附输入样例、预期输出和实际结果；运行 `python3 -m unittest discover -s tests`。不要上传客户问题、真实未获授权的回答、密钥或第三方受限数据。
+这个分支正在把 Traclux 原有用户工作台和 CSSM-HI 生成、执行、分析链路整理为独立部署版。内部运营后台不在范围内。完整链路仍待真实供应商验收，见 [验证记录](docs/community/validation.md)。
 
-提交贡献须确保你有权按本仓的 Apache-2.0 条款提供代码或样本，并保留第三方许可与署名；本仓目前不要求额外 CLA。安全问题请参考 [SECURITY.md](SECURITY.md)。
+反馈请附页面或接口、脱敏输入、预期与实际结果；不要上传 `.env`、会话、客户数据、未获授权的回答或模型密钥。改动前先确认已有服务、composable 或合同是否已经负责该行为。
 
-新手可以从 [good first issue](https://github.com/ZaneLau/traclux-probe/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22) 中选择一个真实的小任务。开始前请在对应 issue 留言，避免重复工作。
+| 修改内容 | 本地验证 |
+| --- | --- |
+| Java 后端 | Java 21；`cd backend && ./mvnw -q test package` |
+| Nuxt 工作台 | `cd frontend && pnpm -s typecheck && pnpm test && pnpm build` |
+| 启动脚本或旧 Python 工具 | `python3 -m unittest discover -s tests` |
+| 开源边界 | `python3 scripts/check_community_boundary.py` |
+| 独立部署 | 按启动文档初始化，再运行 `python3 scripts/community_smoke.py`；此脚本不会调用模型 |
+
+需要模型的验收使用你自己确认可用的配额，不使用作者账号。模拟响应只能证明接线，不能证明生成质量或真实客户端表现。自动检查通过也不代表完整链路已验收。
+
+提交贡献须确保你有权按本仓的 Apache-2.0 条款提供代码或样本，并保留第三方许可与署名；本仓目前不要求额外 CLA。安全问题请参考 [SECURITY.md](SECURITY.md)。旧版选题器的议题需要与工作台问题明确区分。

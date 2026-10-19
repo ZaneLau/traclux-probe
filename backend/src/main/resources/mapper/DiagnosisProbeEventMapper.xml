@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geoprobe.mapper.DiagnosisProbeEventMapper">
+
+    <insert id="insertBatch">
+        insert into diagnosis_probe_events (
+            seq,
+            diagnosis_id,
+            event_type,
+            provisional,
+            payload,
+            created_at
+        )
+        values
+        <foreach collection="events" item="event" separator=",">
+            (
+                #{event.seq},
+                #{event.diagnosisId},
+                #{event.eventType},
+                #{event.provisional},
+                #{event.payload, typeHandler=com.baomidou.mybatisplus.extension.handlers.JacksonTypeHandler},
+                #{event.createdAt}
+            )
+        </foreach>
+    </insert>
+
+</mapper>

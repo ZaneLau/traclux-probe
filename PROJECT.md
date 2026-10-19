@@ -1,8 +1,9 @@
-# Traclux Probe
+# Traclux project
 
-- Purpose: an Apache-2.0 community tool for explicit six-dimensional question selection and imported answer evidence.
-- Current: the standalone [public repository](https://github.com/ZaneLau/traclux-probe) and [interactive demo](https://zanelau.github.io/traclux-probe/demo/) are published. The v0.1.0 community scope includes English/Chinese instructions, offline reports, a screenshot and a walkthrough; the owner accepted the demo on 2026-10-19. Version archives are listed in [Releases](https://github.com/ZaneLau/traclux-probe/releases).
-- Evidence: eight Python tests and clean-source reproduction passed. The public HTTPS demo passed browser checks for selection contributions, original answers/source/time, missing answers, search/empty states and exact JSON download. Hosted demo assets match the reviewed source, and private vulnerability reporting is enabled. This demonstrates tool behavior, not algorithm effectiveness on real demand.
-- Next: collect concrete usage feedback through [Issues](https://github.com/ZaneLau/traclux-probe/issues); prioritize a reproducible defect or a real user's question pool before adding features.
-- Scope: keep the core usable without accounts, APIs or paid services. Private production repositories and historical research data are outside this repository. Research remains paused. The owner approved repository presentation, contribution entrypoints and relevant directory submissions on 2026-10-19; personal social-media accounts are excluded.
-- Stop: a visitor can open the public demo and reproduce the release from its source archive. Reopen feature work for concrete usage feedback or a reproducible defect.
+- Purpose: self-host the existing CSSM-HI probe generation → model execution → user analysis workbench.
+- Outcome anchor: the owner clarified on 2026-10-19 that the user workbench is the open-source product; their internal operations console stays private.
+- Current: local `codex/community-system` candidate exports the original Java backend and Nuxt user app from recorded commits. Original private repositories and dirty work are preserved. Public `main` and v0.1.0 still contain the earlier question-selection utility.
+- Verified: see [validation record](docs/community/validation.md). The package can initialize isolated databases and authenticate an ordinary user. No real provider call or measured algorithm improvement has been claimed.
+- Next: verify sufficient free provider quota, then accept brand creation → generated plan → execution → saved answers → populated workbench. Only then replace the public product presentation and demo.
+- Scope: exclude internal admin pages/APIs/services, production secrets/data and author provider accounts. Retain user features and their backend dependencies. Research and paper experiments remain paused; personal social-media accounts are excluded.
+- Stop rule: a user can reproduce that end-to-end path from the documented clean setup and cannot reach the internal console. Until then this is a candidate, not a completed full-system release.

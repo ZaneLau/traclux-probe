@@ -1,0 +1,90 @@
+[
+  {
+    "caseId": "node0-state-space-base",
+    "assetKey": "CSSM_HI_STATE_SPACE",
+    "variables": {
+      "category": "儿童餐具",
+      "d1AbstractCodes": "verification",
+      "d2AbstractCodes": "instructional_active",
+      "d3AbstractCodes": "subsistence_protection",
+      "d4AbstractCodes": "moderate_strain",
+      "d5AbstractCodes": "anticipatory_constraint",
+      "d6AbstractCodes": "specification"
+    },
+    "expectedSystemContains": [
+      "约束清单",
+      "输出格式规范"
+    ],
+    "expectedUserContains": [
+      "品类：儿童餐具",
+      "D1：verification"
+    ],
+    "minFewShotExamples": 0
+  },
+  {
+    "caseId": "node2-probe-rendering-base",
+    "assetKey": "PROBE_RENDERING",
+    "variables": {
+      "brandName": "美厨物语",
+      "category": "儿童餐具",
+      "competitors": "竞品甲,竞品乙",
+      "categoryAnchors": "儿童餐具,不锈钢餐盘",
+      "brandInjectionPolicy": "BRAND_HIDDEN",
+      "simulationProfile": "理性比较",
+      "mustSemantics": "体现选择与比较",
+      "softHints": "避免模板味",
+      "behaviorRules": "只输出一句问题"
+    },
+    "expectedSystemContains": [
+      "约束清单",
+      "输出格式规范"
+    ],
+    "expectedUserContains": [
+      "品牌：美厨物语",
+      "品类：儿童餐具"
+    ],
+    "minFewShotExamples": 1
+  },
+  {
+    "caseId": "minus-one-context-base",
+    "assetKey": "MINUS_ONE_CONTEXT_EXPANSION",
+    "variables": {
+      "brandName": "美厨物语",
+      "category": "儿童餐具",
+      "competitors": "竞品甲,竞品乙",
+      "categoryAnchors": "儿童餐具,不锈钢餐盘",
+      "userPrompt": "孩子刚上幼儿园，想找不容易翻倒的餐具。",
+      "brandWebsite": "https://example.com",
+      "evidenceSnippets": "材质说明；用户评价；客服答复",
+      "benchmarkQueries": "儿童餐具怎么选；不锈钢餐盘安全吗"
+    },
+    "expectedSystemContains": [
+      "约束清单",
+      "输出格式规范"
+    ],
+    "expectedUserContains": [
+      "品牌：美厨物语",
+      "用户补充：孩子刚上幼儿园"
+    ],
+    "minFewShotExamples": 0
+  },
+  {
+    "caseId": "brand-detection-base",
+    "assetKey": "BRAND_DETECTION_L3",
+    "variables": {
+      "brandName": "美厨物语",
+      "brandAliases": "美厨,美厨物语旗舰店",
+      "competitors": "竞品甲,竞品乙",
+      "responseText": "我会先看美厨物语这类不锈钢儿童餐盘，再和另外两个品牌比材质。"
+    },
+    "expectedSystemContains": [
+      "约束清单",
+      "输出格式规范"
+    ],
+    "expectedUserContains": [
+      "目标品牌：美厨物语",
+      "回答：我会先看美厨物语这类不锈钢儿童餐盘"
+    ],
+    "minFewShotExamples": 0
+  }
+]
