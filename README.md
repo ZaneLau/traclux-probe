@@ -8,6 +8,8 @@ Have a list of questions and a limited testing budget? Traclux Probe selects que
 
 **Python 3.9+ · zero dependencies · no account or API key · Apache-2.0**
 
+If this is useful, [star the repository](https://github.com/ZaneLau/traclux-probe) to help others discover it. Have a reproducible problem or a question about your own pool? [Open an issue](https://github.com/ZaneLau/traclux-probe/issues).
+
 ![Traclux Probe: question selection, coverage comparison and answer evidence](docs/demo/preview.png)
 
 The screenshot uses an invented brand, questions and answers. State-pair coverage is a design metric, not consumer visibility or evidence of better commercial outcomes.
