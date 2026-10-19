@@ -2,7 +2,7 @@
 
 **为 GEO 测试选择问题，看清选择理由，并保留回答证据。**
 
-[English](README.md) · [在线演示](https://zanelau.github.io/traclux-probe/demo/) · [方法与限制](docs/methodology.md)
+[Traclux 官网](https://www.traclux.com/) · [English](README.md) · [在线演示](https://zanelau.github.io/traclux-probe/demo/) · [方法与限制](docs/methodology.md)
 
 当你有一批候选问题，但预算只够测试其中一部分时，本工具根据你提供的六维标签选择问题，显示选题覆盖的状态组合，并支持回查导入的答案、来源和时间。
 

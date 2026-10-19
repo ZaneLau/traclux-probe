@@ -2,7 +2,7 @@
 
 **Choose questions for GEO tests. Inspect the selection. Keep the answer evidence.**
 
-[中文说明](README.zh-CN.md) · [Live demo](https://zanelau.github.io/traclux-probe/demo/) · [Method](docs/methodology.md) · [Contributing](CONTRIBUTING.md)
+[Traclux website](https://www.traclux.com/) · [中文说明](README.zh-CN.md) · [Live demo](https://zanelau.github.io/traclux-probe/demo/) · [Method](docs/methodology.md) · [Contributing](CONTRIBUTING.md)
 
 Have a list of questions and a limited testing budget? Traclux Probe selects questions using six explicitly supplied state dimensions, shows which combinations they cover, and lets you inspect imported answers with their source and capture time.
 

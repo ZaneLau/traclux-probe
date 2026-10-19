@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "method": "community-cssm-hi-greedy-pair-coverage",
-  "generated_at": "2026-10-17T15:35:10.076392+00:00",
+  "generated_at": "2026-10-19T07:38:19.146125+00:00",
   "limitations": "Input-order is only a simple baseline; coverage is a design metric, not proof of user demand, client visibility, or causality. Exact brand match is illustrative.",
   "budget": 5,
   "candidate_count": 12,
