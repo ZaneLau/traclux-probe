@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "method": "community-cssm-hi-greedy-pair-coverage",
+  "generated_at": "2026-10-17T15:35:10.076392+00:00",
+  "limitations": "Input-order is only a simple baseline; coverage is a design metric, not proof of user demand, client visibility, or causality. Exact brand match is illustrative.",
+  "budget": 5,
+  "candidate_count": 12,
+  "selected_ids": [
+    "q01",
+    "q05",
+    "q06",
+    "q09",
+    "q10"
+  ],
+  "selection_pair_coverage": 72,
+  "baseline": {
+    "method": "input-order",
+    "selected_ids": [
+      "q01",
+      "q02",
+      "q03",
+      "q04",
+      "q05"
+    ],
+    "pair_coverage": 30
+  },
+  "entries": [
+    {
+      "question_id": "q01",
+      "text": "星屿水杯好不好？",
+      "state": {
+        "D1": "verification",
+        "D2": "informational_directed",
+        "D3": "understanding_competence",
+        "D4": "optimal",
+        "D5": "reflective",
+        "D6": "specification"
+      },
+      "annotation_source": "unspecified",
+      "response": {
+        "question_id": "q01",
+        "answer": "这是虚构品牌星屿的示例回答；实际购买前应核对产品材料。",
+        "citations": [
+          "https://example.com/fictional-brand"
+        ],
+        "entrypoint": "synthetic-fixture",
+        "captured_at": "2026-10-17T00:00:00Z",
+        "source": "fictional-offline-example"
+      },
+      "brand_mentioned": true
+    },
+    {
+      "question_id": "q05",
+      "text": "怎么比较两种保温杯的保温性能？",
+      "state": {
+        "D1": "exploration",
+        "D2": "instructional_active",
+        "D3": "understanding_competence",
+        "D4": "moderate_strain",
+        "D5": "anticipatory_constraint",
+        "D6": "dialogic"
+      },
+      "annotation_source": "unspecified",
+      "response": {
+        "question_id": "q05",
+        "answer": "对照容量、材料与保温实验的条件，不要仅依赖广告语。",
+        "citations": [],
+        "entrypoint": "synthetic-fixture",
+        "captured_at": "2026-10-17T00:00:00Z",
+        "source": "fictional-offline-example"
+      },
+      "brand_mentioned": false
+    },
+    {
+      "question_id": "q06",
+      "text": "出门前急着买个安全的水杯，该避开什么材料？",
+      "state": {
+        "D1": "initiation",
+        "D2": "resource_acquisition",
+        "D3": "subsistence_protection",
+        "D4": "severely_depleted",
+        "D5": "acute_emergency",
+        "D6": "specification"
+      },
+      "annotation_source": "unspecified",
+      "response": {
+        "question_id": "q06",
+        "answer": "先核实材料说明；紧急选择时注意适用场景。",
+        "citations": [],
+        "entrypoint": "synthetic-fixture",
+        "captured_at": "2026-10-17T00:00:00Z",
+        "source": "fictional-offline-example"
+      },
+      "brand_mentioned": false
+    },
+    {
+      "question_id": "q09",
+      "text": "午休随便看看有趣的杯子造型？",
+      "state": {
+        "D1": "initiation",
+        "D2": "informational_undirected",
+        "D3": "creation_idleness",
+        "D4": "moderate_strain",
+        "D5": "reflective",
+        "D6": "recognition"
+      },
+      "annotation_source": "unspecified",
+      "response": {
+        "question_id": "q09",
+        "answer": "从造型与颜色寻找灵感。",
+        "citations": [],
+        "entrypoint": "synthetic-fixture",
+        "captured_at": "2026-10-17T00:00:00Z",
+        "source": "fictional-offline-example"
+      },
+      "brand_mentioned": false
+    },
+    {
+      "question_id": "q10",
+      "text": "星屿和其他水杯比，选购时应该先检查什么？",
+      "state": {
+        "D1": "formulation",
+        "D2": "instructional_active",
+        "D3": "subsistence_protection",
+        "D4": "optimal",
+        "D5": "anticipatory_constraint",
+        "D6": "dialogic"
+      },
+      "annotation_source": "unspecified",
+      "response": {
+        "question_id": "q10",
+        "answer": "先对照材质、容量与清洗难度。",
+        "citations": [],
+        "entrypoint": "synthetic-fixture",
+        "captured_at": "2026-10-17T00:00:00Z",
+        "source": "fictional-offline-example"
+      },
+      "brand_mentioned": false
+    }
+  ]
+}

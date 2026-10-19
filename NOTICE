@@ -3,4 +3,8 @@ Copyright 2026 Traclux project contributors.
 
 This community implementation was derived from the project's six-dimensional
 CSSM-HI concepts. The fictional example is original illustrative material.
-Third-party code and assets must be reviewed before public distribution.
+The demo screenshots and walkthrough were generated from this repository's
+own interface and fictional data. Promptfoo and Langfuse are design references;
+their code, logos and screenshots are not included in this distribution.
+Optional benchmark preparation downloads upstream text into ignored local
+reports only. That text is not distributed or relicensed by this repository.

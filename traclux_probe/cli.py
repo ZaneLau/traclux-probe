@@ -61,9 +61,12 @@ def main(argv=None):
     parser.add_argument("--responses", help="Optional captured answers; no provider requests are made")
     parser.add_argument("--budget", required=True, type=int, help="Maximum number of questions to select")
     parser.add_argument("--output", required=True, help="JSON report path")
+    parser.add_argument("--html", help="Optional self-contained, interactive HTML report path")
     parser.add_argument("--brand", help="Optional exact brand string for illustrative mention detection")
     args = parser.parse_args(argv)
     try:
+        if args.html and Path(args.html).resolve() == Path(args.output).resolve():
+            raise ValueError("--html and --output must use different paths")
         questions = parse_questions(args.questions)
         if args.brand is not None and not args.brand.strip():
             raise ValueError("brand must be non-empty")
@@ -88,8 +91,17 @@ def main(argv=None):
                                "pair_coverage": coverage(baseline)},
                   "entries": entries}
         write_json(args.output, report)
+        if args.html:
+            from .report_html import render_html
+
+            html_output = Path(args.html)
+            html_output.parent.mkdir(parents=True, exist_ok=True)
+            description = read_json(args.questions).get("description", "")
+            html_output.write_text(render_html(report, questions, responses, args.brand, description), encoding="utf-8")
         print("selected", len(chosen), "questions; pair coverage", coverage(chosen),
               "vs input-order", coverage(baseline), "; report", args.output)
+        if args.html:
+            print("interactive HTML report", args.html)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
 

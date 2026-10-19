@@ -1,46 +1,69 @@
-# Traclux Probe · 探镜社区实验版
+# Traclux Probe
 
-**为品牌候选问题做六维覆盖选点，输出能够追溯到原始回答的离线审计报告。**
+**Choose questions for GEO tests. Inspect the selection. Keep the answer evidence.**
 
-本仓是一个独立、可运行的 CSSM-HI **基础实现**。无需账户、数据库、依赖安装或付费模型：Python 3.9+ 即可。样例中的品牌和答案完全虚构；这里的“覆盖”是问题状态组合的设计指标，**不代表消费者在 ChatGPT 或其他客户端的真实曝光率**。
+[中文说明](README.zh-CN.md) · [Live demo](https://zanelau.github.io/traclux-probe/demo/) · [Method](docs/methodology.md) · [Contributing](CONTRIBUTING.md)
 
-## 一分钟复现
+Have a list of questions and a limited testing budget? Traclux Probe selects questions using six explicitly supplied state dimensions, shows which combinations they cover, and lets you inspect imported answers with their source and capture time.
+
+**Python 3.9+ · zero dependencies · no account or API key · Apache-2.0**
+
+![Traclux Probe: question selection, coverage comparison and answer evidence](docs/demo/preview.png)
+
+The screenshot uses an invented brand, questions and answers. State-pair coverage is a design metric, not consumer visibility or evidence of better commercial outcomes.
+
+## See it before you install anything
+
+**[Open the interactive demo →](https://zanelau.github.io/traclux-probe/demo/)** No account, installation or API key needed.
+
+You can also download this repository and open [`docs/demo/index.html`](docs/demo/index.html) in a browser. The file includes its data and works offline. GitHub's file viewer shows its source; download the file to run it. [Demo instructions and a short walkthrough →](docs/demo/README.md)
+
+1. Compare the question IDs selected by CSSM-HI and input order.
+2. Pick a question to inspect its incremental coverage and supplied labels.
+3. Read its imported answer, entrypoint, source, capture time and citations. Missing answers stay missing.
+
+## Reproduce the report
+
+From the repository root:
 
 ```bash
 python3 -m traclux_probe \
   --questions examples/fictional-brand/questions.json \
   --responses examples/fictional-brand/responses.json \
-  --brand 星屿 --budget 5 --output reports/example.json
+  --brand 星屿 --budget 5 \
+  --output reports/example.json --html reports/example.html
 ```
 
-打开 `reports/example.json`：`selected_ids` 是六维状态两两覆盖优先选点；`baseline` 是按输入顺序选 5 个问题；`entries` 保留每题状态、原文、来源、入口、时间、原始答案和引用。`response: null` 表示该问题没有导入答案，不计为实际采样。演示样例刻意将相似问题放在开头，以便展示选点差异；**不能证明 CSSM-HI 优于真实用户选题或提高销量**。
+Open `reports/example.html` in your browser. JSON remains available for your own analysis; `--html` is optional. No server, database, provider calls or package installation is needed to generate or open the report.
 
-该固定样例在预算 5 时为 **72 个状态对 vs 输入顺序的 30 个**。两边的输入问题相同；这个数字仅是代码可复核的演示，不是对真实问题需求或商业效果的估计。
+In this deliberately clustered fixture, the five selected questions cover **72 state pairs**, compared with **30** for the first five input questions. The shared pool contains 112 distinct pairs. The fixture illustrates the mechanism; it is **not a benchmark demonstrating algorithm superiority**.
 
-## 使用自己的问题与回答
+## Bring your own questions
 
-把你有权使用的问题一行一条写入 UTF-8 文本文件（参考 `examples/fictional-brand/raw-questions.txt`），运行交互式标注：
+Put questions you have permission to use in a UTF-8 text file, one per line. The guided annotator asks you to confirm all six dimensions:
 
 ```bash
 python3 -m traclux_probe annotate \
   --input examples/fictional-brand/raw-questions.txt \
   --output reports/my-questions.json
 python3 -m traclux_probe --questions reports/my-questions.json \
-  --budget 2 --output reports/my-report.json
+  --budget 2 --output reports/my-report.json --html reports/my-report.html
 ```
 
-向导逐维提供合法状态；少量词形匹配只作为**未经验证的建议**，每维都必须由使用者明确选择或确认，不会静默“预测”意图。也可按 `examples/fictional-brand/questions.json` 直接导入带 D1–D6 标签的 JSON。本社区版仅做标注约束校验；生产系统的 LLM 类别翻译并未包含在这里。按 `responses.json` 格式导入你**有权保存**的回答，要求写明 `question_id`、`answer`、`citations`、`entrypoint`、`captured_at`（带时区）和 `source`。本工具不请求模型、网页或客户端，也不会自动购买或抓取问题数据。`--brand` 仅进行示例性的字面提及匹配。
+Labels are supplied by the user. Word-matching suggestions are unvalidated hints, not inferred psychological truth. You can also supply [annotated JSON](examples/fictional-brand/questions.json) directly.
 
-## 公开与商业边界
+Answers are optional. Import captures you may lawfully save using the [response format](examples/fictional-brand/responses.json): `question_id`, `answer`, `citations`, `entrypoint`, timezone-aware `captured_at`, and `source`. The tool does not acquire answers. `--brand` performs illustrative literal matching in the JSON report.
 
-社区版包含六维抽象状态、互斥校验、覆盖优先的确定性选点、证据导入和对照报告。完整商业 Traclux 产品可另行提供经授权的真实问题来源、自动领域映射、持续多入口采样、校准、托管与团队服务；这些能力**不是本仓运行的前提**。本仓不是现有 Geo-Probe 后端的等价移植，也不包含完整生产 Node0–Node5 或任何真实客户数据。详见 [方法与限制](docs/methodology.md)。
+**Sharing reports:** the HTML contains the full candidate pool and all imported answers, including those not selected, so its explorer works offline. The JSON download inside it preserves the CLI's selected-question report. Review either file before sharing it.
 
-代码许可：Apache-2.0，见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。Traclux/探镜名称及 Logo 规则见 [TRADEMARK.md](TRADEMARK.md)。
+## What is open source?
 
-English summary: Standalone, offline CSSM-HI six-state pair coverage selection with imported response provenance. Run the example above without API keys; synthetic captures do not represent consumer visibility. See [methodology](docs/methodology.md), [contributing](CONTRIBUTING.md) and [security](SECURITY.md).
+The community version includes explicit six-dimensional states, compatibility checks, deterministic greedy pair-coverage selection, guided annotation, answer import, and offline JSON/HTML reports. It runs independently of the commercial product.
 
-要在外部 GEO 问题集上做下一轮可复现的准备，见 [公开测评来源和固定样本](docs/benchmark-sources.md)。复现脚本会下载上游文件并核验哈希，候选题文本只留在被 `.gitignore` 排除的本地报告目录；它们尚无六维人工真值或真实模型答案。
+Commercial Traclux may separately provide licensed question sources, automatic domain mapping, ongoing multi-entrypoint sampling, calibration, hosting and team services. This repository is a standalone basic implementation, not the full Geo-Probe production engine.
 
-## 发布状态
+Read the [method and limitations](docs/methodology.md), [license](LICENSE), [notice](NOTICE), [trademark policy](TRADEMARK.md) and [security policy](SECURITY.md). Historical benchmark preparation is documented [separately](docs/benchmark-sources.md) and is not required for the demo.
 
-这是尚未对外发布的本地候选。首次公开前，须确认版权归属与商标权、样例和依赖许可，审查拟公开的 Git 提交内容，提供真正可用的私密安全报告渠道，然后才创建 Public 仓库。现有私有后端、前端、官网及其 Git 历史不属于本仓。
+## Release
+
+The first community release is **v0.1.0**. See the [changelog](CHANGELOG.md) and [GitHub releases](https://github.com/ZaneLau/traclux-probe/releases). This early release focuses on transparent, offline question selection; algorithm effectiveness on real demand remains unvalidated. Existing private backend, frontend and landing repositories are outside this repository.
