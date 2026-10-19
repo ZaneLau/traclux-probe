@@ -1,8 +1,8 @@
 # Traclux Probe
 
 - Purpose: an Apache-2.0 community tool for explicit six-dimensional question selection and imported answer evidence.
-- Current: v0.1.0 release preparation. Interactive fictional demo, English/Chinese README, screenshot and walkthrough are implemented; the owner accepted the demo on 2026-10-19.
-- Evidence: eight Python tests passed; browser checks cover selection contributions, original answers/source/time, filters, search/empty states, JSON-download equality and offline operation. This demonstrates tool behavior, not algorithm effectiveness on real demand.
-- Next: publish the reviewed standalone repository, enable private security reports, verify the hosted demo and release v0.1.0 from the exact public commit.
+- Current: the standalone [public repository](https://github.com/ZaneLau/traclux-probe) and [interactive demo](https://zanelau.github.io/traclux-probe/demo/) are published. The v0.1.0 community scope includes English/Chinese instructions, offline reports, a screenshot and a walkthrough; the owner accepted the demo on 2026-10-19. Version archives are listed in [Releases](https://github.com/ZaneLau/traclux-probe/releases).
+- Evidence: eight Python tests and clean-source reproduction passed. The public HTTPS demo passed browser checks for selection contributions, original answers/source/time, missing answers, search/empty states and exact JSON download. Hosted demo assets match the reviewed source, and private vulnerability reporting is enabled. This demonstrates tool behavior, not algorithm effectiveness on real demand.
+- Next: collect concrete usage feedback through [Issues](https://github.com/ZaneLau/traclux-probe/issues); prioritize a reproducible defect or a real user's question pool before adding features.
 - Scope: keep the core usable without accounts, APIs or paid services. Private production repositories and historical research data are outside this repository. Research remains paused; no promotion campaign is required.
 - Stop: a visitor can open the public demo and reproduce the release from its source archive. Reopen feature work for concrete usage feedback or a reproducible defect.
