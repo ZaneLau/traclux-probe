@@ -8,6 +8,8 @@
 
 **Python 3.9+，零第三方依赖，无需账户或模型密钥，Apache-2.0。**
 
+如果对你有帮助，欢迎在 [GitHub 留一个 Star](https://github.com/ZaneLau/traclux-probe)。有可复现的问题，或想反馈自己的选题场景，可以[提交 Issue](https://github.com/ZaneLau/traclux-probe/issues)。
+
 ![选题对照、问题列表与回答证据](docs/demo/preview.png)
 
 ## 先看演示
