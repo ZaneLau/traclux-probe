@@ -4,7 +4,7 @@
     {
       "component": "backend",
       "commit": "c0753ce5ec2343e0e2b858ca050104ad251ae289",
-      "file_count": 693,
+      "file_count": 694,
       "files": [
         {
           "path": "backend/.mvn/wrapper/maven-wrapper.properties",
@@ -14,12 +14,17 @@
         {
           "path": "backend/Dockerfile",
           "sha256": "aedc5e36e8bdf138a1e9864af3ca776add98f3f885366e1d30ae9cbcee1fa7fb",
-          "exported_sha256": "bc49ef748c802b282ea114e7b3e5ae4c17b6c6e660263c7ffee59278a5c2adc5"
+          "exported_sha256": "4f11dde997bcbc932cf9ee839e8d81ccc3ddaf97565bcaf7c1d09e87c6d5733c"
         },
         {
           "path": "backend/dependency-check-suppressions.xml",
           "sha256": "828b380f04f0febb567b5c38063e88983f9979327317402c31694a21cb3ceaf6",
           "exported_sha256": "828b380f04f0febb567b5c38063e88983f9979327317402c31694a21cb3ceaf6"
+        },
+        {
+          "path": "backend/lombok.config",
+          "sha256": "866d9ddd5427e14aeec38a622aa0b8a7503f5227bc5576a2ec295333c6832796",
+          "exported_sha256": "866d9ddd5427e14aeec38a622aa0b8a7503f5227bc5576a2ec295333c6832796"
         },
         {
           "path": "backend/mvnw",
@@ -2839,7 +2844,7 @@
         {
           "path": "backend/src/test/java/com/geoprobe/config/KnowledgeAssetEnabledDataSourceConfigTest.java",
           "sha256": "c8a2dd07f452444bb37c72a4363332dabb8f824be752295fb300603d620eaccb",
-          "exported_sha256": "c8a2dd07f452444bb37c72a4363332dabb8f824be752295fb300603d620eaccb"
+          "exported_sha256": "b022b27c6a33bab7de1c91464a2f8f817b17ee298b66663b9aba22c35da3372f"
         },
         {
           "path": "backend/src/test/java/com/geoprobe/config/LlmConfigEndpointIdPriorityTest.java",
@@ -4733,7 +4738,8 @@
     "Add same-origin server-side API proxy and remove unavailable private quality script references without dependency changes",
     "Keep login media and fonts required by the existing UI, with third-party font licenses",
     "Point container source labels to this repository; add self-hosted Compose and local credential initialization",
-    "Make yesterday scheduler test fixtures stable near midnight; retain scheduler behavior and assertions"
+    "Make yesterday scheduler test fixtures stable near midnight; retain scheduler behavior and assertions",
+    "Restore original Lombok qualifier-copying build configuration and include it in the Docker build; add a real repository routing regression test for the two-database setup"
   ],
   "hash_note": "sha256 is the original committed source; exported_sha256 is this candidate after the listed derivative edits. New community files are additions, not represented as original source."
 }

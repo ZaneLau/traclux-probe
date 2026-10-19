@@ -9,6 +9,7 @@ import sys
 def check(root):
     findings = []
     required = [
+        "backend/lombok.config",
         "frontend/app/pages/dashboard.vue",
         "frontend/app/pages/engine.vue",
         "frontend/app/pages/sources.vue",

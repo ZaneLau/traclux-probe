@@ -46,11 +46,8 @@ MySQL and PostgreSQL retain data in instance-owned volumes. `stop` preserves the
 
 ## Release acceptance
 
-Builds, tests, fresh-database migrations and login have passed locally; see the [validation record](validation.md). Remaining acceptance:
+Builds, fresh-database migrations, password login and one bounded real-model case have passed locally: CSSM-HI generation, 5/5 actual responses, persisted answers, populated overview and brand performance. See the [validation record](validation.md).
 
-- Follow brand creation → probe generation → model execution → existing analysis pages.
-- Verify that the private console and management routes are absent.
-- Review exported source and prompt assets for secrets and protected data.
-- Exercise a real model only with verified sufficient free quota in the development session; a mock validates wiring, not model quality.
+Release acceptance is still incomplete. Question analysis does not yet expose grouped answers correctly; generated questions and summary labels need a meaning/association check; paused-brand manual execution and call-accounting persistence have known defects. The initial-run result does not establish every execution path, provider compatibility, algorithm superiority or consumer-client visibility. Provider calls consume the instance owner's quota and may incur charges. No author keys are included.
 
 The original selection CLI and static demo belong to the earlier v0.1.0 scope. They remain historical auxiliary artifacts and are not the full user workbench demo.
