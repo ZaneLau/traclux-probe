@@ -266,8 +266,8 @@ onMounted(async () => {
 
       <section class="surface notice-surface notice-surface--muted">
         <div class="notice-copy">
-          <strong>这里把单次运行拆成四层：概览、调度、执行、原始记录</strong>
-          <span>先让人看懂这次为什么这样跑，再决定是否继续深挖底层原始数据。</span>
+          <strong>{{ demoMode ? '本次运行的概览、主题分配与探针执行记录' : '这里把单次运行拆成四层：概览、调度、执行、原始记录' }}</strong>
+          <span v-if="!demoMode">先让人看懂这次为什么这样跑，再决定是否继续深挖底层原始数据。</span>
         </div>
       </section>
 
@@ -296,7 +296,7 @@ onMounted(async () => {
         class="surface section-surface empty-state"
       >
         <strong>正在读取运行详情</strong>
-        <span>我正在把这次运行的概览、调度、执行和原始记录都组装出来。</span>
+        <span>正在加载本次运行记录。</span>
       </section>
 
       <template v-else-if="runtime">

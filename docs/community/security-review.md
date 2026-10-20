@@ -47,7 +47,7 @@ Local and CI source checks use `python3 scripts/release_check.py`; CI also build
 | Review | Result |
 | --- | --- |
 | Case data | One reviewed brand/run; answer excerpts match the approved case. No real user/account/contact fields, raw record UUIDs, private provider endpoints or credentials found in the current snapshot |
-| Removed remnants | Account-budget scheduling notes, unused debug-event projections and a redundant timeline record alias removed. Demo account ID, credit/settlement panels, account-removal action and old hosted-preview model availability copy no longer displayed |
+| Removed remnants | Account-budget scheduling notes, unused debug-event projections and a redundant timeline record alias removed. Demo account ID, credit/settlement panels, account-removal action and old hosted-preview model availability copy no longer displayed; internal field-name warnings use case-specific explanations |
 | Build scope | Only reviewed workbench routes included; unused login, brand-creation and debug pages excluded. No client source maps generated |
 | Release check | Snapshot privacy checks run locally and in CI. New content still requires human review; pattern matching cannot recognize every kind of private information |
 | History boundary | Private credential comparison found no matches in reachable Git history. Two older versions of `validation.md` contained test run/brand record IDs; current files no longer contain them. They are identifiers, not credentials. This review does not rewrite repository history |
