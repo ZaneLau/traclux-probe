@@ -49,7 +49,8 @@ Local and CI source checks use `python3 scripts/release_check.py`; CI also build
 | Case data | One reviewed brand/run; answer excerpts match the approved case. No real user/account/contact fields, raw record UUIDs, private provider endpoints or credentials found in the current snapshot |
 | Removed remnants | Account-budget scheduling notes, unused debug-event projections and a redundant timeline record alias removed. Demo account ID, credit/settlement panels, account-removal action and old hosted-preview model availability copy no longer displayed; internal field-name warnings use case-specific explanations |
 | Build scope | Only reviewed workbench routes included; unused login, brand-creation and debug pages excluded. No client source maps generated |
-| Release check | Snapshot privacy checks run locally and in CI. New content still requires human review; pattern matching cannot recognize every kind of private information |
-| History boundary | Private credential comparison found no matches in reachable Git history. Two older versions of `validation.md` contained test run/brand record IDs; current files no longer contain them. They are identifiers, not credentials. This review does not rewrite repository history |
+| Release check | Snapshot privacy checks run locally and in CI. Screenshots and recordings also require visual review; text scans do not inspect image pixels |
+| Demo images | Both workbench screenshots replaced with the reviewed public demo. The old screenshot displayed a reserved test email and shortened record identifiers; other case images and the walkthrough were visually reviewed |
+| History boundary | Private credential comparison found no matches in reachable Git history. Older commits retain test run/brand record IDs in two versions of `validation.md` and a screenshot with a reserved test identity. Current files no longer expose them. These are test identifiers, not credentials. This review does not rewrite repository history |
 
 The saved questions, public brand/model names and sample dates remain to explain the case. This privacy review does not close the unrelated dependency and hosting findings above.

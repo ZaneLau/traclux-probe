@@ -17,6 +17,6 @@ python3 scripts/package_workbench_demo.py --output /tmp/traclux-demo-pages
 
 Serve the output under a `/traclux-probe/` directory so the production asset paths resolve. The primary entry redirects to `#/dashboard`; route refreshes do not need server rewrites.
 
-`scripts/check_workbench_privacy.py` runs in the source release gate and rejects unreviewed projection routes, personal contact fields, raw record UUIDs, credentials, private URLs, account/billing text and answers outside the reviewed excerpts. Human review is still required for new content.
+`scripts/check_workbench_privacy.py` runs in the source release gate and rejects unreviewed projection routes, personal contact fields, raw record UUIDs, credentials, private URLs, account/billing text and answers outside the reviewed excerpts. Human review is still required for new content, including visual checks of screenshots and recordings.
 
 Changes to the snapshot require review against the captured source and the approved answer excerpts. Do not add credentials or raw responses. Existing sample and summary limitations remain documented in [known limitations](../../../docs/community/known-limitations.md).
