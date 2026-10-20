@@ -3,7 +3,7 @@ definePageMeta({
   layout: false
 })
 
-await navigateTo('/login', {
+await navigateTo(useRuntimeConfig().public.demoMode === true ? '/dashboard' : '/login', {
   replace: true,
   redirectCode: 302
 })

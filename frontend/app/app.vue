@@ -29,12 +29,14 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: `${useRuntimeConfig().app.baseURL}favicon.ico` }
   ],
   htmlAttrs: {
     lang: 'zh-CN'
   }
 })
+
+const demoMode = useRuntimeConfig().public.demoMode === true
 
 const title = 'Traclux 探镜'
 const description = 'Traclux 探镜工作台，聚合品牌可见度、证据、监测与增长信号。'
@@ -54,9 +56,18 @@ useSeoMeta({
       color="var(--ui-primary)"
       :height="3"
     />
+    <DemoNotice v-if="demoMode" />
+    <div :class="demoMode ? 'demo-workbench' : undefined">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    </div>
     <WikiGeoWikiDrawer />
   </UApp>
 </template>
+
+<style>
+.demo-workbench { padding-top: 48px; }
+.demo-workbench .nav-rail { top: 48px; height: calc(100vh - 48px); }
+.demo-workbench .workbench-toolbar-surface { pointer-events: none; opacity: .8; }
+</style>

@@ -16,6 +16,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const demoMode = useRuntimeConfig().public.demoMode === true
 const router = useRouter()
 const brandSpacesApi = useBrandSpacesApi()
 const brandSpaceDirectory = useWorkbenchBrandSpacesDirectory()
@@ -133,6 +134,12 @@ function syncPresetRange(preset: Exclude<BrandSpaceRunDatePreset, 'custom'>) {
 }
 
 function initFilters() {
+  if (demoMode) {
+    dateFrom.value = '2026-10-07'
+    dateTo.value = '2026-10-20'
+    datePreset.value = 'custom'
+    return
+  }
   const queryDateFrom = typeof route.query.dateFrom === 'string' ? route.query.dateFrom : ''
   const queryDateTo = typeof route.query.dateTo === 'string' ? route.query.dateTo : ''
 
@@ -257,7 +264,7 @@ onMounted(async () => {
         </article>
       </section>
 
-      <section class="surface section-surface">
+      <section class="surface section-surface" :inert="demoMode ? true : undefined">
         <div class="surface-head surface-head--compact">
           <div class="surface-head__title">
             <strong>筛选运行窗口</strong>

@@ -55,3 +55,7 @@ The preview has known issues with grouped answer display, topic matching, summar
 See [known limitations](known-limitations.md) and [security review](security-review.md) before deployment. The public captured-case viewer is separate from this authenticated app.
 
 The earlier Python selector is documented in [selector methodology](../methodology.md).
+
+## Browse before deploying
+
+The [public workbench demo](https://zanelau.github.io/traclux-probe/demo/) opens without login. It uses the same Nuxt pages with a read-only Anker case; no backend or model is connected. Navigate to Question analysis → Records for saved excerpts, or Brand management → Run history for execution details. The [CSSM-HI case walkthrough](https://zanelau.github.io/traclux-probe/demo/case-study/) explains the generated state combinations.

@@ -9,7 +9,8 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "test": "vitest run"
+    "test": "vitest run",
+    "generate:demo": "NUXT_PUBLIC_DEMO_MODE=true nuxt generate"
   },
   "dependencies": {
     "@fontsource/noto-sans-sc": "^5.2.7",

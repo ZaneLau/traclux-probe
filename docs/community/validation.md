@@ -59,3 +59,7 @@ The v0.2.0 preview, workbench source and saved-case demo are published. The demo
 The documentation/demo update passed 14 Python tests and the source publication checks. Pull-request and main-branch backend/frontend checks passed, and Pages was verified from the public URL. The downloaded case JSON matched the reviewed source file.
 
 See [known limitations](known-limitations.md), [security review](security-review.md) and [release notes](release-v0.2.0.md) before deploying.
+
+## Static workbench demo
+
+The public demo reuses the Nuxt workbench pages. Its snapshot contains one captured brand and completed run, remapped identifiers and reviewed answer excerpts. No account credentials, provider configuration, billing snapshots or raw task payloads are included. Provider tests reject all mutation verbs and unknown reads, enforce the captured brand/window and verify snapshot isolation. The normal application build retains live authentication.

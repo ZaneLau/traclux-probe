@@ -1421,7 +1421,7 @@ onBeforeUnmount(() => {
       </div>
 
       <div
-        v-else-if="!showBrandSpaceEmptyState && !showBrandSelectionPromptState && !brandSpaceSelectionError && isWorkbenchProblemAnalysisMode && !workbenchProblemAnalysisLoading"
+        v-else-if="!showBrandSpaceEmptyState && !showBrandSelectionPromptState && !brandSpaceSelectionError && isWorkbenchProblemAnalysisMode && !hasWorkbenchProblemAnalysis && !workbenchProblemAnalysisLoading"
         class="state-block"
       >
         {{ promptRuntime.error || '当前品牌空间暂无可展示的问题分析结果。' }}

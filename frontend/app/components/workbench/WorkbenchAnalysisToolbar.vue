@@ -10,6 +10,8 @@ import {
 } from '~/components/workbench/filters/workbenchFilterUi'
 import type { WorkbenchFilterOption } from '~/composables/useWorkbenchAnalysisFilters'
 
+const demoMode = useRuntimeConfig().public.demoMode === true
+
 const props = withDefaults(defineProps<{
   timePreset?: string
   dateFrom?: string
@@ -190,7 +192,7 @@ function openCustomDatePopover() {
 </script>
 
 <template>
-  <section class="surface workbench-toolbar-surface">
+  <section class="surface workbench-toolbar-surface" :inert="demoMode ? true : undefined" :aria-label="demoMode ? '演示固定数据范围' : undefined">
     <div class="workbench-toolbar-card">
       <div
         class="workbench-toolbar-grid"

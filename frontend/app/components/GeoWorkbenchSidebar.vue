@@ -2,6 +2,7 @@
 import { computed, onMounted } from 'vue'
 
 const route = useRoute()
+const demoMode = useRuntimeConfig().public.demoMode === true
 const navGroups = computed(() => useVisibleDashboardNavGroups())
 const authApi = useAuthApi()
 const { auth, load, clear } = useAuthSnapshot()
@@ -87,12 +88,12 @@ onMounted(() => {
     </section>
 
     <section class="nav-account-card">
-      <h2>当前账号</h2>
+      <h2>{{ demoMode ? '公开案例' : '当前账号' }}</h2>
       <div class="nav-account-card__meta">
         <span class="nav-account-card__name">{{ accountDisplayName }}</span>
         <span class="nav-account-card__id">ID: {{ accountDisplayId }}</span>
       </div>
-      <div class="nav-account-card__actions">
+      <div v-if="!demoMode" class="nav-account-card__actions">
         <button
           type="button"
           class="nav-link nav-account-card__logout"

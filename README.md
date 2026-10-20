@@ -2,13 +2,13 @@
 
 **Generate probes with CSSM-HI, run them against a model, and inspect the results in the Traclux workbench.**
 
-[**Explore the demo — no API key**](https://zanelau.github.io/traclux-probe/demo/) · [中文说明](README.zh-CN.md) · [Setup and feature map](docs/community/README.md) · [Source provenance](docs/community/source-manifest.json) · [Security](SECURITY.md)
+[**Open the workbench demo — no login**](https://zanelau.github.io/traclux-probe/demo/) · [中文说明](README.zh-CN.md) · [Setup and feature map](docs/community/README.md) · [Source provenance](docs/community/source-manifest.json) · [Security](SECURITY.md)
 
 **Community preview · v0.2.0.** The Spring Boot backend and Nuxt workbench are available under Apache-2.0. Deploy locally and connect your model provider.
 
-[![Explore a captured five-probe run](docs/demo/preview.png)](https://zanelau.github.io/traclux-probe/demo/)
+[![Read-only Traclux workbench with the saved Anker case](docs/demo/workbench-demo.png)](https://zanelau.github.io/traclux-probe/demo/)
 
-**Explore before installing:** open the [read-only real-model case](https://zanelau.github.io/traclux-probe/demo/), select a generated question and inspect its saved answer excerpt. No signup or API key is needed. To generate new probes, run your own instance.
+**Explore before installing:** open the [read-only workbench](https://zanelau.github.io/traclux-probe/demo/). Browse the overview, brand performance, question records and run history from a saved five-probe case. No signup or API key is needed. To generate new probes, run your own instance.
 
 ## Why CSSM-HI? One brand, different questions
 
@@ -33,7 +33,7 @@ The example comes from a saved Anker run. In English: “Before ordering, should
 | D5 · Urgency | How soon do they need it? | Immediately |
 | D6 · Interaction | How are they asking? | Specify requirements / compare details |
 
-**Explore the difference:** select probes **#1, #2 and #5** in the [demo](https://zanelau.github.io/traclux-probe/demo/#explore). Compare a purchase check, a comparison method and early exploration. Each includes the saved state tags, question and response excerpt. Expand the codes or [download the public JSON](docs/demo/case.json) to inspect the trace.
+**Explore the difference:** select probes **#1, #2 and #5** in the [demo](https://zanelau.github.io/traclux-probe/demo/case-study/#explore). Compare a purchase check, a comparison method and early exploration. Each includes the saved state tags, question and response excerpt. Expand the codes or [download the public JSON](docs/demo/case.json) to inspect the trace.
 
 Read the [generation walkthrough and source map](docs/community/generation-walkthrough.md) for the fixed states, category translation, coverage planning, rendering and checks. The five-probe example illustrates the workflow. Comparative evaluation remains open.
 

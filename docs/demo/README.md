@@ -1,4 +1,9 @@
-# Saved-case demo
+# Demo assets
+
+The primary [public demo](https://zanelau.github.io/traclux-probe/demo/) is the existing Nuxt workbench in read-only mode. It opens without login and uses a saved Anker case. See the [demo implementation](../../frontend/app/demo/README.md) for its data boundary and build commands.
+
+The files below build the secondary [CSSM-HI case walkthrough](https://zanelau.github.io/traclux-probe/demo/case-study/). They explain the six state dimensions and saved questions alongside the workbench.
+
 
 The [public demo](https://zanelau.github.io/traclux-probe/demo/) displays an Anker / USB-C charger run recorded on 2026-10-20. Visitors can search five questions, inspect their six CSSM-HI state tags, expand generation metadata and read response excerpts.
 

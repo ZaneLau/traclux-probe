@@ -78,6 +78,11 @@ export function useGeoApi(options: UseGeoApiOptions = {}) {
   })
 
   return async function request<T>(request: string, options?: Parameters<typeof client<T>>[1]): Promise<T> {
+    if (runtimeConfig.public.demoMode === true) {
+      const { readDemoResponse } = await import('~/demo/provider')
+      return readDemoResponse<T>(request, options?.method || 'GET', options?.query)
+    }
+
     let payload: ApiResult<T>
 
     try {
