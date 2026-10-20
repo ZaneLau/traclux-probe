@@ -10,6 +10,35 @@
 
 **Try before installing:** open the [read-only real-model case](https://zanelau.github.io/traclux-probe/demo/), select a generated question and inspect its saved answer excerpt. No signup, model key or live request is needed. This public case viewer is separate from the authenticated application.
 
+## Why CSSM-HI? One brand, different questions
+
+Someone ready to order and someone still exploring a category need different answers. Traclux starts with **six user-state dimensions**, selects combinations, then asks a model to turn them into natural questions. You can inspect the saved states alongside the resulting wording.
+
+```text
+Anker · USB-C chargers
+  → verifying a choice + trying to buy + protecting devices
+  → clear attention + urgent need + comparing specifications
+  → “下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？”
+  → execute against your model → save the response → inspect in the workbench
+```
+
+That question and its six state tags come from the **same saved run**, not a recreated example. Its English gist: “Before ordering, should I choose Anker or UGREEN for a USB-C charger?” The intent tags are generation targets; the wording does not necessarily express every target perfectly.
+
+| Dimension | Plain-language question | Saved state for this probe |
+| --- | --- | --- |
+| D1 · Decision stage | How far along is the buyer? | Verifying a choice |
+| D2 · Goal | What do they want to do? | Buy / acquire a resource |
+| D3 · Motivation | Why do they care? | Protect devices / avoid harm |
+| D4 · Attention | How much can they process? | Clear and able to compare |
+| D5 · Urgency | How soon do they need it? | Immediately |
+| D6 · Interaction | How are they asking? | Specify requirements / compare details |
+
+**Explore the difference:** select probes **#1, #2 and #5** in the [demo](https://zanelau.github.io/traclux-probe/demo/#explore). Compare a purchase check, a comparison method and early exploration. Each has its own actual state tags, generated wording and saved response excerpt. Expand the codes or [download the public JSON](docs/demo/case.json) to inspect the trace.
+
+Read the [generation walkthrough and source map](docs/community/generation-walkthrough.md) for the fixed states, category translation, coverage planning, rendering and checks. These implementations are included in this repository. This small case demonstrates how the method works; it is not evidence that CSSM-HI beats another method.
+
+**Demo cost boundary:** browsing, searching and switching probes are local page interactions over saved data. There is no live trial, provider proxy or author-funded model endpoint. Running new probes requires your own instance and model quota; a provider may charge you.
+
 ## What you get
 
 | User task | Included implementation |

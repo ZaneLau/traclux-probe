@@ -1,5 +1,6 @@
 """Build the public read-only case from a reviewed, allowlisted JSON artifact."""
 import json
+import hashlib
 from pathlib import Path
 
 def main():
@@ -7,7 +8,10 @@ def main():
     demo = root / "docs/demo"
     data = json.loads((demo / "case.json").read_text())
     embedded = json.dumps(data, ensure_ascii=False).replace("<", "\\u003c")
-    (demo / "index.html").write_text((demo / "template.html").read_text().replace("{{CASE_DATA}}", embedded))
+    html = (demo / "template.html").read_text().replace("{{CASE_DATA}}", embedded)
+    for placeholder, name in [("STYLE_HASH", "style.css"), ("SCRIPT_HASH", "case-viewer.js")]:
+        html = html.replace("{{" + placeholder + "}}", hashlib.sha256((demo / name).read_bytes()).hexdigest()[:12])
+    (demo / "index.html").write_text(html)
 
 if __name__ == "__main__":
     main()
