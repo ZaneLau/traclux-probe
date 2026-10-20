@@ -2,28 +2,28 @@
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="no-referrer">
-<meta name="description" content="CSSM-HI probe generation, real model answers, and a self-hosted GEO workbench. Explore a captured case without an API key.">
+<meta name="description" content="See how six CSSM-HI user states become a GEO probe. Inspect five real questions, saved generation tags and model answer excerpts. No login or live calls.">
 <meta property="og:title" content="Traclux · From brand to probes to answers">
-<meta property="og:description" content="Explore a real five-probe case. No signup or API key required.">
+<meta property="og:description" content="Brand → six user states → generated question → saved model answer. No signup, API key or live model calls.">
 <meta property="og:image" content="https://zanelau.github.io/traclux-probe/demo/preview.png">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Traclux · Real probe run / 真实探针案例</title>
-<link rel="stylesheet" href="style.css"><script src="case-viewer.js" defer></script>
+<link rel="stylesheet" href="style.css?v={{STYLE_HASH}}"><script src="case-viewer.js?v={{SCRIPT_HASH}}" defer></script>
 </head><body>
 <header><nav class="nav"><a class="brand" href="https://www.traclux.com/">TRACLUX <span>Community</span></a><div class="nav-right"><a href="#explore">Explore case</a><a href="https://github.com/ZaneLau/traclux-probe#start-locally">Self-host</a><a class="text-button" href="https://github.com/ZaneLau/traclux-probe">☆ Star on GitHub</a></div></nav></header>
 <main>
-<div class="hero"><div><div class="eyebrow">CSSM-HI → PROBES → MODEL ANSWERS</div><h1>From a brand to questions worth testing.</h1><p class="subtitle">输入品牌，生成探针，接入模型执行，在用户工作台查看结果。<br>Explore one captured Anker / USB-C charger run. This is a read-only case, not a live model request.</p></div><div class="run-meta"><span class="badge">REAL MODEL · CAPTURED CASE</span><br>2026-10-20 · Chinese / CN<br>Doubao Seed 2.0 Lite · API</div></div>
-<div class="steps"><span class="step">01 Brand & category · 品牌与品类</span><span class="step">02 CSSM-HI · 生成探针</span><span class="step">03 Your model · 执行</span><span class="step">04 Workbench · 查看回答</span></div>
+<div class="hero"><div><div class="eyebrow">CSSM-HI → PROBES → MODEL ANSWERS</div><h1>What would different buyers ask AI?</h1><p class="subtitle">同一个品牌，临下单、怕踩坑、刚开始了解的人，会怎样问？<br>CSSM-HI models six user states, chooses combinations, then generates questions to run against your model.</p><p class="small-note"><strong>No login. No API key. No live model calls.</strong><br>直接查看已跑好的案例，点击和搜索都只在本页完成，不会使用作者的模型额度。<br><a href="https://github.com/ZaneLau/traclux-probe/blob/main/docs/community/generation-walkthrough.md">How generation works · 看懂生成过程 →</a></p></div><div class="run-meta"><span class="badge">REAL MODEL · SAVED CASE</span><br>2026-10-20 · Chinese / CN<br>Doubao Seed 2.0 Lite · API</div></div>
+<div class="steps"><span class="step">01 Input · Anker / USB-C充电器</span><span class="step">02 Six states · 用户状态组合</span><span class="step">03 Generate & run · 生成问题并执行</span><span class="step">04 Inspect · 查看已保存的回答</span></div>
 <div class="stats">
 <div class="stat"><div class="stat-label">Generated & executed · 生成并执行</div><div class="stat-number">5 <span>probes</span></div><div class="stat-foot">5 topics in the initial plan</div></div>
 <div class="stat"><div class="stat-label">Completed · 已完成</div><div class="stat-number green">5 / 5</div><div class="stat-foot">0 execution failures</div></div>
 <div class="stat"><div class="stat-label">Run time · 本轮耗时</div><div class="stat-number">2:53</div><div class="stat-foot">State modeling through stored results</div></div>
 <div class="stat"><div class="stat-label">Citations · 引用</div><div class="stat-number">0</div><div class="stat-foot">Web search off in this run</div></div>
 </div>
-<div id="explore" class="workspace-head"><div class="workspace-title"><h2>Inspect the actual probes · 点开看实际问题</h2></div><a href="case.json" download>Download public case JSON ↓</a></div>
+<div id="explore" class="workspace-head"><div class="workspace-title"><h2>Pick a question. See the states behind it.</h2><span class="caption">点左侧问题，右侧查看实际状态标签与回答摘录</span></div><a href="case.json" download>Case + generation JSON ↓</a></div>
 <div class="workspace">
 <section class="panel"><div class="toolbar"><span class="caption">Anker · USB-C充电器 · 5 probes</span><input id="search" class="search" type="search" placeholder="Search questions / 搜索" aria-label="Search questions"></div><div id="questions" class="question-list"></div><div class="list-foot"><span>Generated questions, not purchased search logs</span><span id="count"></span></div></section>
-<section class="panel" aria-label="Probe details"><div class="detail-head"><h2 id="detail-title">Probe</h2><span class="tiny-badge">Captured response · 回答摘录</span></div><div class="detail-body"><p id="question" class="detail-question"></p><dl id="metadata" class="provenance"></dl><hr><h3>Model answer excerpt · 模型回答摘录</h3><blockquote id="answer" class="answer"></blockquote><p id="answer-note" class="small-note"></p><div class="missing">No citations in this run: web search was off. API responses are not measurements of consumer app answers.<br>本轮未联网；模型原话未经事实核验，不是产品选购建议。主题匹配和分析展示仍有已知限制。</div></div></section>
+<section class="panel" aria-label="Probe details"><div class="detail-head"><h2 id="detail-title">Probe</h2><span class="tiny-badge">Saved states → question → answer</span></div><div class="detail-body"><p id="question" class="detail-question"></p><p id="question-summary" class="small-note"></p><h3>Why this question? · 生成时设定的用户状态</h3><p class="small-note">These six tags were saved with this question during generation. Compare the intended situation with the wording above.<br>下面是本轮真实保存的生成标签；它们表达生成目标，不代表问句已完美体现每个状态。</p><dl id="metadata" class="provenance"></dl><details><summary>Inspect saved codes · 查看原始状态编码与生成标记</summary><pre id="generation-trace" class="command"></pre></details><p id="plan-topic" class="small-note"></p><hr><h3>Model answer excerpt · 模型回答摘录</h3><p id="execution-meta" class="small-note"></p><blockquote id="answer" class="answer"></blockquote><p id="answer-note" class="small-note"></p><div class="missing">No citations in this run: web search was off. API responses are not measurements of consumer app answers.<br>本轮未联网；模型原话未经事实核验，不是产品选购建议。主题匹配和分析展示仍有已知限制。</div></div></section>
 </div>
 <section class="panel case-start"><div class="panel-head"><h2>Run the full workbench · 运行完整系统</h2><a href="https://github.com/ZaneLau/traclux-probe">View source →</a></div><div class="detail-body"><p class="subtitle">The open-source package includes the existing Nuxt user application, Spring Boot backend, CSSM-HI generation, model execution, saved answers and run history. The author's operations console stays private.</p><pre class="command">git clone https://github.com/ZaneLau/traclux-probe.git
 cd traclux-probe

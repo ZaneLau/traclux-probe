@@ -4,6 +4,8 @@ This package reuses the Traclux application. It generates probes with CSSM-HI, s
 
 The private operations console is excluded: no `/admin` pages, admin Controller, management DTOs or exclusive admin services. Provider quota collectors and refresh scheduling are excluded as well; shared runtime accounting remains where user execution depends on it. Instance operators keep their own database, account credentials and model keys. No Traclux hosted subscription is required.
 
+Start with the [actual generation walkthrough](generation-walkthrough.md): brand → six saved user states → generated question → saved answer, with links to each implementation stage. The [public saved-case viewer](https://zanelau.github.io/traclux-probe/demo/) needs no login or key and makes no model calls. Generating new probes uses the deploying user's own provider quota.
+
 ## User features
 
 | Area | Included capability | Application route |

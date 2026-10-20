@@ -22,7 +22,30 @@
       "latencySeconds": 57.5,
       "answerExcerpt": "但要分场景选，才能做到100%不踩使用体验的坑，直接给你不用纠结的选择标准：",
       "excerpted": true,
-      "citations": []
+      "citations": [],
+      "generation": {
+        "bucket": "ORTHOGONAL",
+        "abstractTags": {
+          "D1": "verification",
+          "D2": "resource_acquisition",
+          "D3": "subsistence_protection",
+          "D4": "optimal",
+          "D5": "acute_emergency",
+          "D6": "specification"
+        },
+        "fallbackUsed": false,
+        "renderSource": "LLM",
+        "translatedTags": {
+          "D1": "核对看中的C充靠不靠谱",
+          "D2": "就想赶紧买到合适的C充",
+          "D3": "要安全别充坏我的设备",
+          "D4": "思路清晰选得很顺畅",
+          "D5": "急着用马上就要买到",
+          "D6": "对着参数详情挨个比对"
+        },
+        "qualityGatePassed": true
+      },
+      "questionSummaryEn": "Before ordering, should I choose Anker or UGREEN for a USB-C charger?"
     },
     {
       "number": 2,
@@ -32,7 +55,30 @@
       "latencySeconds": 63.2,
       "answerExcerpt": "你完全不用懵，不用上来直接比品牌，按「优先级从高到低」的顺序筛，先看最影响你使用的核心差异，90%的纠结直接就消了：",
       "excerpted": true,
-      "citations": []
+      "citations": [],
+      "generation": {
+        "bucket": "ORTHOGONAL",
+        "abstractTags": {
+          "D1": "formulation",
+          "D2": "instructional_active",
+          "D3": "understanding_competence",
+          "D4": "moderate_strain",
+          "D5": "anticipatory_constraint",
+          "D6": "dialogic"
+        },
+        "fallbackUsed": false,
+        "renderSource": "LLM",
+        "translatedTags": {
+          "D1": "慢慢捋清选C充的标准",
+          "D2": "主动找选C充的攻略教程",
+          "D3": "想搞懂C充的各类门道",
+          "D4": "费点劲还能扛得住",
+          "D5": "近期打算要提前选购",
+          "D6": "跟客服问清相关问题"
+        },
+        "qualityGatePassed": true
+      },
+      "questionSummaryEn": "I am comparing UGREEN and Baseus: which differences should I understand first?"
     },
     {
       "number": 3,
@@ -42,7 +88,30 @@
       "latencySeconds": 74.7,
       "answerExcerpt": "挑绿联（UGREEN）和倍思（Baseus）的USB-C充电器，完全不用纠结谁绝对更好，按下面4步走，既能卡准性价比，还能避开两家各自的减配/历史雷区：",
       "excerpted": true,
-      "citations": []
+      "citations": [],
+      "generation": {
+        "bucket": "ORTHOGONAL",
+        "abstractTags": {
+          "D1": "exploration",
+          "D2": "instructional_active",
+          "D3": "subsistence_protection",
+          "D4": "severely_depleted",
+          "D5": "reflective",
+          "D6": "recognition"
+        },
+        "fallbackUsed": false,
+        "renderSource": "LLM",
+        "translatedTags": {
+          "D1": "正在搜罗各类C充相关信息",
+          "D2": "主动找选C充的攻略教程",
+          "D3": "要安全别充坏我的设备",
+          "D4": "脑子乱完全不想费神",
+          "D5": "慢慢挑不着急入手",
+          "D6": "扫一眼外观就认好坏"
+        },
+        "qualityGatePassed": true
+      },
+      "questionSummaryEn": "How should I compare UGREEN and Baseus for value and fewer buying mistakes?"
     },
     {
       "number": 4,
@@ -53,7 +122,30 @@
       "answerExcerpt": null,
       "excerpted": true,
       "citations": [],
-      "publicNote": "原始回答已保存；该回答包含未经核实的品牌与安全性断言，本公开案例不展示其正文。"
+      "publicNote": "原始回答已保存；该回答包含未经核实的品牌与安全性断言，本公开案例不展示其正文。",
+      "generation": {
+        "bucket": "ORTHOGONAL",
+        "abstractTags": {
+          "D1": "initiation",
+          "D2": "informational_directed",
+          "D3": "identity_freedom",
+          "D4": "severely_depleted",
+          "D5": "anticipatory_constraint",
+          "D6": "specification"
+        },
+        "fallbackUsed": false,
+        "renderSource": "LLM",
+        "translatedTags": {
+          "D1": "刚打算选C口充摸不着头绪",
+          "D2": "专门查指定C充的相关信息",
+          "D3": "选符合自己偏好的C充",
+          "D4": "脑子乱完全不想费神",
+          "D5": "近期打算要提前选购",
+          "D6": "对着参数详情挨个比对"
+        },
+        "qualityGatePassed": true
+      },
+      "questionSummaryEn": "Which brand should I choose, considering official information and a less ordinary product?"
     },
     {
       "number": 5,
@@ -63,7 +155,31 @@
       "latencySeconds": 80.5,
       "answerExcerpt": "选绿联（UGREEN）和倍思（Baseus）的USB-C充电器，大家基本上都是先锚定自己的使用场景，先筛核心参数，再对应两家各自口碑最稳的产品线，很少盲目堆高功率，整理下大家公认的优先级筛选逻辑和值得入的高性价比选项：",
       "excerpted": true,
-      "citations": []
+      "citations": [],
+      "generation": {
+        "bucket": "ORTHOGONAL",
+        "abstractTags": {
+          "D1": "initiation",
+          "D2": "informational_undirected",
+          "D3": "affection_belonging_participation",
+          "D4": "optimal",
+          "D5": "reflective",
+          "D6": "dialogic"
+        },
+        "fallbackUsed": false,
+        "renderSource": "LLM",
+        "translatedTags": {
+          "D1": "刚打算选C口充摸不着头绪",
+          "D2": "随便刷点C充相关内容",
+          "D3": "跟着大伙选热门的C充",
+          "D4": "思路清晰选得很顺畅",
+          "D5": "慢慢挑不着急入手",
+          "D6": "跟客服问清相关问题"
+        },
+        "qualityGatePassed": true
+      },
+      "questionSummaryEn": "Where do people usually start when exploring UGREEN and Baseus USB-C chargers?"
     }
-  ]
+  ],
+  "generationProvenance": "Saved diagnosis_probes.render_metadata_json; matched each render_text exactly before exporting only the allowlisted generation fields. English question summaries are editorial reading aids."
 }

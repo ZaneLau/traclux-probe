@@ -6,6 +6,7 @@ import subprocess
 import sys
 
 from check_community_boundary import check
+from check_public_demo import check_case, check_viewer
 
 def main():
     root = Path(__file__).resolve().parent.parent
@@ -22,6 +23,8 @@ def main():
             findings.append(f"Credential signature; inspect privately: {name}")
     demo = root / "docs/demo"
     data = json.loads((demo / "case.json").read_text())
+    findings.extend(check_case(data))
+    findings.extend(check_viewer((demo / "index.html").read_text()))
     embedded = re.search(r'<script type="application/json" id="case-data">(.*?)</script>', (demo / "index.html").read_text(), re.S)
     if not embedded or json.loads(embedded[1]) != data:
         findings.append("Demo and public case JSON differ; rebuild the demo")
