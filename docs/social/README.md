@@ -1,14 +1,12 @@
-# Traclux sharing facts
+# Project links and media
 
-- Repository: https://github.com/ZaneLau/traclux-probe
-- No-key captured case: https://zanelau.github.io/traclux-probe/demo/
-- Website: https://www.traclux.com/
-- Visuals: `../demo/preview.png` and `../demo/walkthrough.gif`.
+- [Repository](https://github.com/ZaneLau/traclux-probe)
+- [Demo](https://zanelau.github.io/traclux-probe/demo/)
+- [Website](https://www.traclux.com/)
+- [Screenshot](../demo/preview.png) and [walkthrough GIF](../demo/walkthrough.gif)
 
-Traclux is a self-hosted GEO probe system: start with a brand/category, generate probes with CSSM-HI, connect a model, save answers and inspect them in the user workbench. The Java backend, Nuxt user app, packaged prompts and Compose setup are open source. The author's operations console remains private.
+Traclux is a self-hosted GEO workbench. It generates probes with CSSM-HI, runs them against a configured model and stores answers for analysis. The repository includes the Spring Boot backend, Nuxt workbench, prompts and Docker Compose setup under Apache-2.0.
 
-The community preview completed one actual 5-probe initial run. It has known limitations and does not establish algorithm superiority, consumer-client visibility or brand ranking. External model usage belongs to each user's provider account.
+The demo shows five saved questions with their generation states and response excerpts. It needs no login or API key. New runs require a self-hosted instance and a model provider account. See [known limitations](../community/known-limitations.md) for preview issues.
 
-中文事实材料：开源了探镜 Traclux 的用户工作台和 CSSM-HI 探针生成、模型执行后端。可以先看免 Key 的真实案例，再按 README 自部署。欢迎反馈部署体验、模型兼容或问答展示问题。
-
-No personal-account posting is automated. Follow each community's rules and identify your connection. Do not exchange rewards for Stars or solicit artificial engagement. HN requires authors to write their own submissions and replies; these facts are not a generated Show HN post.
+探镜 Traclux 是一个可自部署的 GEO 工作台：用 CSSM-HI 生成探针，接入模型执行，再查看和分析回答。可以先打开免登录案例，查看五条实际问题、生成状态和回答摘录，也可以按 README 部署完整系统。

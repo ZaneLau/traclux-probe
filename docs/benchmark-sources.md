@@ -1,6 +1,6 @@
-# GEO 问题测评来源：首轮选择
+# Python 选题器的测评数据来源
 
-**首选**：[SIGIR 2026 AIO 作者仓](https://github.com/rag24/AIO)的 [11,500 条搜索测评 CSV](https://github.com/rag24/AIO/blob/58f57d7db8c932bc67dcd9b94474db3223d65452/data/AIO_Benchmark_Dataset_v1.csv)。其中有 500 条真实 Amazon 零售**搜索短词**，以及分别基于它们经 Gemini 2.5 Flash 生成的 500 条购物问题和 500 条比较问题。[原作者说明](https://github.com/rag24/AIO#benchmark-query-dataset)。后两组不是未经改写的消费者提问。
+选题器复现脚本使用[SIGIR 2026 AIO 作者仓](https://github.com/rag24/AIO)的 [11,500 条搜索测评 CSV](https://github.com/rag24/AIO/blob/58f57d7db8c932bc67dcd9b94474db3223d65452/data/AIO_Benchmark_Dataset_v1.csv)。其中有 500 条真实 Amazon 零售**搜索短词**，以及分别基于它们经 Gemini 2.5 Flash 生成的 500 条购物问题和 500 条比较问题。[原作者说明](https://github.com/rag24/AIO#benchmark-query-dataset)。后两组不是未经改写的消费者提问。
 
 | 来源 | 可用之处 | 发布边界 |
 | --- | --- | --- |
@@ -19,4 +19,4 @@ python3 -m traclux_probe annotate \
 
 脚本下载固定提交 `58f57d7db8c932bc67dcd9b94474db3223d65452`，核对 SHA-256 `653ef0387f8467abed0db9bf3acdbfde5dc6c83ff0448a993608d8cc05c0029d`，并对下列 20 个基础 ID 分别取问题和比较题：`2, 3, 5, 7, 12, 13, 14, 16, 23, 24, 27, 30, 34, 37, 39, 43, 45, 46, 48, 50`。相应 40 条题目仅写入忽略版本控制的 `reports/`；`source-manifest.json` 保留来源、组别和 ID。这些 ID 经人为检查排除显著非商品项，**属于方便上手的便利样本，不是随机代表样本**；若用于效果报告，必须另选冻结且独立的评估组。
 
-后续实验需先由独立标注者确认六维状态和问题是否真正重要，再同预算比较覆盖选点、随机与关键词选题，在**未参与选题的评估集**上计算有价值盲点发现率。来源 CSV 不含六维真值、AI 客户端回答或销售结果。这里不触发付费模型，也不声称这些生成的问题代表真实消费需求。
+评估选题效果时，可先由独立标注者确认六维状态和问题是否真正重要，再同预算比较覆盖选点、随机与关键词选题，在**未参与选题的评估集**上计算有价值盲点发现率。来源 CSV 不含六维真值、AI 客户端回答或销售结果。下载和标注脚本不调用模型。
