@@ -56,7 +56,11 @@ The source export had omitted `backend/lombok.config`; the container build also 
 
 The first interrupted creation and a later failed manual task remain isolated validation artifacts. No production records were copied or removed. No additional model batches are needed to establish these gaps; address the consumption and mapping defects before expanding volume.
 
-## Delivery state and stop rule
+## Publication decision (2026-10-20)
+
+The owner explicitly chose to publish after the real execution check, defer the listed functional repairs, and prioritize visible demo/repository assets. This supersedes the previous functional stop rule for the community preview only. Known gaps remain documented; no security-clearance or stable-release claim is made. See [security review](security-review.md), [known limitations](known-limitations.md) and [release notes](release-v0.2.0.md).
+
+## Earlier delivery state and stop rule
 
 The small real-provider test is complete. The full product remains a **local candidate with known acceptance gaps**. Stop at this evidence-backed result; do not restart research, expand features or run more paid batches in this package. Next, repair the smallest set of question/answer consumption and manual execution defects, then replay those exact paths.
 

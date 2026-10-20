@@ -1,0 +1,22 @@
+name: Workbench bug / 工作台问题
+description: Report a reproducible community-system issue without secrets.
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Version and page / 版本与页面
+      placeholder: v0.2.0, /brands/new
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected and actual result / 复现、预期与实际
+      description: Use fictional data. Never attach .env, keys, cookies, private answers or database dumps.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: OS, Docker version and provider/model name only. No endpoint account IDs or credentials.

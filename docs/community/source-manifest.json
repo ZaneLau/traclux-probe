@@ -19,7 +19,7 @@
         {
           "path": "backend/dependency-check-suppressions.xml",
           "sha256": "828b380f04f0febb567b5c38063e88983f9979327317402c31694a21cb3ceaf6",
-          "exported_sha256": "828b380f04f0febb567b5c38063e88983f9979327317402c31694a21cb3ceaf6"
+          "exported_sha256": "e75c1accdf19bcbb1022eb16147af4a5b5f58c24b06a40dc04a25017ed3b56c7"
         },
         {
           "path": "backend/lombok.config",
@@ -3501,7 +3501,7 @@
         {
           "path": "frontend/Dockerfile",
           "sha256": "1fd7883f429723c2f824a26f2172828599935f346c2181811db66287dcc5e42d",
-          "exported_sha256": "274fe24f76bf193e5f50be52da4fb942c3f8b9f201a15a6b9470d393a6576122"
+          "exported_sha256": "9f1f1e6230587ab07a711f80d62596227a975d0cb96bcbe27bf67eb7849bf33c"
         },
         {
           "path": "frontend/LICENSE",
@@ -4261,12 +4261,12 @@
         {
           "path": "frontend/package.json",
           "sha256": "596903e63f8e32e05a34e807f1b05d0de25b841b4634ff1f16c7379277fd8209",
-          "exported_sha256": "a8b7fd024b408587d3f5ef3258dbafcb96b68a40ffb01b66e6994a3a515a1fd4"
+          "exported_sha256": "7d5f15f2397d9a9c4684236926320baca3d3fffe0b005eadeebb186a64a6f2ee"
         },
         {
           "path": "frontend/pnpm-lock.yaml",
           "sha256": "7f8f5094f66d1dda5feab5009d11881f5256b3feaf00659c458b6f17f3bac5f1",
-          "exported_sha256": "7f8f5094f66d1dda5feab5009d11881f5256b3feaf00659c458b6f17f3bac5f1"
+          "exported_sha256": "0ab9f982a7592313d04ce27f055f012aa105b450969379909d2542abc970f2b3"
         },
         {
           "path": "frontend/pnpm-workspace.yaml",
@@ -4739,7 +4739,8 @@
     "Keep login media and fonts required by the existing UI, with third-party font licenses",
     "Point container source labels to this repository; add self-hosted Compose and local credential initialization",
     "Make yesterday scheduler test fixtures stable near midnight; retain scheduler behavior and assertions",
-    "Restore original Lombok qualifier-copying build configuration and include it in the Docker build; add a real repository routing regression test for the two-database setup"
+    "Restore original Lombok qualifier-copying build configuration and include it in the Docker build; add a real repository routing regression test for the two-database setup",
+    "2026-10-20 release preview: frontend Nuxt/Vue/ECharts security updates and h3 type alignment; package-specific SCA false-positive review. See docs/community/security-review.md."
   ],
   "hash_note": "sha256 is the original committed source; exported_sha256 is this candidate after the listed derivative edits. New community files are additions, not represented as original source."
 }

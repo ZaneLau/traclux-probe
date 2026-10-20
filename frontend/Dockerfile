@@ -1,4 +1,4 @@
-FROM node:20-bookworm-slim AS build
+FROM node:22-bookworm-slim AS build
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 
 RUN pnpm build
 
-FROM node:20-bookworm-slim
+FROM node:22-bookworm-slim
 
 ARG VCS_REF=unknown
 ARG BUILD_DATE=unknown

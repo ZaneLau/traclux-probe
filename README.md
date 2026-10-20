@@ -2,9 +2,13 @@
 
 **Generate probes with CSSM-HI, run them against a model, and inspect the results in the existing Traclux user workbench.**
 
-[中文说明](README.zh-CN.md) · [Setup and feature map](docs/community/README.md) · [Source provenance](docs/community/source-manifest.json) · [Security](SECURITY.md)
+[**Explore the demo — no API key**](https://zanelau.github.io/traclux-probe/demo/) · [中文说明](README.zh-CN.md) · [Setup and feature map](docs/community/README.md) · [Source provenance](docs/community/source-manifest.json) · [Security](SECURITY.md)
 
-This branch is an **unreleased full-system candidate**. It reuses the Java/Spring Boot backend and Nuxt user application. The internal operations console is excluded. The published v0.1.0 and its static question-selection demo still describe the previous, narrower utility; they are not a demo of this workbench.
+**Community preview · v0.2.0.** The complete user workbench and its supporting backend are open source under Apache-2.0. Connect your own model account; the author's operations console stays private.
+
+[![Explore a captured five-probe run](docs/demo/preview.png)](https://zanelau.github.io/traclux-probe/demo/)
+
+**Try before installing:** open the [read-only real-model case](https://zanelau.github.io/traclux-probe/demo/), select a generated question and inspect its saved answer excerpt. No signup, model key or live request is needed. This public case viewer is separate from the authenticated application.
 
 ## What you get
 
@@ -24,6 +28,8 @@ Your internal `/admin` console, user operations, management reruns, billing conf
 Requires Docker Compose and Python 3. Builds use Java 21 and the locked Nuxt dependencies.
 
 ```bash
+git clone https://github.com/ZaneLau/traclux-probe.git
+cd traclux-probe
 python3 scripts/community_init.py
 # Privately configure MODEL_BASE_URL, MODEL_API_KEY and MODEL_NAME in .env.
 docker compose up --build -d
@@ -41,16 +47,20 @@ The smoke check verifies login, user APIs and rejection of management APIs. It m
 
 ## Validation and limits
 
-The candidate has passed backend/frontend builds and tests, fresh-database migrations, packaged-prompt loading and ordinary-user API checks. Check the [validation record](docs/community/validation.md) for the exact tested path and remaining gap.
+One actual Anker / USB-C charger run completed **5/5 probes in 173 seconds** and persisted five raw answers. Password login, populated overview, brand performance and run history were exercised locally. See the [validation record](docs/community/validation.md).
 
-**Real-provider generation → execution → populated analysis has not yet been accepted.** There is no verified free-quota account for that run in this development session. Provider compatibility must be checked for the selected endpoint and model. API sampling does not establish the answers shown in consumer apps. Generated probes are not purchased real-user search logs, and this release makes no measured claim of algorithm superiority.
+This is an early release with [known limitations](docs/community/known-limitations.md), including grouped answer presentation, topic mapping, summary wording, manual re-execution and call accounting. Default Compose is local-only. Read the [dated security review](docs/community/security-review.md) before changing that boundary.
+
+Generated probes are not purchased search logs; API responses do not establish consumer-client visibility. Five responses do not establish algorithm superiority or meaningful brand ranking. Your provider account supplies model quota and billing.
+
+![Short walkthrough: choose a probe and inspect its saved excerpt](docs/demo/walkthrough.gif)
 
 ## Earlier utility
 
-The Python selector, invented-brand examples and [static v0.1.0 demo](https://zanelau.github.io/traclux-probe/demo/) remain historical auxiliary artifacts. They illustrate question selection and imported evidence, not the full generation/execution product. See [legacy usage](docs/demo/README.md).
+The Python selector, invented-brand examples and [v0.1.0 selection demo](https://github.com/ZaneLau/traclux-probe/tree/v0.1.0/docs/demo) remain historical auxiliary artifacts. They illustrate question selection and imported evidence, not the full generation/execution product. See [legacy usage](docs/demo/README.md).
 
 ## License and contribution
 
 Project code is under [Apache-2.0](LICENSE); retained third-party files carry their own notices, including [frontend template licensing](frontend/LICENSE) and bundled font licenses. Traclux names and marks follow the [trademark policy](TRADEMARK.md).
 
-Please include the affected workbench route, expected behavior and a sanitized reproduction when [reporting a bug](https://github.com/ZaneLau/traclux-probe/issues). Never attach `.env`, cookies, keys, private brand answers or database exports. The full-system candidate must finish provider acceptance before being presented as a completed release.
+Please include the affected workbench route, expected behavior and a sanitized reproduction when [reporting a bug](https://github.com/ZaneLau/traclux-probe/issues). Never attach `.env`, cookies, keys, private brand answers or database exports. Useful first contributions include provider compatibility reports, deployment feedback and clearer question-to-answer navigation. If this helps your work, a GitHub Star makes the project easier to discover.

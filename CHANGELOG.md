@@ -1,10 +1,12 @@
 # Changelog
 
-## Unreleased — full-system candidate
+## 0.2.0 — 2026-10-20 · community preview
 
 - Reuse the original CSSM-HI backend and Nuxt user workbench, with self-hosted storage, packaged prompts and generated local credentials.
 - Exclude the internal operations console and management APIs.
-- Fresh-install and ordinary-user checks are recorded separately from the pending real-provider execution acceptance.
+- Complete one real-model initial run: 5/5 probes and persisted responses; publish a no-key read-only case, screenshots and walkthrough.
+- Restore missing Lombok constructor-qualifier configuration for separate knowledge-database routing.
+- Update Nuxt, Vue and ECharts security dependencies. Document remaining preview limits and dated security findings.
 
 
 ## 0.1.0 — 2026-10-19

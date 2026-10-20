@@ -2,9 +2,13 @@
 
 **用 CSSM-HI 生成探针，接入模型执行，再在现有用户工作台中查看和分析结果。**
 
-[English](README.md) · [启动与功能说明](docs/community/README.md) · [来源清单](docs/community/source-manifest.json) · [安全政策](SECURITY.md)
+[**免 Key 真实案例演示**](https://zanelau.github.io/traclux-probe/demo/) · [English](README.md) · [启动与功能说明](docs/community/README.md) · [来源清单](docs/community/source-manifest.json) · [安全政策](SECURITY.md)
 
-这个分支是**尚未发布的完整系统候选版**，复用原来的 Spring Boot 后端和 Nuxt 用户工作台。你自己用的运营后台不在开源范围内。当前已发布的 v0.1.0 和静态选题演示仍属于旧范围，不能当作本工作台的演示。
+这是 **v0.2.0 社区预览版**，开源已有 Spring Boot 后端和 Nuxt 用户工作台，采用 Apache-2.0。作者自己用的运营后台保持私有。你配置自己的模型账号即可运行。
+
+[![真实探针案例：点选问题查看回答摘录](docs/demo/preview.png)](https://zanelau.github.io/traclux-probe/demo/)
+
+先打开[只读案例](https://zanelau.github.io/traclux-probe/demo/)，无需注册或 API Key，就能看这次实际生成的问题、执行状态和回答摘录。它是公开案例查看器；完整用户工作台在你自己的实例中运行。
 
 | 用户要做的事 | 开源内容 |
 | --- | --- |
@@ -22,6 +26,8 @@
 需要 Docker Compose 和 Python 3；构建使用 Java 21 和仓库锁定的 Nuxt 依赖。
 
 ```bash
+git clone https://github.com/ZaneLau/traclux-probe.git
+cd traclux-probe
 python3 scripts/community_init.py
 # 私下编辑 .env 中的 MODEL_BASE_URL、MODEL_API_KEY、MODEL_NAME。
 docker compose up --build -d
@@ -38,10 +44,16 @@ docker compose stop
 
 ## 当前验证到哪里
 
-已验证构建、原有自动测试、空库迁移、包内提示词加载，以及普通用户接口路径。详细证据见[验证记录](docs/community/validation.md)。
+已完成一个 Anker / USB-C 充电器真实案例：CSSM-HI 建模和生成、模型执行、5/5 回答保存、有数据的总览/品牌表现/运行详情。首轮耗时 173 秒。登录表单、空库迁移及构建检查也已验证。详见[验证记录](docs/community/validation.md)。
 
-**真实模型的“生成 → 执行 → 有数据的分析页面”仍待验收。** 本轮开发没有已核实的免费额度账号，因此没有发起真实供应商调用。模型端点的兼容性需要逐个核实，不能承诺任意模型直接支持全部能力。API 回答也不能等同于消费端客户端的回答；算法生成的探针不是购买的真实用户搜索日志，当前不宣称已证明算法优越性。
+这是早期版本，[已知限制](docs/community/known-limitations.md)包括问答分组展示、主题关联、汇总表达、手动重跑和调用计量。默认只监听本机，不应直接作为公开多用户服务；[安全检查记录](docs/community/security-review.md)逐项说明检查范围和剩余告警。
 
-Python 选题器、虚构示例和[旧静态演示](https://zanelau.github.io/traclux-probe/demo/)保留为历史辅助材料，不再代表本项目的主要产品。
+本轮联网关闭、引用为 0；API 回答不能等同于消费端客户端回答。探针不是购买的真实用户搜索日志；本例不证明算法优于其他方法，也不足以判断品牌排名。模型用量与费用来自你自己的服务商账号。
+
+![真实案例查看短动图](docs/demo/walkthrough.gif)
+
+Python 选题器、虚构示例和[v0.1.0 历史演示](https://github.com/ZaneLau/traclux-probe/tree/v0.1.0/docs/demo)保留为历史辅助材料，不再代表本项目的主要产品。
 
 项目代码采用 [Apache-2.0](LICENSE)，保留的前端模板、字体等第三方文件遵守各自许可证。问题反馈请提供对应页面、预期行为及脱敏复现，不附带密钥、会话、私有回答或数据库导出。
+
+欢迎先试案例，再反馈部署与模型兼容情况。如果它对你有帮助，也欢迎在 GitHub 留一个 Star。

@@ -48,6 +48,8 @@ MySQL and PostgreSQL retain data in instance-owned volumes. `stop` preserves the
 
 Builds, fresh-database migrations, password login and one bounded real-model case have passed locally: CSSM-HI generation, 5/5 actual responses, persisted answers, populated overview and brand performance. See the [validation record](validation.md).
 
-Release acceptance is still incomplete. Question analysis does not yet expose grouped answers correctly; generated questions and summary labels need a meaning/association check; paused-brand manual execution and call-accounting persistence have known defects. The initial-run result does not establish every execution path, provider compatibility, algorithm superiority or consumer-client visibility. Provider calls consume the instance owner's quota and may incur charges. No author keys are included.
+This is a published community preview with incomplete stable-release acceptance. Question analysis does not yet expose grouped answers correctly; generated questions and summary labels need a meaning/association check; paused-brand manual execution and call-accounting persistence have known defects. The initial-run result does not establish every execution path, provider compatibility, algorithm superiority or consumer-client visibility. Provider calls consume the instance owner's quota and may incur charges. No author keys are included.
 
-The original selection CLI and static demo belong to the earlier v0.1.0 scope. They remain historical auxiliary artifacts and are not the full user workbench demo.
+See [known limitations](known-limitations.md) and [security review](security-review.md) before deployment. The public captured-case viewer is separate from this authenticated app.
+
+The original selection CLI and v0.1.0 static demo belong to the earlier scope. They remain historical auxiliary artifacts and are not the full user workbench demo.
