@@ -3,8 +3,14 @@ Copyright 2026 Traclux project contributors.
 
 This community implementation was derived from the project's six-dimensional
 CSSM-HI concepts. The fictional example is original illustrative material.
-The demo screenshots and walkthrough were generated from this repository's
-own interface and fictional data. Promptfoo and Langfuse are design references;
+The v0.1.0 demo used fictional data. The v0.2.0 demo is a reviewed snapshot of
+an actual model API run; excerpts are marked, and no brand endorsement is implied. Promptfoo and Langfuse are design references;
 their code, logos and screenshots are not included in this distribution.
 Optional benchmark preparation downloads upstream text into ignored local
 reports only. That text is not distributed or relicensed by this repository.
+
+The community system reuses the project's original Java backend
+and Nuxt user workbench from the source commits recorded in
+ docs/community/source-manifest.json. The internal operations console is excluded.
+The frontend retains the upstream Nuxt UI template license in frontend/LICENSE.
+Bundled fonts retain their OFL notices in frontend/public/landing-nexus/fonts/.

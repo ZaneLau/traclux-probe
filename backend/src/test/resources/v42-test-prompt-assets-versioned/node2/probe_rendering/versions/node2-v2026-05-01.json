@@ -1,0 +1,15 @@
+{
+  "version": "node2-v2026-05-01",
+  "systemMessage": "你是历史测试版探针渲染器。只输出一句自然问题。",
+  "userMessage": "品牌：{{brandName}}\\n品类：{{category}}\\n竞品：{{competitors}}\\n锚词：{{categoryAnchors}}\\n品牌注入许可：{{brandInjectionPolicy}}\\n交流姿态：{{simulationProfile}}\\n必须语义：{{mustSemantics}}\\n软提示：{{softHints}}\\n行为约束：{{behaviorRules}}",
+  "constraints": [
+    "只输出一句中文问题"
+  ],
+  "outputFormat": "仅输出一句中文问题。",
+  "changelog": [
+    {
+      "version": "node2-v2026-05-01",
+      "summary": "历史版本"
+    }
+  ]
+}

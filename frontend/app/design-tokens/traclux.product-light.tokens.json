@@ -1,0 +1,70 @@
+{
+  "$schema": "https://www.designtokens.org/TR/drafts/format/",
+  "traclux": {
+    "productLight": {
+      "color": {
+        "surface": {
+          "canvas": { "$value": "#F3F4F6", "$type": "color" },
+          "sidebar": { "$value": "#F8FAFC", "$type": "color" },
+          "card": { "$value": "#FFFFFF", "$type": "color" },
+          "cardHover": { "$value": "#F9FAFB", "$type": "color" },
+          "stickyOverlay": { "$value": "rgba(243, 244, 246, 0.64)", "$type": "color" },
+          "stickyRailOverlay": { "$value": "rgba(248, 250, 252, 0.22)", "$type": "color" }
+        },
+        "border": {
+          "soft": { "$value": "#D1D5DB", "$type": "color" },
+          "strong": { "$value": "#9CA3AF", "$type": "color" },
+          "subtle": { "$value": "#E5E7EB", "$type": "color" }
+        },
+        "text": {
+          "primary": { "$value": "#111827", "$type": "color" },
+          "secondary": { "$value": "#6B7280", "$type": "color" },
+          "tertiary": { "$value": "#4B5563", "$type": "color" },
+          "quaternary": { "$value": "#374151", "$type": "color" }
+        },
+        "accent": {
+          "soul": { "$value": "#4A827D", "$type": "color" },
+          "link": { "$value": "#2563EB", "$type": "color" },
+          "linkHover": { "$value": "#1D4ED8", "$type": "color" },
+          "dataTeal": { "$value": "#0F766E", "$type": "color" },
+          "dataBlue": { "$value": "#38BDF8", "$type": "color" },
+          "attention": { "$value": "#F59E0B", "$type": "color" }
+        },
+        "status": {
+          "positive": { "$value": "#047857", "$type": "color" },
+          "negative": { "$value": "#B91C1C", "$type": "color" }
+        }
+      },
+      "font": {
+        "ui": { "$value": "'Sora', 'Noto Sans SC', sans-serif", "$type": "fontFamily" }
+      },
+      "fontSize": {
+        "12": { "$value": "12px", "$type": "dimension" },
+        "13": { "$value": "13px", "$type": "dimension" },
+        "14": { "$value": "14px", "$type": "dimension" },
+        "16": { "$value": "16px", "$type": "dimension" },
+        "20": { "$value": "20px", "$type": "dimension" },
+        "24": { "$value": "24px", "$type": "dimension" },
+        "32": { "$value": "32px", "$type": "dimension" },
+        "44": { "$value": "44px", "$type": "dimension" }
+      },
+      "space": {
+        "4": { "$value": "4px", "$type": "dimension" },
+        "6": { "$value": "6px", "$type": "dimension" },
+        "8": { "$value": "8px", "$type": "dimension" },
+        "10": { "$value": "10px", "$type": "dimension" },
+        "12": { "$value": "12px", "$type": "dimension" },
+        "14": { "$value": "14px", "$type": "dimension" },
+        "16": { "$value": "16px", "$type": "dimension" },
+        "24": { "$value": "24px", "$type": "dimension" }
+      },
+      "radius": {
+        "hard": { "$value": "2px", "$type": "dimension" },
+        "pill": { "$value": "999px", "$type": "dimension" }
+      },
+      "shadow": {
+        "sticky": { "$value": "0 10px 18px -18px rgba(15, 23, 42, 0.38)", "$type": "shadow" }
+      }
+    }
+  }
+}

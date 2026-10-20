@@ -1,0 +1,275 @@
+@import "@fontsource/noto-sans-sc/400.css";
+@import "@fontsource/noto-sans-sc/500.css";
+@import "@fontsource/noto-sans-sc/700.css";
+@import "@fontsource/noto-serif-sc/700.css";
+@import "@fontsource/sora/400.css";
+@import "@fontsource/sora/600.css";
+@import "tailwindcss";
+@import "@nuxt/ui";
+@import "./traclux-tokens.css";
+
+@font-face {
+  font-family: "Manrope Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/landing-nexus/fonts/ManropeVariable.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Instrument Sans Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url("/landing-nexus/fonts/InstrumentSansVariable.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Cal Sans";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url("/landing-nexus/fonts/CalSans-SemiBold.woff2") format("woff2");
+}
+
+@theme static {
+  --font-sans: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-serif: 'Noto Serif SC', 'STSong', 'SimSun', serif;
+  --font-display: 'Sora', 'Noto Sans SC', sans-serif;
+
+  --color-cyan-50: #ecfeff;
+  --color-cyan-100: #cffafe;
+  --color-cyan-200: #a5f3fc;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-cyan-500: #06b6d4;
+  --color-cyan-600: #0891b2;
+  --color-cyan-700: #0e7490;
+  --color-cyan-800: #155e75;
+  --color-cyan-900: #164e63;
+  --color-cyan-950: #082f49;
+}
+
+:root {
+  color-scheme: light;
+  --geo-bg: #07111f;
+  --geo-surface-1: rgba(7, 17, 31, 0.76);
+  --geo-surface-2: rgba(13, 26, 46, 0.92);
+  --geo-line: rgba(152, 173, 198, 0.22);
+  --geo-copy: rgba(226, 238, 252, 0.94);
+  --geo-copy-muted: rgba(165, 185, 211, 0.76);
+  --geo-glow: 0 24px 60px -28px rgba(34, 211, 238, 0.35);
+  --geo-accent-green: rgba(134, 255, 176, 0.88);
+  --geo-accent-green-soft: rgba(134, 255, 176, 0.76);
+  --geo-accent-green-muted: rgba(134, 255, 176, 0.62);
+  --geo-accent-green-glow: 0 0 18px rgba(134, 255, 176, 0.16);
+}
+
+html,
+body,
+#__nuxt {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--traclux-text-primary);
+  background:
+    radial-gradient(circle at 18% 20%, rgba(56, 189, 248, 0.12), transparent 24%),
+    radial-gradient(circle at 82% 0%, rgba(74, 130, 125, 0.08), transparent 20%),
+    linear-gradient(180deg, #f8fafc 0%, #f3f4f6 100%);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-heading {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.geo-page-shell {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(7, 17, 31, 0.94), rgba(7, 17, 31, 0.88)),
+    radial-gradient(circle at 68% 30%, rgba(20, 92, 148, 0.18), transparent 30%);
+}
+
+.geo-panel {
+  border: 1px solid var(--geo-line);
+  background: linear-gradient(180deg, rgba(7, 17, 31, 0.92), rgba(10, 22, 40, 0.88));
+  box-shadow: var(--geo-glow);
+  backdrop-filter: blur(14px);
+}
+
+.geo-muted {
+  color: var(--geo-copy-muted);
+}
+
+.geo-accent-label {
+  color: var(--geo-accent-green);
+  text-shadow: var(--geo-accent-green-glow);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.geo-accent-label-soft {
+  color: var(--geo-accent-green-soft);
+  text-shadow: var(--geo-accent-green-glow);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.geo-accent-label-muted {
+  color: var(--geo-accent-green-muted);
+  text-shadow: var(--geo-accent-green-glow);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.geo-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.landing-nexus-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.landing-nexus-shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-nexus-shimmer-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgb(255 255 255 / 0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: landing-nexus-shimmer 3s ease-in-out infinite;
+}
+
+.landing-nexus-pulse-glow {
+  animation: landing-nexus-pulse-glow 2s ease-in-out infinite;
+}
+
+.landing-nexus-animate-marquee {
+  animation: landing-nexus-marquee 30s linear infinite;
+}
+
+.landing-nexus-draw-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: landing-nexus-draw-line 2s ease-out forwards;
+}
+
+.landing-nexus-border-beam {
+  animation: landing-nexus-border-beam 8s linear infinite;
+}
+
+.landing-nexus-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.landing-nexus-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing-nexus-fade-in {
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.landing-nexus-fade-in.is-visible {
+  opacity: 1;
+}
+
+@keyframes landing-nexus-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes landing-nexus-pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 4px currentColor;
+  }
+
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 8px currentColor;
+  }
+}
+
+@keyframes landing-nexus-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes landing-nexus-draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes landing-nexus-border-beam {
+  0% {
+    offset-distance: 0%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-nexus-shimmer-btn::before,
+  .landing-nexus-pulse-glow,
+  .landing-nexus-animate-marquee,
+  .landing-nexus-draw-line,
+  .landing-nexus-border-beam {
+    animation: none !important;
+  }
+
+  .landing-nexus-fade-up,
+  .landing-nexus-fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

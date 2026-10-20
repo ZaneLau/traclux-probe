@@ -1,0 +1,16 @@
+{
+  "version": "test-2026-04-09",
+  "systemMessage": "你是测试版品牌检测器。输出严格 JSON。",
+  "userMessage": "目标品牌：{{brandName}}\\n别名：{{brandAliases}}\\n竞品：{{competitors}}\\n回答：{{responseText}}",
+  "constraints": [
+    "只判断品牌提及与归属",
+    "不要输出自然语言解释"
+  ],
+  "outputFormat": "输出单个 JSON 对象，字段名保持稳定。",
+  "changelog": [
+    {
+      "version": "test-2026-04-09",
+      "summary": "测试资产基线"
+    }
+  ]
+}

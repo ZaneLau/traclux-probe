@@ -1,0 +1,29 @@
+{
+  "$schema": "https://www.designtokens.org/TR/drafts/format/",
+  "traclux": {
+    "identity": {
+      "color": {
+        "ink": {
+          "primary": { "$value": "#111A2E", "$type": "color" },
+          "inverse": { "$value": "#FFFFFF", "$type": "color" }
+        },
+        "soul": {
+          "primary": { "$value": "#4A827D", "$type": "color" },
+          "strong": { "$value": "#3F747C", "$type": "color" }
+        },
+        "ground": {
+          "warm": {
+            "100": { "$value": "#F2EEE7", "$type": "color" },
+            "200": { "$value": "#ECE7DE", "$type": "color" },
+            "300": { "$value": "#E9E4DA", "$type": "color" }
+          }
+        }
+      },
+      "font": {
+        "ui": { "$value": "'Sora', 'Noto Sans SC', sans-serif", "$type": "fontFamily" },
+        "chinese": { "$value": "'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif", "$type": "fontFamily" },
+        "editorial": { "$value": "'Noto Serif SC', 'STSong', 'SimSun', serif", "$type": "fontFamily" }
+      }
+    }
+  }
+}

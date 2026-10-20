@@ -1,71 +1,66 @@
-# Traclux Probe
+# Traclux · self-hosted GEO workbench
 
-**Choose questions for GEO tests. Inspect the selection. Keep the answer evidence.**
+**Generate probes with CSSM-HI, run them against a model, and inspect the results in the existing Traclux user workbench.**
 
-[Traclux website](https://www.traclux.com/) · [中文说明](README.zh-CN.md) · [Live demo](https://zanelau.github.io/traclux-probe/demo/) · [Method](docs/methodology.md) · [Contributing](CONTRIBUTING.md)
+[**Explore the demo — no API key**](https://zanelau.github.io/traclux-probe/demo/) · [中文说明](README.zh-CN.md) · [Setup and feature map](docs/community/README.md) · [Source provenance](docs/community/source-manifest.json) · [Security](SECURITY.md)
 
-Have a list of questions and a limited testing budget? Traclux Probe selects questions using six explicitly supplied state dimensions, shows which combinations they cover, and lets you inspect imported answers with their source and capture time.
+**Community preview · v0.2.0.** The complete user workbench and its supporting backend are open source under Apache-2.0. Connect your own model account; the author's operations console stays private.
 
-**Python 3.9+ · zero dependencies · no account or API key · Apache-2.0**
+[![Explore a captured five-probe run](docs/demo/preview.png)](https://zanelau.github.io/traclux-probe/demo/)
 
-If this is useful, [star the repository](https://github.com/ZaneLau/traclux-probe) to help others discover it. Have a reproducible problem or a question about your own pool? [Open an issue](https://github.com/ZaneLau/traclux-probe/issues).
+**Try before installing:** open the [read-only real-model case](https://zanelau.github.io/traclux-probe/demo/), select a generated question and inspect its saved answer excerpt. No signup, model key or live request is needed. This public case viewer is separate from the authenticated application.
 
-![Traclux Probe: question selection, coverage comparison and answer evidence](docs/demo/preview.png)
+## What you get
 
-The screenshot uses an invented brand, questions and answers. State-pair coverage is a design metric, not consumer visibility or evidence of better commercial outcomes.
+| User task | Included implementation |
+| --- | --- |
+| Set up a brand | Brand recognition, brand spaces, topics, fixed questions and configuration |
+| Generate a probe plan | CSSM-HI state modeling, coverage-oriented blueprints, natural-language generation and quality checks |
+| Execute probes | Plan confirmation, manual execution, configured provider adapters, response storage and failure records |
+| Understand results | Visibility overview, brand performance, citation sources, question analysis and existing explanation/provenance interfaces |
+| Follow a run | Progress, events, run history and run details |
+| Run your own instance | Authentication, user access isolation, MySQL, Redis, knowledge-asset PostgreSQL and Docker Compose |
 
-## See it before you install anything
+Your internal `/admin` console, user operations, management reruns, billing configuration, provider-quota management, author credentials and production data are outside this package. Local usage accounting remains where the user execution path depends on it; the seeded local allowance does not require a Traclux subscription.
 
-**[Open the interactive demo →](https://zanelau.github.io/traclux-probe/demo/)** No account, installation or API key needed.
+## Start locally
 
-You can also download this repository and open [`docs/demo/index.html`](docs/demo/index.html) in a browser. The file includes its data and works offline. GitHub's file viewer shows its source; download the file to run it. [Demo instructions and a short walkthrough →](docs/demo/README.md)
-
-1. Compare the question IDs selected by CSSM-HI and input order.
-2. Pick a question to inspect its incremental coverage and supplied labels.
-3. Read its imported answer, entrypoint, source, capture time and citations. Missing answers stay missing.
-
-## Reproduce the report
-
-From the repository root:
-
-```bash
-python3 -m traclux_probe \
-  --questions examples/fictional-brand/questions.json \
-  --responses examples/fictional-brand/responses.json \
-  --brand 星屿 --budget 5 \
-  --output reports/example.json --html reports/example.html
-```
-
-Open `reports/example.html` in your browser. JSON remains available for your own analysis; `--html` is optional. No server, database, provider calls or package installation is needed to generate or open the report.
-
-In this deliberately clustered fixture, the five selected questions cover **72 state pairs**, compared with **30** for the first five input questions. The shared pool contains 112 distinct pairs. The fixture illustrates the mechanism; it is **not a benchmark demonstrating algorithm superiority**.
-
-## Bring your own questions
-
-Put questions you have permission to use in a UTF-8 text file, one per line. The guided annotator asks you to confirm all six dimensions:
+Requires Docker Compose and Python 3. Builds use Java 21 and the locked Nuxt dependencies.
 
 ```bash
-python3 -m traclux_probe annotate \
-  --input examples/fictional-brand/raw-questions.txt \
-  --output reports/my-questions.json
-python3 -m traclux_probe --questions reports/my-questions.json \
-  --budget 2 --output reports/my-report.json --html reports/my-report.html
+git clone https://github.com/ZaneLau/traclux-probe.git
+cd traclux-probe
+python3 scripts/community_init.py
+# Privately configure MODEL_BASE_URL, MODEL_API_KEY and MODEL_NAME in .env.
+docker compose up --build -d
 ```
 
-Labels are supplied by the user. Word-matching suggestions are unvalidated hints, not inferred psychological truth. You can also supply [annotated JSON](examples/fictional-brand/questions.json) directly.
+Open **http://localhost:3100/login**. Read your generated `COMMUNITY_USERNAME` and `COMMUNITY_PASSWORD` in the local `.env`. Each instance gets fresh credentials. An unconfigured model points to a closed local port; no author model account is used. Optional `SAMPLING_*` settings separate the model being measured from the generation/analysis model. See the [setup guide](docs/community/README.md) for adapter limitations and costs.
 
-Answers are optional. Import captures you may lawfully save using the [response format](examples/fictional-brand/responses.json): `question_id`, `answer`, `citations`, `entrypoint`, timezone-aware `captured_at`, and `source`. The tool does not acquire answers. `--brand` performs illustrative literal matching in the JSON report.
+```bash
+python3 scripts/community_smoke.py
+# Stops the instance while preserving its database volumes:
+docker compose stop
+```
 
-**Sharing reports:** the HTML contains the full candidate pool and all imported answers, including those not selected, so its explorer works offline. The JSON download inside it preserves the CLI's selected-question report. Review either file before sharing it.
+The smoke check verifies login, user APIs and rejection of management APIs. It makes no model calls. Scheduled model execution and provider web search are disabled in the community profile; manual model requests consume your own provider quota.
 
-## What is open source?
+## Validation and limits
 
-The community version includes explicit six-dimensional states, compatibility checks, deterministic greedy pair-coverage selection, guided annotation, answer import, and offline JSON/HTML reports. It runs independently of the commercial product.
+One actual Anker / USB-C charger run completed **5/5 probes in 173 seconds** and persisted five raw answers. Password login, populated overview, brand performance and run history were exercised locally. See the [validation record](docs/community/validation.md).
 
-Commercial Traclux may separately provide licensed question sources, automatic domain mapping, ongoing multi-entrypoint sampling, calibration, hosting and team services. This repository is a standalone basic implementation, not the full Geo-Probe production engine.
+This is an early release with [known limitations](docs/community/known-limitations.md), including grouped answer presentation, topic mapping, summary wording, manual re-execution and call accounting. Default Compose is local-only. Read the [dated security review](docs/community/security-review.md) before changing that boundary.
 
-Read the [method and limitations](docs/methodology.md), [license](LICENSE), [notice](NOTICE), [trademark policy](TRADEMARK.md) and [security policy](SECURITY.md). Historical benchmark preparation is documented [separately](docs/benchmark-sources.md) and is not required for the demo.
+Generated probes are not purchased search logs; API responses do not establish consumer-client visibility. Five responses do not establish algorithm superiority or meaningful brand ranking. Your provider account supplies model quota and billing.
 
-## Release
+![Short walkthrough: choose a probe and inspect its saved excerpt](docs/demo/walkthrough.gif)
 
-The first community release is **v0.1.0**. See the [changelog](CHANGELOG.md) and [GitHub releases](https://github.com/ZaneLau/traclux-probe/releases). This early release focuses on transparent, offline question selection; algorithm effectiveness on real demand remains unvalidated. Existing private backend, frontend and landing repositories are outside this repository.
+## Earlier utility
+
+The Python selector, invented-brand examples and [v0.1.0 selection demo](https://github.com/ZaneLau/traclux-probe/tree/v0.1.0/docs/demo) remain historical auxiliary artifacts. They illustrate question selection and imported evidence, not the full generation/execution product. See [legacy usage](docs/demo/README.md).
+
+## License and contribution
+
+Project code is under [Apache-2.0](LICENSE); retained third-party files carry their own notices, including [frontend template licensing](frontend/LICENSE) and bundled font licenses. Traclux names and marks follow the [trademark policy](TRADEMARK.md).
+
+Please include the affected workbench route, expected behavior and a sanitized reproduction when [reporting a bug](https://github.com/ZaneLau/traclux-probe/issues). Never attach `.env`, cookies, keys, private brand answers or database exports. Useful first contributions include provider compatibility reports, deployment feedback and clearer question-to-answer navigation. If this helps your work, a GitHub Star makes the project easier to discover.

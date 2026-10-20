@@ -1,0 +1,16 @@
+{
+  "version": "test-2026-04-09",
+  "systemMessage": "你是测试版 -1 层上下文整理器。输出严格 JSON。",
+  "userMessage": "品牌：{{brandName}}\\n品类：{{category}}\\n竞品：{{competitors}}\\n锚词：{{categoryAnchors}}\\n用户补充：{{userPrompt}}\\n官网：{{brandWebsite}}\\n证据：{{evidenceSnippets}}\\nbenchmark：{{benchmarkQueries}}",
+  "constraints": [
+    "只保留与品牌判断相关的信息",
+    "输出必须可反序列化"
+  ],
+  "outputFormat": "输出单个 JSON 对象，禁止附加说明。",
+  "changelog": [
+    {
+      "version": "test-2026-04-09",
+      "summary": "测试资产基线"
+    }
+  ]
+}

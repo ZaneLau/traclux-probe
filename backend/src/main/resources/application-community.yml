@@ -1,0 +1,67 @@
+# Self-hosted user workbench. No operator console, author account or private assets.
+spring:
+  flyway:
+    enabled: true
+    baseline-on-migrate: false
+
+llm:
+  deepseek:
+    api-key: ${MODEL_API_KEY:community-not-configured}
+    base-url: ${MODEL_BASE_URL:http://127.0.0.1:9/v1}
+    model: ${MODEL_NAME:configure-your-model}
+    endpoint-id: ""
+  volcengine:
+    api-key: ${SAMPLING_API_KEY:${MODEL_API_KEY:community-not-configured}}
+    base-url: ${SAMPLING_BASE_URL:${MODEL_BASE_URL:http://127.0.0.1:9/v1}}
+    model: ${SAMPLING_MODEL_NAME:${MODEL_NAME:configure-your-model}}
+    endpoint-id: ""
+    realtime-endpoint-id: ${SAMPLING_MODEL_NAME:${MODEL_NAME:configure-your-model}}
+    realtime-fallback-endpoint-ids: ""
+
+app:
+  volcengine:
+    reward-quota-collector:
+      enabled: false
+      startup-warmup-enabled: false
+      runtime-fallback-enabled: false
+    reward-quota-enforcement:
+      enabled: false
+  cors-origins: ${COMMUNITY_ORIGINS:http://localhost:3100,http://127.0.0.1:3100}
+  runtime:
+    mode: community
+  scheduling:
+    enabled: ${COMMUNITY_SCHEDULING_ENABLED:false}
+  bootstrap:
+    seed-user:
+      enabled: true
+      username: ${COMMUNITY_USERNAME:owner@example.test}
+      password: ${COMMUNITY_PASSWORD}
+      display-name: ${COMMUNITY_USERNAME:owner@example.test}
+      company-name: Self-hosted Traclux
+      credits-remaining: 1000000
+      role: 0
+  auth:
+    registration-enabled: false
+    turnstile:
+      enabled: false
+  engine:
+    execution:
+      enabled: true
+    sampling:
+      realtime-search:
+        allowed: false
+        enabled: false
+        model-routing:
+          enabled: false
+    v42:
+      default-target-probe-count: ${COMMUNITY_PROBE_COUNT:5}
+      minus-one:
+        evidence-expansion:
+          enabled: false
+  brand-space:
+    create:
+      initial-run-enabled: true
+  security:
+    secret-assets:
+      prompt-asset-dir: classpath:prompts/community
+      prompt-asset-fail-fast: true

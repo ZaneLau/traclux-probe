@@ -1,0 +1,92 @@
+name: traclux-community
+
+services:
+  mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: traclux
+      MYSQL_USER: traclux
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Run python3 scripts/community_init.py first}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Run community_init.py first}
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD="$$MYSQL_PASSWORD" mysql -u "$$MYSQL_USER" -D "$$MYSQL_DATABASE" -e "SELECT 1" >/dev/null 2>&1']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    mem_limit: 768m
+
+  redis:
+    image: redis:8-alpine
+    command: [redis-server, --maxmemory, 128mb, --maxmemory-policy, allkeys-lru]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 15
+    mem_limit: 192m
+
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: traclux_knowledge
+      POSTGRES_USER: traclux
+      POSTGRES_PASSWORD: ${KNOWLEDGE_DB_PASSWORD:?Run community_init.py first}
+    volumes:
+      - knowledge-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    mem_limit: 256m
+
+  backend:
+    build: ./backend
+    environment:
+      SPRING_PROFILES_ACTIVE: community
+      DB_HOST: mysql
+      DB_NAME: traclux
+      DB_USERNAME: traclux
+      DB_PASSWORD: ${DB_PASSWORD}
+      REDIS_HOST: redis
+      APP_KNOWLEDGE_ASSET_DB_HOST: postgres
+      APP_KNOWLEDGE_ASSET_DB_PORT: 5432
+      APP_KNOWLEDGE_ASSET_DB_NAME: traclux_knowledge
+      APP_KNOWLEDGE_ASSET_DB_USERNAME: traclux
+      APP_KNOWLEDGE_ASSET_DB_PASSWORD: ${KNOWLEDGE_DB_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?Run community_init.py first}
+      COMMUNITY_USERNAME: ${COMMUNITY_USERNAME:-owner@example.test}
+      COMMUNITY_PASSWORD: ${COMMUNITY_PASSWORD:?Run community_init.py first}
+      COMMUNITY_PROBE_COUNT: ${COMMUNITY_PROBE_COUNT:-5}
+      COMMUNITY_SCHEDULING_ENABLED: ${COMMUNITY_SCHEDULING_ENABLED:-false}
+      COMMUNITY_ORIGINS: http://localhost:${TRACLUX_PORT:-3100},http://127.0.0.1:${TRACLUX_PORT:-3100}
+      MODEL_API_KEY: ${MODEL_API_KEY:-community-not-configured}
+      MODEL_BASE_URL: ${MODEL_BASE_URL:-http://127.0.0.1:9/v1}
+      MODEL_NAME: ${MODEL_NAME:-configure-your-model}
+      SAMPLING_API_KEY: ${SAMPLING_API_KEY:-${MODEL_API_KEY:-community-not-configured}}
+      SAMPLING_BASE_URL: ${SAMPLING_BASE_URL:-${MODEL_BASE_URL:-http://127.0.0.1:9/v1}}
+      SAMPLING_MODEL_NAME: ${SAMPLING_MODEL_NAME:-${MODEL_NAME:-configure-your-model}}
+      JAVA_TOOL_OPTIONS: -Xms128m -Xmx768m
+    depends_on:
+      mysql: {condition: service_healthy}
+      redis: {condition: service_healthy}
+      postgres: {condition: service_healthy}
+    mem_limit: 1g
+
+  frontend:
+    build: ./frontend
+    environment:
+      NUXT_PUBLIC_API_BASE: /api/v1
+      NUXT_API_PROXY_TARGET: http://backend:8080
+      NUXT_PUBLIC_ENABLE_ENGINE_THEATER: "false"
+    ports:
+      - "127.0.0.1:${TRACLUX_PORT:-3100}:3000"
+    depends_on:
+      backend: {condition: service_healthy}
+    mem_limit: 512m
+
+volumes:
+  mysql-data:
+  knowledge-data:

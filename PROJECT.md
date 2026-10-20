@@ -1,8 +1,9 @@
-# Traclux Probe
+# Traclux project
 
-- Purpose: an Apache-2.0 community tool for explicit six-dimensional question selection and imported answer evidence.
-- Current: the standalone [public repository](https://github.com/ZaneLau/traclux-probe) and [interactive demo](https://zanelau.github.io/traclux-probe/demo/) are published. The v0.1.0 community scope includes English/Chinese instructions, offline reports, a screenshot and a walkthrough; the owner accepted the demo on 2026-10-19. Version archives are listed in [Releases](https://github.com/ZaneLau/traclux-probe/releases).
-- Evidence: eight Python tests and clean-source reproduction passed. The public HTTPS demo passed browser checks for selection contributions, original answers/source/time, missing answers, search/empty states and exact JSON download. Hosted demo assets match the reviewed source, and private vulnerability reporting is enabled. This demonstrates tool behavior, not algorithm effectiveness on real demand.
-- Next: collect concrete usage feedback through [Issues](https://github.com/ZaneLau/traclux-probe/issues); prioritize a reproducible defect or a real user's question pool before adding features.
-- Scope: keep the core usable without accounts, APIs or paid services. Private production repositories and historical research data are outside this repository. Research remains paused. The owner approved repository presentation, contribution entrypoints and relevant directory submissions on 2026-10-19; personal social-media accounts are excluded.
-- Stop: a visitor can open the public demo and reproduce the release from its source archive. Reopen feature work for concrete usage feedback or a reproducible defect.
+- Purpose: self-host the existing CSSM-HI probe generation → model execution → user analysis workbench.
+- Outcome anchor: the owner clarified on 2026-10-19 that the user workbench is the open-source product; their internal operations console stays private.
+- Current: v0.2.0 community preview preparation. The owner authorized publishing after the 5/5 real-model initial run, deferring functional polish. Source and case publication are tracked separately from stable or production readiness.
+- Verified: real initial generation/execution, five persisted answers, populated overview/brand performance, password login. Scoped frontend security upgrades built and passed tests; known dependency and correctness warnings are documented.
+- Next: publish full-system source, replace the old demo with a no-key captured real case, verify remote CI/Pages and show the public entry. Do not reopen question/answer mapping, research or paper work in this package.
+- Scope: exclude internal admin pages/APIs/services, production secrets/data and author provider accounts. Retain user features and their backend dependencies. Research and paper experiments remain paused; personal social-media accounts are excluded.
+- Stop rule: public source/release and working captured-case entry are reachable, default private credentials remain excluded, remote checks are reported, and early-release limitations are visible. No further polish without a new outcome.

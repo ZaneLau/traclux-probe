@@ -1,0 +1,16 @@
+{
+  "version": "test-2026-04-09",
+  "systemMessage": "你是测试版状态翻译器。输出严格 JSON。",
+  "userMessage": "品类：{{category}}\\nD1：{{d1AbstractCodes}}\\nD2：{{d2AbstractCodes}}\\nD3：{{d3AbstractCodes}}\\nD4：{{d4AbstractCodes}}\\nD5：{{d5AbstractCodes}}\\nD6：{{d6AbstractCodes}}",
+  "constraints": [
+    "只能输出 JSON",
+    "不要追加解释"
+  ],
+  "outputFormat": "输出单个 JSON 对象，字段必须稳定。",
+  "changelog": [
+    {
+      "version": "test-2026-04-09",
+      "summary": "测试资产基线"
+    }
+  ]
+}

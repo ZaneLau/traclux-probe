@@ -1,0 +1,124 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:geoprobe;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  flyway:
+    enabled: false
+  sql:
+    init:
+      mode: always
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+jwt:
+  secret: test-secret-key-for-jwt-signing-at-least-thirty-two-bytes
+  expiration: 86400000
+
+llm:
+  volcengine:
+    api-key: ${V42_ARK_API_KEY:dummy-api-key}
+    base-url: https://ark.cn-beijing.volces.com/api/v3
+    model: doubao-seed-1.8
+    endpoint-id: ${V42_DOUBAO_ENDPOINT_ID:}
+  deepseek:
+    api-key: ${V42_ARK_API_KEY:dummy-api-key}
+    base-url: https://ark.cn-beijing.volces.com/api/v3
+    model: deepseek-v3.2
+    endpoint-id: ${V42_DEEPSEEK32_ENDPOINT_ID:}
+  zhipu:
+    api-key: ${ZHIPU_API_KEY:dummy-api-key}
+    base-url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4-flashx
+
+app:
+  scheduling:
+    enabled: false
+  volcengine:
+    reward-quota-collector:
+      enabled: false
+      startup-warmup-enabled: false
+      runtime-fallback-enabled: false
+    reward-quota-enforcement:
+      enabled: false
+  llm-budget:
+    enabled: true
+    default-daily-token-budget-per-model: 1900000
+    default-reservation-tokens: 12000
+    zone-id: Asia/Shanghai
+    daily-token-budget-overrides:
+  database:
+    v1:
+      enabled: false
+      read-preferred: false
+  security:
+    expose-swagger: true
+    expose-dev-endpoints: true
+    enforce-jwt-secret: true
+    secret-assets:
+      prompt-asset-dir: classpath:v42-test-prompt-assets
+      prompt-asset-fail-fast: true
+      expose-routing-debug: false
+    auth-rate-limit:
+      window-seconds: 60
+      login-per-ip: 1000
+      login-per-user-ip: 200
+      register-per-ip: 1000
+      register-per-user-ip: 200
+  async:
+    core-pool-size: 2
+    max-pool-size: 4
+    queue-capacity: 16
+  engine:
+    execution:
+      enabled: true
+    v42:
+      default-target-probe-count: 100
+      max-target-probe-count: 1000
+      node2:
+        concurrent:
+          enabled: true
+          parallelism: 4
+          task-timeout-millis: 45000
+      minus-one:
+        evidence-expansion:
+          enabled: false
+    sampling:
+      realtime-search:
+        enabled: false
+        provider: doubao
+        task-timeout-seconds: 150
+        min-evidence-success-rate: 0.9
+        max-evidence-retries: 2
+        max-backfill-rounds: 2
+        aimd-min-concurrency: 40
+        aimd-max-concurrency: 120
+        aimd-increase-step: 8
+        aimd-adjust-interval: 8
+        aimd-congestion-ratio: 0.25
+        aimd-high-latency-ms: 12000
+  brand-space:
+    create:
+      initial-run-enabled: true
+  diagnosis:
+    reconciliation:
+      enabled: true
+  knowledge-asset:
+    enabled: false
+    ingestion:
+      enabled: false
+      on-run-completion-enabled: false
+    projection:
+      materialization-enabled: false
+      strict-workbench-read-enabled: false
+      brand-performance-enabled: false
+      citation-sources-enabled: false
+      problem-analysis-enabled: false
+      metric-slices-enabled: false

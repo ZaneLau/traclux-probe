@@ -1,0 +1,206 @@
+jwt:
+  secret: ${JWT_SECRET:replace-with-256-bit-secret}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+spring:
+  config:
+    import:
+      - optional:file:../.env[.properties]
+      - optional:file:../.env.local[.properties]
+      - optional:file:.env[.properties]
+      - optional:file:.env.local[.properties]
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:geoprobe}?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=UTF-8
+    username: ${DB_USERNAME:geoprobe}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      database: ${REDIS_DATABASE:0}
+  mail:
+    host: ${SMTP_HOST:smtp.zoho.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${SMTP_AUTH:true}
+          starttls:
+            enable: ${SMTP_STARTTLS_ENABLE:true}
+  flyway:
+    enabled: ${SPRING_FLYWAY_ENABLED:false}
+    locations: classpath:db/migration
+    baseline-on-migrate: ${SPRING_FLYWAY_BASELINE_ON_MIGRATE:false}
+    baseline-version: ${SPRING_FLYWAY_BASELINE_VERSION:1}
+
+springdoc:
+  api-docs:
+    enabled: ${app.security.expose-swagger:false}
+  swagger-ui:
+    enabled: ${app.security.expose-swagger:false}
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+llm:
+  deepseek:
+    api-key: ${V42_ARK_API_KEY:${VOLCENGINE_API_KEY:dummy-api-key}}
+    base-url: ${DEEPSEEK_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
+    model: ${DEEPSEEK_MODEL:deepseek-v3.2}
+    endpoint-id: ${V42_DEEPSEEK32_ENDPOINT_ID:${DEEPSEEK_ENDPOINT_ID:}}
+  zhipu:
+    api-key: ${ZHIPU_API_KEY:dummy-api-key}
+    base-url: ${ZHIPU_BASE_URL:https://open.bigmodel.cn/api/paas/v4}
+    model: ${ZHIPU_MODEL:glm-4-flashx}
+  openai:
+    api-key: ${OPENAI_API_KEY:dummy-api-key}
+    base-url: ${OPENAI_BASE_URL:https://api.openai.com/v1}
+    model: ${OPENAI_MODEL:gpt-5-mini}
+  kimi:
+    api-key: ${KIMI_API_KEY:${V42_ARK_API_KEY:${VOLCENGINE_API_KEY:dummy-api-key}}}
+    base-url: ${KIMI_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
+    model: ${KIMI_MODEL:kimi-k2-thinking-251104}
+  glm:
+    api-key: ${GLM_API_KEY:${V42_ARK_API_KEY:${VOLCENGINE_API_KEY:dummy-api-key}}}
+    base-url: ${GLM_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
+    model: ${GLM_MODEL:glm-4-7-251222}
+  minimax:
+    api-key: ${MINIMAX_API_KEY:dummy-api-key}
+    base-url: ${MINIMAX_BASE_URL:https://api.minimax.chat/v1}
+    model: ${MINIMAX_MODEL:MiniMax-M1}
+  volcengine:
+    api-key: ${V42_ARK_API_KEY:${VOLCENGINE_API_KEY:dummy-api-key}}
+    base-url: ${VOLCENGINE_BASE_URL:https://ark.cn-beijing.volces.com/api/v3}
+    model: ${VOLCENGINE_MODEL:doubao-seed-1.8}
+    endpoint-id: ${V42_DOUBAO_ENDPOINT_ID:${VOLCENGINE_ENDPOINT_ID:}}
+    realtime-endpoint-id: ${V42_DOUBAO16_ENDPOINT_ID:doubao-seed-1-6-lite-251015}
+    realtime-fallback-endpoint-ids: ${V42_DOUBAO_REALTIME_FALLBACK_ENDPOINT_IDS:doubao-seed-1-6-251015,doubao-seed-1-6-flash-250828,doubao-seed-1-8-251228,doubao-seed-2-0-lite-260215,doubao-seed-2-0-mini-260215,doubao-seed-2-0-pro-260215}
+
+app:
+  runtime:
+    mode: ${APP_RUNTIME_MODE:standby}
+  scheduling:
+    enabled: ${APP_SCHEDULING_ENABLED:false}
+  health:
+    llm-enabled: ${APP_HEALTH_LLM_ENABLED:false}
+  auth:
+    registration-enabled: ${APP_AUTH_REGISTRATION_ENABLED:true}
+    turnstile:
+      enabled: ${APP_AUTH_TURNSTILE_ENABLED:false}
+      secret: ${APP_AUTH_TURNSTILE_SECRET:}
+      site-key: ${NUXT_PUBLIC_TURNSTILE_SITE_KEY:${APP_AUTH_TURNSTILE_SITE_KEY:}}
+      siteverify-url: ${APP_AUTH_TURNSTILE_SITEVERIFY_URL:https://challenges.cloudflare.com/turnstile/v0/siteverify}
+      timeout-seconds: ${APP_AUTH_TURNSTILE_TIMEOUT_SECONDS:5}
+    email:
+      provider: ${APP_AUTH_EMAIL_PROVIDER:fake}
+      from: ${APP_AUTH_EMAIL_FROM:support@traclux.com}
+      reset-url-base: ${APP_AUTH_EMAIL_RESET_URL_BASE:http://127.0.0.1:3000/login}
+    password-reset:
+      token-ttl-minutes: ${APP_AUTH_PASSWORD_RESET_TOKEN_TTL_MINUTES:30}
+  bootstrap:
+    seed-user:
+      enabled: ${APP_BOOTSTRAP_SEED_USER_ENABLED:false}
+      username: ${APP_BOOTSTRAP_SEED_USER_USERNAME:}
+      password: ${APP_BOOTSTRAP_SEED_USER_PASSWORD:}
+      display-name: ${APP_BOOTSTRAP_SEED_USER_DISPLAY_NAME:}
+      company-name: ${APP_BOOTSTRAP_SEED_USER_COMPANY_NAME:AeoProbe Alpha}
+      credits-remaining: ${APP_BOOTSTRAP_SEED_USER_CREDITS_REMAINING:20}
+      role: ${APP_BOOTSTRAP_SEED_USER_ROLE:0}
+  volcengine:
+    reward-quota-collector:
+      enabled: ${APP_VOLCENGINE_REWARD_QUOTA_COLLECTOR_ENABLED:false}
+      refresh-cron: ${APP_VOLCENGINE_REWARD_QUOTA_COLLECTOR_REFRESH_CRON:0 15 */6 * * *}
+      zone: ${APP_VOLCENGINE_REWARD_QUOTA_COLLECTOR_ZONE:Asia/Shanghai}
+      startup-warmup-enabled: ${APP_VOLCENGINE_REWARD_QUOTA_COLLECTOR_STARTUP_WARMUP_ENABLED:false}
+      runtime-fallback-enabled: ${APP_VOLCENGINE_REWARD_QUOTA_COLLECTOR_RUNTIME_FALLBACK_ENABLED:false}
+    reward-quota-enforcement:
+      enabled: ${APP_VOLCENGINE_REWARD_QUOTA_ENFORCEMENT_ENABLED:false}
+  llm-budget:
+    enabled: ${APP_LLM_BUDGET_ENABLED:false}
+    default-daily-token-budget-per-model: ${APP_LLM_BUDGET_DEFAULT_DAILY_TOKEN_BUDGET_PER_MODEL:1900000}
+    default-reservation-tokens: ${APP_LLM_BUDGET_DEFAULT_RESERVATION_TOKENS:12000}
+    zone-id: ${APP_LLM_BUDGET_ZONE_ID:Asia/Shanghai}
+    daily-token-budget-overrides: ${APP_LLM_BUDGET_DAILY_TOKEN_BUDGET_OVERRIDES:}
+  database:
+    v1:
+      enabled: ${APP_DATABASE_V1_ENABLED:true}
+      read-preferred: ${APP_DATABASE_V1_READ_PREFERRED:false}
+      legacy-diagnosis-write-enabled: ${APP_DATABASE_V1_LEGACY_DIAGNOSIS_WRITE_ENABLED:false}
+      legacy-diagnosis-write-required: ${APP_DATABASE_V1_LEGACY_DIAGNOSIS_WRITE_REQUIRED:false}
+      legacy-credit-write-enabled: ${APP_DATABASE_V1_LEGACY_CREDIT_WRITE_ENABLED:false}
+      backfill:
+        run-on-startup: ${APP_DATABASE_V1_BACKFILL_RUN_ON_STARTUP:false}
+  engine:
+    execution:
+      enabled: ${APP_ENGINE_EXECUTION_ENABLED:false}
+    v42:
+      default-target-probe-count: ${APP_ENGINE_V42_DEFAULT_TARGET_PROBE_COUNT:100}
+      max-target-probe-count: ${APP_ENGINE_V42_MAX_TARGET_PROBE_COUNT:1000}
+  brand-space:
+    create:
+      initial-run-enabled: ${APP_BRAND_SPACE_CREATE_INITIAL_RUN_ENABLED:false}
+    tracking:
+      cron: ${APP_BRAND_SPACE_TRACKING_CRON:0 */15 * * * *}
+      zone: ${APP_BRAND_SPACE_TRACKING_ZONE:Asia/Shanghai}
+    lifecycle:
+      cron: ${APP_BRAND_SPACE_LIFECYCLE_CRON:0 15 3 * * *}
+      zone: ${APP_BRAND_SPACE_LIFECYCLE_ZONE:Asia/Shanghai}
+  diagnosis:
+    reconciliation:
+      enabled: ${APP_DIAGNOSIS_RECONCILIATION_ENABLED:false}
+      open-task-limit: ${APP_DIAGNOSIS_RECONCILIATION_OPEN_TASK_LIMIT:200}
+  knowledge-asset:
+    enabled: ${APP_KNOWLEDGE_ASSET_ENABLED:true}
+    datasource:
+      url: jdbc:postgresql://${APP_KNOWLEDGE_ASSET_DB_HOST:localhost}:${APP_KNOWLEDGE_ASSET_DB_PORT:55432}/${APP_KNOWLEDGE_ASSET_DB_NAME:geoprobe_knowledge}
+      username: ${APP_KNOWLEDGE_ASSET_DB_USERNAME:geoprobe}
+      password: ${APP_KNOWLEDGE_ASSET_DB_PASSWORD:}
+      driver-class-name: ${APP_KNOWLEDGE_ASSET_DB_DRIVER:org.postgresql.Driver}
+      schema: ${APP_KNOWLEDGE_ASSET_DB_SCHEMA:public}
+      maximum-pool-size: ${APP_KNOWLEDGE_ASSET_DB_MAX_POOL_SIZE:5}
+      minimum-idle: ${APP_KNOWLEDGE_ASSET_DB_MIN_IDLE:0}
+      pool-name: ${APP_KNOWLEDGE_ASSET_DB_POOL_NAME:knowledge-asset-pool}
+      connection-timeout-ms: ${APP_KNOWLEDGE_ASSET_DB_CONNECTION_TIMEOUT_MS:5000}
+    flyway:
+      enabled: ${APP_KNOWLEDGE_ASSET_FLYWAY_ENABLED:true}
+      baseline-on-migrate: ${APP_KNOWLEDGE_ASSET_FLYWAY_BASELINE_ON_MIGRATE:true}
+      baseline-version: ${APP_KNOWLEDGE_ASSET_FLYWAY_BASELINE_VERSION:0}
+      locations: ${APP_KNOWLEDGE_ASSET_FLYWAY_LOCATIONS:classpath:db/knowledge-asset}
+    ingestion:
+      enabled: ${APP_KNOWLEDGE_ASSET_INGESTION_ENABLED:true}
+      on-run-completion-enabled: ${APP_KNOWLEDGE_ASSET_INGESTION_ON_RUN_COMPLETION_ENABLED:true}
+      checkpoint-batch-size: ${APP_KNOWLEDGE_ASSET_INGESTION_CHECKPOINT_BATCH_SIZE:200}
+      history-sync:
+        read-repair-enabled: ${APP_KNOWLEDGE_ASSET_INGESTION_HISTORY_SYNC_READ_REPAIR_ENABLED:true}
+        run-on-startup: ${APP_KNOWLEDGE_ASSET_INGESTION_HISTORY_SYNC_RUN_ON_STARTUP:false}
+        startup-max-scopes: ${APP_KNOWLEDGE_ASSET_INGESTION_HISTORY_SYNC_STARTUP_MAX_SCOPES:0}
+    projection:
+      materialization-enabled: ${APP_KNOWLEDGE_ASSET_PROJECTION_MATERIALIZATION_ENABLED:true}
+      strict-workbench-read-enabled: ${APP_KNOWLEDGE_ASSET_PROJECTION_STRICT_WORKBENCH_READ_ENABLED:true}
+      brand-performance-enabled: ${APP_KNOWLEDGE_ASSET_PROJECTION_BRAND_PERFORMANCE_ENABLED:true}
+      citation-sources-enabled: ${APP_KNOWLEDGE_ASSET_PROJECTION_CITATION_SOURCES_ENABLED:true}
+      problem-analysis-enabled: ${APP_KNOWLEDGE_ASSET_PROJECTION_PROBLEM_ANALYSIS_ENABLED:true}
+      metric-slices-enabled: ${APP_KNOWLEDGE_ASSET_PROJECTION_METRIC_SLICES_ENABLED:true}
+  security:
+    expose-swagger: ${APP_SECURITY_EXPOSE_SWAGGER:false}
+    expose-dev-endpoints: ${APP_SECURITY_EXPOSE_DEV_ENDPOINTS:false}
+    enforce-jwt-secret: ${APP_SECURITY_ENFORCE_JWT_SECRET:true}
+    secret-assets:
+      prompt-asset-dir: ${APP_SECURITY_SECRET_ASSETS_PROMPT_ASSET_DIR:file:../.private/prompt-assets}
+      prompt-asset-fail-fast: ${APP_SECURITY_SECRET_ASSETS_PROMPT_ASSET_FAIL_FAST:true}
+      expose-routing-debug: ${APP_SECURITY_SECRET_ASSETS_EXPOSE_ROUTING_DEBUG:false}
+    auth-rate-limit:
+      window-seconds: ${APP_SECURITY_AUTH_RATE_LIMIT_WINDOW_SECONDS:60}
+      login-per-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_LOGIN_PER_IP:60}
+      login-per-user-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_LOGIN_PER_USER_IP:12}
+      register-per-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_REGISTER_PER_IP:30}
+      register-per-user-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_REGISTER_PER_USER_IP:6}
+      lookup-per-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_LOOKUP_PER_IP:60}
+      lookup-per-user-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_LOOKUP_PER_USER_IP:12}
+      password-reset-per-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_PASSWORD_RESET_PER_IP:20}
+      password-reset-per-user-ip: ${APP_SECURITY_AUTH_RATE_LIMIT_PASSWORD_RESET_PER_USER_IP:3}

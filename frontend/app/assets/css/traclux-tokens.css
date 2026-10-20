@@ -1,0 +1,67 @@
+:root {
+  --identity-ink: #111A2E;
+  --identity-ink-inverse: #FFFFFF;
+  --identity-soul: #4A827D;
+  --identity-soul-strong: #3F747C;
+  --identity-ground-warm-100: #F2EEE7;
+  --identity-ground-warm-200: #ECE7DE;
+  --identity-ground-warm-300: #E9E4DA;
+
+  --traclux-font-ui: 'Sora', 'Noto Sans SC', sans-serif;
+  --traclux-font-cn: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --traclux-font-editorial: 'Noto Serif SC', 'STSong', 'SimSun', serif;
+
+  --traclux-surface-canvas: #F3F4F6;
+  --traclux-surface-sidebar: #F8FAFC;
+  --traclux-surface-card: #FFFFFF;
+  --traclux-surface-card-hover: #F9FAFB;
+  --traclux-surface-sticky-overlay: rgba(243, 244, 246, 0.64);
+  --traclux-surface-sticky-rail-overlay: rgba(248, 250, 252, 0.22);
+
+  --traclux-border-soft: #D1D5DB;
+  --traclux-border-strong: #9CA3AF;
+  --traclux-border-subtle: #E5E7EB;
+
+  --traclux-text-primary: #111827;
+  --traclux-text-secondary: #6B7280;
+  --traclux-text-tertiary: #4B5563;
+  --traclux-text-quaternary: #374151;
+  --traclux-text-neutral-strong: #0F172A;
+  --traclux-text-neutral-mid: #475569;
+  --traclux-text-neutral-soft: #64748B;
+
+  --traclux-accent-soul: #4A827D;
+  --traclux-accent-soul-strong: #3F747C;
+  --traclux-accent-link: #2563EB;
+  --traclux-accent-link-hover: #1D4ED8;
+  --traclux-accent-data-teal: #0F766E;
+  --traclux-accent-data-blue: #38BDF8;
+  --traclux-accent-attention: #F59E0B;
+
+  --traclux-status-positive: #047857;
+  --traclux-status-negative: #B91C1C;
+
+  --traclux-space-4: 4px;
+  --traclux-space-6: 6px;
+  --traclux-space-8: 8px;
+  --traclux-space-10: 10px;
+  --traclux-space-12: 12px;
+  --traclux-space-14: 14px;
+  --traclux-space-16: 16px;
+  --traclux-space-24: 24px;
+
+  --traclux-radius-hard: 2px;
+  --traclux-radius-pill: 999px;
+
+  --traclux-font-size-12: 12px;
+  --traclux-font-size-13: 13px;
+  --traclux-font-size-14: 14px;
+  --traclux-font-size-16: 16px;
+  --traclux-font-size-20: 20px;
+  --traclux-font-size-24: 24px;
+  --traclux-font-size-32: 32px;
+  --traclux-font-size-44: 44px;
+
+  --traclux-shadow-sticky: 0 10px 18px -18px rgba(15, 23, 42, 0.38);
+  --traclux-focus-ring: 0 0 0 3px rgba(74, 130, 125, 0.18);
+}

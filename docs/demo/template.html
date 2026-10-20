@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="CSSM-HI probe generation, real model answers, and a self-hosted GEO workbench. Explore a captured case without an API key.">
+<meta property="og:title" content="Traclux · From brand to probes to answers">
+<meta property="og:description" content="Explore a real five-probe case. No signup or API key required.">
+<meta property="og:image" content="https://zanelau.github.io/traclux-probe/demo/preview.png">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Traclux · Real probe run / 真实探针案例</title>
+<link rel="stylesheet" href="style.css"><script src="case-viewer.js" defer></script>
+</head><body>
+<header><nav class="nav"><a class="brand" href="https://www.traclux.com/">TRACLUX <span>Community</span></a><div class="nav-right"><a href="#explore">Explore case</a><a href="https://github.com/ZaneLau/traclux-probe#start-locally">Self-host</a><a class="text-button" href="https://github.com/ZaneLau/traclux-probe">☆ Star on GitHub</a></div></nav></header>
+<main>
+<div class="hero"><div><div class="eyebrow">CSSM-HI → PROBES → MODEL ANSWERS</div><h1>From a brand to questions worth testing.</h1><p class="subtitle">输入品牌，生成探针，接入模型执行，在用户工作台查看结果。<br>Explore one captured Anker / USB-C charger run. This is a read-only case, not a live model request.</p></div><div class="run-meta"><span class="badge">REAL MODEL · CAPTURED CASE</span><br>2026-10-20 · Chinese / CN<br>Doubao Seed 2.0 Lite · API</div></div>
+<div class="steps"><span class="step">01 Brand & category · 品牌与品类</span><span class="step">02 CSSM-HI · 生成探针</span><span class="step">03 Your model · 执行</span><span class="step">04 Workbench · 查看回答</span></div>
+<div class="stats">
+<div class="stat"><div class="stat-label">Generated & executed · 生成并执行</div><div class="stat-number">5 <span>probes</span></div><div class="stat-foot">5 topics in the initial plan</div></div>
+<div class="stat"><div class="stat-label">Completed · 已完成</div><div class="stat-number green">5 / 5</div><div class="stat-foot">0 execution failures</div></div>
+<div class="stat"><div class="stat-label">Run time · 本轮耗时</div><div class="stat-number">2:53</div><div class="stat-foot">State modeling through stored results</div></div>
+<div class="stat"><div class="stat-label">Citations · 引用</div><div class="stat-number">0</div><div class="stat-foot">Web search off in this run</div></div>
+</div>
+<div id="explore" class="workspace-head"><div class="workspace-title"><h2>Inspect the actual probes · 点开看实际问题</h2></div><a href="case.json" download>Download public case JSON ↓</a></div>
+<div class="workspace">
+<section class="panel"><div class="toolbar"><span class="caption">Anker · USB-C充电器 · 5 probes</span><input id="search" class="search" type="search" placeholder="Search questions / 搜索" aria-label="Search questions"></div><div id="questions" class="question-list"></div><div class="list-foot"><span>Generated questions, not purchased search logs</span><span id="count"></span></div></section>
+<section class="panel" aria-label="Probe details"><div class="detail-head"><h2 id="detail-title">Probe</h2><span class="tiny-badge">Captured response · 回答摘录</span></div><div class="detail-body"><p id="question" class="detail-question"></p><dl id="metadata" class="provenance"></dl><hr><h3>Model answer excerpt · 模型回答摘录</h3><blockquote id="answer" class="answer"></blockquote><p id="answer-note" class="small-note"></p><div class="missing">No citations in this run: web search was off. API responses are not measurements of consumer app answers.<br>本轮未联网；模型原话未经事实核验，不是产品选购建议。主题匹配和分析展示仍有已知限制。</div></div></section>
+</div>
+<section class="panel case-start"><div class="panel-head"><h2>Run the full workbench · 运行完整系统</h2><a href="https://github.com/ZaneLau/traclux-probe">View source →</a></div><div class="detail-body"><p class="subtitle">The open-source package includes the existing Nuxt user application, Spring Boot backend, CSSM-HI generation, model execution, saved answers and run history. The author's operations console stays private.</p><pre class="command">git clone https://github.com/ZaneLau/traclux-probe.git
+cd traclux-probe
+python3 scripts/community_init.py
+# Privately configure MODEL_* in .env
+docker compose up --build -d</pre><p class="small-note">Open http://localhost:3100/login with the credentials generated in your local .env. Your model account supplies quota; this public demo makes no model calls.</p><p><a href="https://github.com/ZaneLau/traclux-probe/blob/main/docs/community/README.md">Setup guide</a> · <a href="https://github.com/ZaneLau/traclux-probe/blob/main/docs/community/known-limitations.md">Early-release limitations</a> · <a href="https://github.com/ZaneLau/traclux-probe/issues/new/choose">Report feedback</a></p></div></section>
+<section class="panel case-start"><div class="panel-head"><h2>The actual user workbench · 真实用户工作台</h2></div><div class="detail-body"><p class="small-note">Captured from the self-hosted application using the same five-probe run. This screenshot shows the existing interface; rankings and summary wording have known early-release limitations.</p><img class="workbench-preview" src="workbench.png" alt="Actual self-hosted Traclux user workbench with the captured Anker case" loading="lazy"></div></section>
+<p class="small-note">Apache-2.0 · Community preview · Five responses verify the execution path, not algorithm superiority or brand ranking. Anker, UGREEN and Baseus are independent brands; no affiliation or endorsement is implied. <a href="https://www.traclux.com/">Traclux website</a></p>
+</main><noscript>JavaScript enables question selection. Download case.json to inspect the data.</noscript>
+<script type="application/json" id="case-data">{{CASE_DATA}}</script>
+</body></html>

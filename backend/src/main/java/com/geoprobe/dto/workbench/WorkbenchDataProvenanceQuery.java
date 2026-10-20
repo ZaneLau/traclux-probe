@@ -1,0 +1,60 @@
+package com.geoprobe.dto.workbench;
+
+import java.util.List;
+
+public record WorkbenchDataProvenanceQuery(
+        String brandSpaceId,
+        String runId,
+        String topicId,
+        String topicName,
+        String probeId,
+        String anchorType,
+        String anchorKey,
+        String metricKey,
+        String metricLabel,
+        String metricValue,
+        String timePreset,
+        String dateFrom,
+        String dateTo,
+        String resultPointKey,
+        String windowKey,
+        String platform,
+        String domain,
+        List<String> platforms,
+        Integer contextCitationCount,
+        Integer contextCitationDomainCount,
+        Integer contextTotalCitationCount,
+        Double contextCitationShare,
+        Integer contextSampleSize,
+        Integer contextMentionCount,
+        Double contextMentionRate,
+        Double contextRecommendRate,
+        Double contextTop3Rate,
+        Double contextDemandVolume,
+        Double contextDemandTotal,
+        Integer contextActiveTopicCount,
+        Integer contextActivePlatformCount,
+        Integer contextPromptCount,
+        Double contextTotalProjection,
+        Integer contextHighValuePromptCount,
+        Integer contextPromptLoopTotalCount,
+        Integer contextPromptLoopCoveredCount,
+        Integer contextPromptLoopGapCount,
+        Integer contextPromptLoopHighOpportunityCount,
+        Integer samplePage,
+        Integer samplePageSize
+) {
+    public WorkbenchDataProvenanceQuery(String brandSpaceId,
+                                        String runId,
+                                        String topicId,
+                                        String probeId,
+                                        String anchorType,
+                                        String anchorKey,
+                                        String metricKey) {
+        this(brandSpaceId, runId, topicId, null, probeId, anchorType, anchorKey, metricKey,
+                null, null, null, null, null, null, null, null, null, List.<String>of(),
+                null, null, null, null, null, null, null, null, null,
+                null, null, null, null, null, null, null, null, null, null, null,
+                null, null);
+    }
+}
