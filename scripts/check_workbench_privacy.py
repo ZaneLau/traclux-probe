@@ -10,7 +10,7 @@ ROUTES = {
     *(BRAND + suffix for suffix in ['/basic-profile', '/config', '/probe-plan', '/runs', '/runs/demo-run-20261020']),
     *('/workbench/' + name for name in ['overview', 'brand-performance', 'citation-sources', 'problem-analysis']),
 }
-FORBIDDEN_FIELD = re.compile(r'token|password|secret|cookie|api.?key|endpoint|credit|balance|billing|account|organization|membership|tenant|(?:user|owner)(?:Id|name)|email|phone|createdBy|updatedBy|rawRecord|taskOrder|taskMetadata|taskPayload|truthSource|sourceWindowKey', re.I)
+FORBIDDEN_FIELD = re.compile(r'token|password|secret|cookie|api.?key|endpoint|credit|balance|billing|account|organization|membership|tenant|(?:user|owner)(?:Id|name)|email|phone|createdBy|updatedBy|rawRecord|taskOrder|taskMetadata|taskPayload|serviceAccess|quotaLimited|truthSource|sourceWindowKey', re.I)
 PRIVATE_TEXT = re.compile(r'\b[\w.+-]+@[\w.-]+\.[a-z]{2,}\b|(?<!\d)1[3-9]\d{9}(?!\d)|/Users/|/home/|\b(?:localhost|127\.0\.0\.1)\b|\b[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}\b|sk-(?:proj-)?[\w-]{30,}|ep-\d{12,}-[a-z0-9]{5,}|-----BEGIN .*PRIVATE KEY-----|积分|余额|公测|测试账号|测试用户|测试数据', re.I)
 
 

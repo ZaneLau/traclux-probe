@@ -19,10 +19,10 @@ class WorkbenchPrivacyTest(unittest.TestCase):
         self.assertEqual(privacy.check_snapshot(self.data, self.case), [])
 
     def test_rejects_hidden_account_fields_and_unreviewed_routes(self):
-        self.data['/workbench/overview']['extra'] = {'email': 'guest@example.invalid'}
+        self.data['/workbench/overview']['extra'] = {'email': 'guest@example.invalid', 'serviceAccessStatus': 'trial', 'quotaLimited': True}
         self.data['/runs/unreviewed/events'] = []
         findings = privacy.check_snapshot(self.data, self.case)
-        self.assertGreaterEqual(len(findings), 2)
+        self.assertGreaterEqual(len(findings), 4)
         self.assertNotIn('guest@example.invalid', str(findings))
 
     def test_rejects_private_content_even_in_display_fields(self):
