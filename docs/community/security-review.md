@@ -1,13 +1,13 @@
 # Community preview security review — 2026-10-20
 
-This is a bounded source-release review, not a penetration test or approval to operate an untrusted public service. The release is local-first, with known functional and dependency limits. No claim of zero vulnerabilities is made.
+This review covers source scanning, default configuration, authentication checks and dependency findings for v0.2.0. It is not a penetration test. The default deployment is local-only; outstanding findings are listed below.
 
 | Check | Evidence / result |
 | --- | --- |
 | Secrets and publication boundary | Source signature scan, exact comparison against private model/instance secret values, and reachable Git-history comparison; no matches. Environment files, runtime logs, databases and sessions excluded |
 | Internal console | Admin pages/controllers/exclusive services excluded by source check; ordinary-user request to `/api/v1/admin/overview` rejected. Dev, tracking and Swagger routes default denied |
 | Local default | Only frontend `127.0.0.1:3100` is published by default Compose; backend, MySQL, PostgreSQL and Redis have no host ports |
-| Credentials | Initializer creates exclusive mode-0600 `.env` with random login, database passwords and JWT secret; preserves existing files. No author account or working provider endpoint in defaults |
+| Credentials | Initializer creates exclusive mode-0600 `.env` with random login, database passwords and JWT secret; preserves existing files. Model endpoint configuration required before use |
 | Authentication | Password login, authenticated user APIs, session and logout exercised. Existing backend authentication, cookie-origin and access tests retained; frontend does not store auth tokens in localStorage |
 | Public demo | Allowlisted case fields only, no fetch/provider calls, no private endpoint or account IDs. Text is rendered through `textContent`; JSON embedding escapes `<`. Static CSP disallows external scripts, connections and forms |
 | Frontend dependencies | Nuxt 4.4.6 → 4.5.1, Vue 3.5.34 → 3.5.42, ECharts 6.0.0 → 6.1.0; h3 1.15.11 explicitly aligned to avoid duplicate-event-type errors. Docker build/runtime moves from Node 20 to Node 22, matching upgraded Nuxt requirements and CI. Typecheck, 13 tests and local production build passed |
@@ -26,7 +26,7 @@ No general CVSS threshold was lowered. No library was globally excluded. Medium/
 
 **SEC-01 — High, dependency review remains open.** The frontend audit still includes high advisories in build/development tooling and UI/editor dependencies. Paths include ESLint glob/YAML tools, PostCSS/source maps, Nuxt CLI TLS tooling, and Tiptap/ProseMirror. A framework dependency manifest can include build tools even with `audit --prod`; this review has not proved every advisory unreachable. The shipped pages do not currently use an editor/paste surface. Do not ingest untrusted projects/configurations through development tooling or expose development servers. Review these remaining dependencies before operating an internet-facing multi-user service.
 
-Locations: `frontend/package.json`, `frontend/pnpm-lock.yaml`; generated audit evidence is intentionally local, not a customer-data/log upload.
+Locations: `frontend/package.json`, `frontend/pnpm-lock.yaml`; audit results refer to the dependency versions checked on the date above.
 
 **SEC-04 — Critical alerts in development/test dependencies (checked 2026-10-20).** GitHub's complete dependency graph reports **3 critical / 24 high / 14 moderate / 2 low** open alerts. The three critical entries concern development-only Vitest and its Tinypool dependency: [Vitest UI server](https://github.com/advisories/GHSA-5xrq-8626-4rwp), [Tinypool worker options](https://github.com/advisories/GHSA-5gmw-xhrv-c9v3), [Tinypool run options](https://github.com/advisories/GHSA-85c8-ppgw-ccpr). The existing test command uses `vitest run`, not a public UI server. These alerts remain unresolved; no claim of zero critical findings across the entire repository is made. They are not shipped to the static Pages demo. Review/update test tooling before exposing any test/development service or executing untrusted input through it.
 
@@ -36,8 +36,8 @@ Locations: `frontend/package.json`, `frontend/pnpm-lock.yaml`; generated audit e
 
 Backend identity/authorization references: `backend/src/main/java/com/geoprobe/config/SecurityConfig.java`, `filter/JwtAuthFilter.java`, `filter/AuthCookieOriginGuardFilter.java`, and existing authentication/access tests. New static-viewer input handling is in `docs/demo/case-viewer.js`.
 
-## Release decision
+## Deployment guidance
 
-Publish the source and no-key case as an early community preview, keeping all these limits visible. This decision follows the owner's explicit direction to publish after execution verification and defer additional functional polishing. It is not a stable or production-security certification. No additional real model calls were made for this release preparation.
+Keep the default loopback binding for local use. Public multi-user hosting requires a separate review of access control, rate limits, provider access and the outstanding dependencies above.
 
-Local and CI source checks use `python3 scripts/release_check.py`; CI also builds/tests Java and Nuxt and rejects critical frontend **production-dependency** advisories. Development/test dependency alerts, other remaining advisories and SpotBugs warnings are documented, not silently counted as passed. Future security work should target a demonstrated exposure or an intended hosting boundary.
+Local and CI source checks use `python3 scripts/release_check.py`; CI also builds/tests Java and Nuxt and rejects critical frontend **production-dependency** advisories. Development/test dependency alerts, other remaining advisories and SpotBugs warnings are documented, not silently counted as passed.

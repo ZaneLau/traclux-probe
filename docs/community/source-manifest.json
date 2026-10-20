@@ -3511,7 +3511,7 @@
         {
           "path": "frontend/README.md",
           "sha256": "dc2f22333d581c22d5de208fca6e1d56ddba56e2be303eabd95c2ecfaf42860e",
-          "exported_sha256": "dc2f22333d581c22d5de208fca6e1d56ddba56e2be303eabd95c2ecfaf42860e"
+          "exported_sha256": "cb1e4c7bc5883aed57ffee071678fc0bbc5ad98a02e4f1c39f2b8ff15fa58a55"
         },
         {
           "path": "frontend/app/app.config.ts",

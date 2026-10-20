@@ -1,17 +1,24 @@
-# Captured real-model case
+# Saved-case demo
 
-This demo uses the existing approved native HTML list/search/detail presentation, with reviewed fields from the 2026-10-20 Anker / USB-C charger run. It is a standalone read-only viewer, not the authenticated workbench or a live model service.
+The [public demo](https://zanelau.github.io/traclux-probe/demo/) displays an Anker / USB-C charger run recorded on 2026-10-20. Visitors can search five questions, inspect their six CSSM-HI state tags, expand generation metadata and read response excerpts.
 
-- Five actual generated questions and successful execution records.
-- Each question now includes its saved six-dimensional abstract/category tags, bucket and generation flags. Read-only export matched every stored question exactly; there are no reconstructed historical tags. English question summaries and state glosses are editorial reading aids, separate from the unchanged saved Chinese tags/codes.
-- Four exact answer excerpts; one answer body is withheld because it contains unverified brand/safety claims. No replacement answers are invented.
-- Public model name and capture time; private endpoint IDs, account IDs, keys and raw task payloads excluded.
-- Zero citations: web search was off. API answers are not consumer-client measurements.
+## Data
 
-Edit only reviewed `case.json` fields, then run `python3 scripts/build_community_demo.py`. The generated `index.html` embeds exactly that JSON with script-termination escaping. The viewer uses DOM textContent, has no fetch or provider calls, and ships no external scripts or fonts.
+`case.json` contains the generated questions, saved state codes and category wording, generation flags, model name, capture time and latency. English summaries explain the Chinese questions and tags. Four responses have exact excerpts; response #4 is omitted because it contains unsupported brand and safety claims. Web search was disabled, so the case has no citations.
 
-The existing detail panel's provenance list now shows the six saved states. Its native disclosure exposes exact codes/flags; the original question, answer excerpt, model and latency remain available. This is a content/provenance extension of the approved list/detail presentation, not a new page layout. See the [generation walkthrough](../community/generation-walkthrough.md) for the source map and interpretation boundaries.
+See the [generation walkthrough](../community/generation-walkthrough.md) for the method and source code.
 
-Public cost rule: no login, live generation, trial proxy or author-funded endpoint. Keep `connect-src 'none'` and `form-action 'none'`. New generation belongs in the self-hosted app with the visitor's own provider account. No API key is accepted by this viewer.
+## Update the demo
 
-The inherited presentation was approved using Promptfoo's viewer and Langfuse's demo as references; their code and assets are not copied. Current adaptations retain the list/search/detail interaction and replace selection-comparison claims with actual execution results. The v0.1.0 demo remains available in its Git tag.
+Edit `template.html`, `case-viewer.js` or reviewed fields in `case.json`, then rebuild:
+
+```bash
+python3 scripts/build_community_demo.py
+python3 scripts/release_check.py
+```
+
+The build embeds the JSON in `index.html`, escapes script-termination characters and versions the CSS/JavaScript URLs by content hash. Use a local HTTP server to preview `docs/demo/`.
+
+The viewer uses `textContent`, loads no external scripts or fonts, and makes no API requests. Keep `connect-src 'none'` and `form-action 'none'` when editing. New model runs belong in the self-hosted application.
+
+The earlier selection demo is available in the [v0.1.0 tag](https://github.com/ZaneLau/traclux-probe/tree/v0.1.0/docs/demo).

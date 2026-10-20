@@ -45,8 +45,8 @@ function showDetails(q) {
   byId("plan-topic").textContent = `Plan topic: ${q.topic}. The plan label and final wording can diverge in this preview.`;
   byId("answer").textContent = q.answerExcerpt || q.publicNote;
   byId("answer-note").textContent = q.answerExcerpt
-    ? "Exact excerpt from the saved response; omitted sections are not reproduced. Model claims are unverified. 原始回答节录，非完整回答。"
-    : "The question and execution status are retained. No replacement answer has been invented.";
+    ? "Excerpt from the saved response. Model claims are unverified. 原始回答摘录，内容未经事实核验。"
+    : "Answer omitted because it contains unsupported brand and safety claims. 问题与执行记录仍可查看。";
   for (const b of byId("questions").querySelectorAll("button")) b.setAttribute("aria-pressed",String(Number(b.dataset.number)===selected));
 }
 function renderList() {
