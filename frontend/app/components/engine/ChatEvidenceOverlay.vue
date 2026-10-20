@@ -28,6 +28,8 @@ interface ChatEvidenceOverlayItem {
   } | null
 }
 
+const demoMode = useRuntimeConfig().public.demoMode === true
+
 const props = defineProps<{
   modelValue: string | null
   chats: ChatEvidenceOverlayItem[]
@@ -186,7 +188,7 @@ function resolveChatPlatformLabel(value?: string | null) {
           >
             <section class="evidence-section">
               <div class="evidence-section__head">
-                <strong>原始回答</strong>
+                <strong>{{ demoMode ? '回答摘录' : '原始回答' }}</strong>
                 <span>{{ currentChat.answer ? '已记录' : '未记录' }}</span>
               </div>
               <div class="evidence-overlay__answer">

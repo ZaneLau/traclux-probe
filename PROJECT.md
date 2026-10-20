@@ -17,3 +17,5 @@ Traclux is a self-hosted GEO workbench for CSSM-HI probe generation, model execu
 - Review outstanding development-tool and application dependency alerts.
 
 New runs use the configured provider account. The public demo remains a saved-case viewer.
+
+The public demo uses the Nuxt workbench in read-only mode, with one captured Anker run. The explanatory CSSM-HI case is available at `/demo/case-study/`.

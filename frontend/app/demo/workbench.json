@@ -1,0 +1,2645 @@
+{
+  "/brand-spaces": {
+    "items": [
+      {
+        "brandSpaceId": "demo-anker",
+        "brandId": "demo-71e3b2fa3bda",
+        "brandScopeId": "demo-anker",
+        "brandName": "Anker",
+        "category": "USB-C充电器",
+        "officialWebsite": "https://www.anker.com/",
+        "primaryDomain": "www.anker.com",
+        "status": "active",
+        "latestRunId": "demo-run-20261020",
+        "latestReportId": "demo-a70fb0a0672c",
+        "lastGeneratedAt": "2026-10-20T00:55:47",
+        "visibilityScore": 7.0,
+        "recommendRate": 0.0,
+        "mentionRate": 20.0,
+        "top3Rate": 0.0,
+        "serviceAccessStatus": "trial",
+        "trackingStatus": "PAUSED",
+        "healthStatus": "HEALTHY",
+        "configReady": true,
+        "activePromptCount": 10,
+        "probePlanStatus": "confirmed",
+        "probePlanVersionNo": 1,
+        "activeRecurringProbeCount": 0,
+        "lastRunStatus": "completed",
+        "lastRunAt": "2026-10-19T16:52:54",
+        "latestSchedule": {
+          "triggerMode": "create_initial_run",
+          "targetProbeCount": 5,
+          "coverageStrategy": "cold_start_wide_coverage",
+          "schedulingReason": "今天是新品牌首跑，优先做宽覆盖；今天因为可用积分有限，部分主题延后到后续轮次",
+          "selectedTopicCount": 5,
+          "selectedTopicNames": [
+            "USB-C充电器选购场景",
+            "竞品对比",
+            "官网与信任线索",
+            "真实体验口碑",
+            "价格与性价比"
+          ],
+          "deferredTopicCount": 5,
+          "deferredTopicNames": [
+            "人群与使用场景",
+            "USB-C充电器核心卖点",
+            "决策顾虑",
+            "推荐与替代品牌",
+            "购买决策阻力"
+          ],
+          "coldStart": true,
+          "justEdited": false,
+          "quotaLimited": true,
+          "brandCoreProbeCount": 40,
+          "brandExpansionProbeCount": 50,
+          "weeklyTargetTopicCount": 10,
+          "weeklyCoveredTopicCount": 0,
+          "weeklyGapTopicCount": 10,
+          "weeklyCoverageRatio": 0.0
+        }
+      }
+    ],
+    "total": 1
+  },
+  "/brand-spaces/archived": {
+    "items": [],
+    "total": 0
+  },
+  "/brand-spaces/demo-anker/basic-profile": {
+    "brandSpaceId": "demo-anker",
+    "brandId": "demo-71e3b2fa3bda",
+    "brandName": "Anker",
+    "category": "USB-C充电器",
+    "officialWebsite": "https://www.anker.com/",
+    "primaryDomain": "www.anker.com",
+    "competitors": [
+      "UGREEN",
+      "Baseus",
+      "Belkin"
+    ]
+  },
+  "/brand-spaces/demo-anker/config": {
+    "brandSpaceId": "demo-anker",
+    "brandId": "demo-71e3b2fa3bda",
+    "brandName": "Anker",
+    "configGeneration": 1,
+    "topics": [
+      {
+        "topicId": "demo-61b727a69373",
+        "name": "USB-C充电器选购场景",
+        "description": "围绕Anker在USB-C充电器基础决策中的真实问法。",
+        "seqNo": 1,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-65eebbfd3f50",
+        "name": "竞品对比",
+        "description": "聚焦Anker与UGREEN、Baseus、Belkin的差异化比较。",
+        "seqNo": 2,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-d3bbdd502be5",
+        "name": "官网与信任线索",
+        "description": "关注官网 www.anker.com、可信来源和品牌自身表达是否被模型吸收。",
+        "seqNo": 3,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-9a7fefd7c9b4",
+        "name": "真实体验口碑",
+        "description": "聚焦消费者真实体验、常见优缺点和被反复提到的风险点。",
+        "seqNo": 4,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-5abb41eb0177",
+        "name": "价格与性价比",
+        "description": "关注Anker在同品类价格带中的位置，以及被推荐时的性价比理由。",
+        "seqNo": 5,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-35b5d3382cd1",
+        "name": "人群与使用场景",
+        "description": "看模型是否能把Anker放进合适的人群、场景和需求语境里。",
+        "seqNo": 6,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-546095e57814",
+        "name": "USB-C充电器核心卖点",
+        "description": "拆解Anker最值得被提到的卖点，以及它和UGREEN的差异。",
+        "seqNo": 7,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-671748162f56",
+        "name": "决策顾虑",
+        "description": "识别这个品类里最容易让用户犹豫的风险点，看品牌是否能被有效解释。",
+        "seqNo": 8,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-7e5feb4957cf",
+        "name": "推荐与替代品牌",
+        "description": "观察模型在不点名时，会不会主动把Anker放进推荐名单。",
+        "seqNo": 9,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "topicId": "demo-631804fc772f",
+        "name": "购买决策阻力",
+        "description": "识别用户在下单前最可能追问的顾虑、误解和决策阻力。",
+        "seqNo": 10,
+        "enabled": true,
+        "source": "system_generated",
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      }
+    ],
+    "prompts": [
+      {
+        "promptId": "demo-5520a2b8ef9e",
+        "topicId": "demo-61b727a69373",
+        "topicName": "USB-C充电器选购场景",
+        "seqNo": 1,
+        "text": "USB-C充电器怎么选，哪些品牌更值得先加入候选？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-22ba2644cfd6",
+        "topicId": "demo-65eebbfd3f50",
+        "topicName": "竞品对比",
+        "seqNo": 2,
+        "text": "Anker和UGREEN相比，谁更适合大多数USB-C充电器用户？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-ca040948200c",
+        "topicId": "demo-d3bbdd502be5",
+        "topicName": "官网与信任线索",
+        "seqNo": 3,
+        "text": "判断一个USB-C充电器品牌是否靠谱，应该优先看官网、资质还是第三方口碑？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-3b62d7ce6fd3",
+        "topicId": "demo-9a7fefd7c9b4",
+        "topicName": "真实体验口碑",
+        "seqNo": 4,
+        "text": "用户讨论USB-C充电器品牌时，最常提到的优缺点和风险点是什么？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-89ec1b9b4895",
+        "topicId": "demo-5abb41eb0177",
+        "topicName": "价格与性价比",
+        "seqNo": 5,
+        "text": "同价位USB-C充电器里，哪些品牌更容易被认为性价比高？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-7874387f3d7c",
+        "topicId": "demo-35b5d3382cd1",
+        "topicName": "人群与使用场景",
+        "seqNo": 6,
+        "text": "什么人、什么使用场景更需要优先看USB-C充电器品牌的适配度？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-de7917fe7cc0",
+        "topicId": "demo-546095e57814",
+        "topicName": "USB-C充电器核心卖点",
+        "seqNo": 7,
+        "text": "在USB-C充电器里，哪些卖点最容易真正影响选择，而不只是宣传口号？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-7c8b23cc61fc",
+        "topicId": "demo-671748162f56",
+        "topicName": "决策顾虑",
+        "seqNo": 8,
+        "text": "用户在买USB-C充电器时最怕踩哪些坑，Anker通常会不会被拿来对比？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-9ff5a85f812b",
+        "topicId": "demo-7e5feb4957cf",
+        "topicName": "推荐与替代品牌",
+        "seqNo": 9,
+        "text": "如果不指定品牌，AI 会推荐Anker还是其他USB-C充电器品牌？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      },
+      {
+        "promptId": "demo-9ca84434d7cd",
+        "topicId": "demo-631804fc772f",
+        "topicName": "购买决策阻力",
+        "seqNo": 10,
+        "text": "用户在考虑USB-C充电器时，最常见的顾虑和劝退点是什么？",
+        "enabled": true,
+        "source": "system_generated",
+        "regionCode": "CN",
+        "locale": "zh-CN",
+        "language": "zh-CN",
+        "createdAt": "2026-10-19T16:52:54",
+        "updatedAt": "2026-10-19T16:52:54"
+      }
+    ],
+    "runConfig": {
+      "targetProbeCount": 5,
+      "targetModelProduct": "doubao",
+      "autoRunEnabled": false
+    },
+    "summary": {
+      "topicCount": 10,
+      "enabledTopicCount": 10,
+      "promptCount": 10,
+      "enabledPromptCount": 10
+    },
+    "capabilities": {
+      "canRead": true,
+      "canCreateTopic": false,
+      "canUpdateTopic": false,
+      "canReorderTopic": false,
+      "canCreatePrompt": false,
+      "canUpdatePrompt": false,
+      "canReorderPrompt": false,
+      "canRegenerateSystemConfig": false,
+      "regenerationRecommended": false,
+      "tagTruthObjectSupported": false
+    }
+  },
+  "/brand-spaces/demo-anker/probe-plan": {
+    "contractVersion": "brand_space_probe_plan_b1",
+    "brandSpaceId": "demo-anker",
+    "currentRunConfig": {
+      "targetProbeCount": 5,
+      "targetModelProduct": "doubao",
+      "autoRunEnabled": false
+    },
+    "currentPlan": {
+      "planVersionId": "demo-3aebb82070a7",
+      "versionNo": 1,
+      "activeRecurringProbeCount": 0,
+      "configGeneration": 1,
+      "snapshot": {
+        "probes": [
+          {
+            "seqNo": 1,
+            "prompt": "USB-C充电器怎么选，哪些品牌更值得先加入候选？",
+            "enabled": true,
+            "probeId": "demo-5520a2b8ef9e",
+            "topicId": "demo-61b727a69373",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 2,
+            "prompt": "Anker和UGREEN相比，谁更适合大多数USB-C充电器用户？",
+            "enabled": true,
+            "probeId": "demo-22ba2644cfd6",
+            "topicId": "demo-65eebbfd3f50",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 3,
+            "prompt": "判断一个USB-C充电器品牌是否靠谱，应该优先看官网、资质还是第三方口碑？",
+            "enabled": true,
+            "probeId": "demo-ca040948200c",
+            "topicId": "demo-d3bbdd502be5",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 4,
+            "prompt": "用户讨论USB-C充电器品牌时，最常提到的优缺点和风险点是什么？",
+            "enabled": true,
+            "probeId": "demo-3b62d7ce6fd3",
+            "topicId": "demo-9a7fefd7c9b4",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 5,
+            "prompt": "同价位USB-C充电器里，哪些品牌更容易被认为性价比高？",
+            "enabled": true,
+            "probeId": "demo-89ec1b9b4895",
+            "topicId": "demo-5abb41eb0177",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 6,
+            "prompt": "什么人、什么使用场景更需要优先看USB-C充电器品牌的适配度？",
+            "enabled": true,
+            "probeId": "demo-7874387f3d7c",
+            "topicId": "demo-35b5d3382cd1",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 7,
+            "prompt": "在USB-C充电器里，哪些卖点最容易真正影响选择，而不只是宣传口号？",
+            "enabled": true,
+            "probeId": "demo-de7917fe7cc0",
+            "topicId": "demo-546095e57814",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 8,
+            "prompt": "用户在买USB-C充电器时最怕踩哪些坑，Anker通常会不会被拿来对比？",
+            "enabled": true,
+            "probeId": "demo-7c8b23cc61fc",
+            "topicId": "demo-671748162f56",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 9,
+            "prompt": "如果不指定品牌，AI 会推荐Anker还是其他USB-C充电器品牌？",
+            "enabled": true,
+            "probeId": "demo-9ff5a85f812b",
+            "topicId": "demo-7e5feb4957cf",
+            "sourceCode": 0
+          },
+          {
+            "seqNo": 10,
+            "prompt": "用户在考虑USB-C充电器时，最常见的顾虑和劝退点是什么？",
+            "enabled": true,
+            "probeId": "demo-9ca84434d7cd",
+            "topicId": "demo-631804fc772f",
+            "sourceCode": 0
+          }
+        ],
+        "topics": [
+          {
+            "name": "USB-C充电器选购场景",
+            "seqNo": 1,
+            "enabled": true,
+            "topicId": "demo-61b727a69373"
+          },
+          {
+            "name": "竞品对比",
+            "seqNo": 2,
+            "enabled": true,
+            "topicId": "demo-65eebbfd3f50"
+          },
+          {
+            "name": "官网与信任线索",
+            "seqNo": 3,
+            "enabled": true,
+            "topicId": "demo-d3bbdd502be5"
+          },
+          {
+            "name": "真实体验口碑",
+            "seqNo": 4,
+            "enabled": true,
+            "topicId": "demo-9a7fefd7c9b4"
+          },
+          {
+            "name": "价格与性价比",
+            "seqNo": 5,
+            "enabled": true,
+            "topicId": "demo-5abb41eb0177"
+          },
+          {
+            "name": "人群与使用场景",
+            "seqNo": 6,
+            "enabled": true,
+            "topicId": "demo-35b5d3382cd1"
+          },
+          {
+            "name": "USB-C充电器核心卖点",
+            "seqNo": 7,
+            "enabled": true,
+            "topicId": "demo-546095e57814"
+          },
+          {
+            "name": "决策顾虑",
+            "seqNo": 8,
+            "enabled": true,
+            "topicId": "demo-671748162f56"
+          },
+          {
+            "name": "推荐与替代品牌",
+            "seqNo": 9,
+            "enabled": true,
+            "topicId": "demo-7e5feb4957cf"
+          },
+          {
+            "name": "购买决策阻力",
+            "seqNo": 10,
+            "enabled": true,
+            "topicId": "demo-631804fc772f"
+          }
+        ],
+        "brandId": "demo-71e3b2fa3bda",
+        "brandName": "Anker",
+        "createdAt": "2026-10-20T00:52:54.360080012",
+        "brandSpaceId": "demo-anker",
+        "contractVersion": "probe_plan_b1",
+        "configGeneration": 1,
+        "targetModelProduct": "doubao"
+      },
+      "items": [
+        {
+          "probeId": "demo-5520a2b8ef9e",
+          "topicId": "demo-61b727a69373",
+          "seqNo": 1,
+          "promptText": "USB-C充电器怎么选，哪些品牌更值得先加入候选？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-22ba2644cfd6",
+          "topicId": "demo-65eebbfd3f50",
+          "seqNo": 2,
+          "promptText": "Anker和UGREEN相比，谁更适合大多数USB-C充电器用户？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-ca040948200c",
+          "topicId": "demo-d3bbdd502be5",
+          "seqNo": 3,
+          "promptText": "判断一个USB-C充电器品牌是否靠谱，应该优先看官网、资质还是第三方口碑？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-3b62d7ce6fd3",
+          "topicId": "demo-9a7fefd7c9b4",
+          "seqNo": 4,
+          "promptText": "用户讨论USB-C充电器品牌时，最常提到的优缺点和风险点是什么？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-89ec1b9b4895",
+          "topicId": "demo-5abb41eb0177",
+          "seqNo": 5,
+          "promptText": "同价位USB-C充电器里，哪些品牌更容易被认为性价比高？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-7874387f3d7c",
+          "topicId": "demo-35b5d3382cd1",
+          "seqNo": 6,
+          "promptText": "什么人、什么使用场景更需要优先看USB-C充电器品牌的适配度？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-de7917fe7cc0",
+          "topicId": "demo-546095e57814",
+          "seqNo": 7,
+          "promptText": "在USB-C充电器里，哪些卖点最容易真正影响选择，而不只是宣传口号？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-7c8b23cc61fc",
+          "topicId": "demo-671748162f56",
+          "seqNo": 8,
+          "promptText": "用户在买USB-C充电器时最怕踩哪些坑，Anker通常会不会被拿来对比？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-9ff5a85f812b",
+          "topicId": "demo-7e5feb4957cf",
+          "seqNo": 9,
+          "promptText": "如果不指定品牌，AI 会推荐Anker还是其他USB-C充电器品牌？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        },
+        {
+          "probeId": "demo-9ca84434d7cd",
+          "topicId": "demo-631804fc772f",
+          "seqNo": 10,
+          "promptText": "用户在考虑USB-C充电器时，最常见的顾虑和劝退点是什么？",
+          "actionCode": "ADD",
+          "executeModeCode": "ONE_TIME"
+        }
+      ]
+    },
+    "recentRecords": [
+      {
+        "planRecordId": "demo-3a0ab3c0df94",
+        "planVersionId": "demo-3aebb82070a7",
+        "recordNo": 1,
+        "changeTypeCode": "INITIAL_CONFIRM",
+        "executeModeCode": "ONE_TIME",
+        "triggeredRunId": "demo-run-20261020",
+        "summary": {
+          "brandName": "Anker",
+          "probeCount": 10,
+          "topicCount": 10,
+          "brandSpaceId": "demo-anker",
+          "triggeredRunId": "demo-run-20261020",
+          "contractVersion": "probe_plan_b1",
+          "enabledProbeCount": 5,
+          "targetModelProduct": "doubao",
+          "executionTargetProbeCount": 5
+        },
+        "createdAt": "2026-10-19T16:52:54"
+      }
+    ]
+  },
+  "/brand-spaces/demo-anker/runs": {
+    "brandSpaceId": "demo-anker",
+    "brandName": "Anker / USB-C充电器",
+    "dateFrom": "2026-10-07",
+    "dateTo": "2026-10-20",
+    "totalRuns": 1,
+    "items": [
+      {
+        "runId": "demo-run-20261020",
+        "runDate": "2026-10-20",
+        "startedAt": "2026-10-20T00:52:54",
+        "completedAt": "2026-10-20T00:55:47",
+        "updatedAt": "2026-10-20T00:55:47",
+        "triggerMode": "create_initial_run",
+        "triggerLabel": "首次运行",
+        "status": "completed",
+        "statusLabel": "已完成",
+        "plannedProbeCount": 5,
+        "completedProbeCount": 5,
+        "failedProbeCount": 0,
+        "coverageTopicCount": 5,
+        "evidenceCount": 0,
+        "schedulingReason": "今天是新品牌首跑，优先做宽覆盖；今天因为可用积分有限，部分主题延后到后续轮次",
+        "planTrace": {
+          "planVersionId": "demo-3aebb82070a7",
+          "planVersionNo": 1,
+          "planRecordId": "demo-3a0ab3c0df94",
+          "planRecordNo": 1,
+          "executeModeCode": "ONE_TIME",
+          "coveredTopicCount": 5,
+          "plannedProbeCount": 5
+        }
+      }
+    ]
+  },
+  "/brand-spaces/demo-anker/runs/demo-run-20261020": {
+    "brandSpaceId": "demo-anker",
+    "brandName": "Anker / USB-C充电器",
+    "runId": "demo-run-20261020",
+    "overview": {
+      "runDate": "2026-10-20",
+      "startedAt": "2026-10-20T00:52:54",
+      "completedAt": "2026-10-20T00:55:47",
+      "updatedAt": "2026-10-20T00:55:47",
+      "durationSeconds": 173,
+      "triggerMode": "create_initial_run",
+      "triggerLabel": "首次运行",
+      "status": "completed",
+      "statusLabel": "已完成",
+      "plannedProbeCount": 5,
+      "completedProbeCount": 5,
+      "failedProbeCount": 0,
+      "evidenceCount": 0,
+      "coverageTopicCount": 5,
+      "reportGeneratedAt": "2026-10-20T00:55:47"
+    },
+    "planTrace": {
+      "planVersionId": "demo-3aebb82070a7",
+      "planVersionNo": 1,
+      "planRecordId": "demo-3a0ab3c0df94",
+      "planRecordNo": 1,
+      "executeModeCode": "ONE_TIME",
+      "coveredTopicCount": 5,
+      "plannedProbeCount": 5
+    },
+    "scheduleDecision": {
+      "snapshotAvailable": true,
+      "coverageStrategy": "cold_start_wide_coverage",
+      "schedulingReason": "这次是新品牌首跑，先执行 5 个主题；其余 5 个主题留待后续运行。",
+      "coldStart": true,
+      "justEdited": false,
+      "weeklyTargetTopicCount": 10,
+      "weeklyCoveredTopicCount": 0,
+      "weeklyGapTopicCount": 10,
+      "weeklyCoverageRatio": 0.0,
+      "selectedTopics": [
+        {
+          "topicId": "topic_tmp_1",
+          "topicName": "USB-C充电器选购场景",
+          "plannedProbeCount": 1,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_2",
+          "topicName": "竞品对比",
+          "plannedProbeCount": 1,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_3",
+          "topicName": "官网与信任线索",
+          "plannedProbeCount": 1,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_4",
+          "topicName": "真实体验口碑",
+          "plannedProbeCount": 1,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_5",
+          "topicName": "价格与性价比",
+          "plannedProbeCount": 1,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        }
+      ],
+      "deferredTopics": [
+        {
+          "topicId": "topic_tmp_6",
+          "topicName": "人群与使用场景",
+          "plannedProbeCount": 0,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_7",
+          "topicName": "USB-C充电器核心卖点",
+          "plannedProbeCount": 0,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_8",
+          "topicName": "决策顾虑",
+          "plannedProbeCount": 0,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_9",
+          "topicName": "推荐与替代品牌",
+          "plannedProbeCount": 0,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_10",
+          "topicName": "购买决策阻力",
+          "plannedProbeCount": 0,
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        }
+      ]
+    },
+    "executionRecord": {
+      "selectedTopicCount": 5,
+      "deferredTopicCount": 5,
+      "completedProbeCount": 5,
+      "failedProbeCount": 0,
+      "topicExecutions": [
+        {
+          "topicId": "topic_tmp_1",
+          "topicName": "USB-C充电器选购场景",
+          "plannedProbeCount": 1,
+          "promptCount": 1,
+          "promptSamples": [
+            "USB-C充电器怎么选，哪些品牌更值得先加入候选？"
+          ],
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_2",
+          "topicName": "竞品对比",
+          "plannedProbeCount": 1,
+          "promptCount": 1,
+          "promptSamples": [
+            "Anker和UGREEN相比，谁更适合大多数USB-C充电器用户？"
+          ],
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_3",
+          "topicName": "官网与信任线索",
+          "plannedProbeCount": 1,
+          "promptCount": 1,
+          "promptSamples": [
+            "判断一个USB-C充电器品牌是否靠谱，应该优先看官网、资质还是第三方口碑？"
+          ],
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_4",
+          "topicName": "真实体验口碑",
+          "plannedProbeCount": 1,
+          "promptCount": 1,
+          "promptSamples": [
+            "用户讨论USB-C充电器品牌时，最常提到的优缺点和风险点是什么？"
+          ],
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        },
+        {
+          "topicId": "topic_tmp_5",
+          "topicName": "价格与性价比",
+          "plannedProbeCount": 1,
+          "promptCount": 1,
+          "promptSamples": [
+            "同价位USB-C充电器里，哪些品牌更容易被认为性价比高？"
+          ],
+          "priorityScore": 0.6,
+          "reasonTags": [
+            "冷启动",
+            "补债"
+          ]
+        }
+      ],
+      "probeExecutions": [
+        {
+          "probeId": "demo-37485b10017f",
+          "probeRef": "demo-83952ac9c239",
+          "seqNo": 1,
+          "topicId": "demo-61b727a69373",
+          "topicName": "USB-C充电器选购场景",
+          "promptId": "demo-5520a2b8ef9e",
+          "renderedPrompt": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+          "modelId": "doubao-seed-2-0-lite-260428",
+          "status": "succeeded",
+          "statusLabel": "成功",
+          "evidenceCount": 0,
+          "latencyMs": 57530,
+          "createdAt": "2026-10-19T16:55:46"
+        },
+        {
+          "probeId": "demo-cad824f8f56f",
+          "probeRef": "demo-2011bb2a526b",
+          "seqNo": 2,
+          "topicId": "demo-65eebbfd3f50",
+          "topicName": "竞品对比",
+          "promptId": "demo-22ba2644cfd6",
+          "renderedPrompt": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+          "modelId": "doubao-seed-2-0-lite-260428",
+          "status": "succeeded",
+          "statusLabel": "成功",
+          "evidenceCount": 0,
+          "latencyMs": 63182,
+          "createdAt": "2026-10-19T16:55:46"
+        },
+        {
+          "probeId": "demo-574c79a1fd54",
+          "probeRef": "demo-5bf80c2aff38",
+          "seqNo": 3,
+          "topicId": "demo-d3bbdd502be5",
+          "topicName": "官网与信任线索",
+          "promptId": "demo-ca040948200c",
+          "renderedPrompt": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+          "modelId": "doubao-seed-2-0-lite-260428",
+          "status": "succeeded",
+          "statusLabel": "成功",
+          "evidenceCount": 0,
+          "latencyMs": 74700,
+          "createdAt": "2026-10-19T16:55:46"
+        },
+        {
+          "probeId": "demo-c64402acf33d",
+          "probeRef": "demo-80a4501ff6f8",
+          "seqNo": 4,
+          "topicId": "demo-9a7fefd7c9b4",
+          "topicName": "真实体验口碑",
+          "promptId": "demo-3b62d7ce6fd3",
+          "renderedPrompt": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+          "modelId": "doubao-seed-2-0-lite-260428",
+          "status": "succeeded",
+          "statusLabel": "成功",
+          "evidenceCount": 0,
+          "latencyMs": 62870,
+          "createdAt": "2026-10-19T16:55:46"
+        },
+        {
+          "probeId": "demo-b57757d497b7",
+          "probeRef": "demo-f298502e0b28",
+          "seqNo": 5,
+          "topicId": "demo-5abb41eb0177",
+          "topicName": "价格与性价比",
+          "promptId": "demo-89ec1b9b4895",
+          "renderedPrompt": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+          "modelId": "doubao-seed-2-0-lite-260428",
+          "status": "succeeded",
+          "statusLabel": "成功",
+          "evidenceCount": 0,
+          "latencyMs": 80492,
+          "createdAt": "2026-10-19T16:55:46"
+        }
+      ],
+      "milestones": [
+        {
+          "type": "run_started",
+          "label": "运行开始",
+          "createdAt": "2026-10-20T00:52:54"
+        },
+        {
+          "type": "step_changed",
+          "label": "阶段变化",
+          "createdAt": "2026-10-19T16:55:46",
+          "summary": "诊断完成，报告已可查看"
+        },
+        {
+          "type": "aggregation_completed",
+          "label": "聚合完成",
+          "createdAt": "2026-10-20T00:55:47",
+          "summary": "demo-a70fb0a0672c"
+        },
+        {
+          "type": "run_completed",
+          "label": "运行完成",
+          "createdAt": "2026-10-20T00:55:47"
+        }
+      ]
+    }
+  },
+  "/runs/demo-run-20261020": {
+    "runId": "demo-run-20261020",
+    "brandSpaceId": "demo-anker",
+    "brandName": "Anker",
+    "status": "completed",
+    "progressPercent": 100.0,
+    "currentStep": "completed",
+    "currentStepLabel": "诊断完成，报告已可查看",
+    "startedAt": "2026-10-20T00:52:54",
+    "completedAt": "2026-10-20T00:55:47",
+    "latestEventSeq": 22
+  },
+  "/runs/demo-run-20261020/events": {
+    "events": [
+      {
+        "seq": 1,
+        "type": "run_started",
+        "provisional": false,
+        "createdAt": "2026-10-20T00:52:54"
+      },
+      {
+        "seq": 2,
+        "type": "step_changed",
+        "provisional": false,
+        "createdAt": "2026-10-19T16:55:46"
+      },
+      {
+        "seq": 12,
+        "type": "aggregation_completed",
+        "provisional": false,
+        "createdAt": "2026-10-20T00:55:47"
+      },
+      {
+        "seq": 22,
+        "type": "run_completed",
+        "provisional": false,
+        "createdAt": "2026-10-20T00:55:47"
+      }
+    ],
+    "nextSeq": 22
+  },
+  "/workbench/overview": {
+    "brandSpaceId": "demo-anker",
+    "brandId": "demo-71e3b2fa3bda",
+    "brandName": "Anker",
+    "category": "USB-C充电器",
+    "officialWebsite": "https://www.anker.com/",
+    "primaryDomain": "www.anker.com",
+    "brandSpaceStatus": "active",
+    "latestRunId": "demo-run-20261020",
+    "latestReportId": "demo-a70fb0a0672c",
+    "lastGeneratedAt": "2026-10-20T00:55:47",
+    "analysisContext": {
+      "timePreset": "last_14_days",
+      "dateFrom": "2026-10-07",
+      "dateTo": "2026-10-20",
+      "windowKey": "last_14_days",
+      "comparison": "previous_period",
+      "frequency": "day",
+      "platforms": [],
+      "availablePlatforms": [
+        "豆包"
+      ],
+      "channelFilters": {},
+      "supportedDimensions": [
+        "timeRange",
+        "platforms",
+        "comparison",
+        "frequency",
+        "metrics"
+      ],
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
+      "truthSource": "configuration+knowledge_window_query+knowledge_projection",
+      "sourceWindowKey": "last_14_days",
+      "notes": [
+        "当前结果先按自然时间窗口查询知识运行，不再依赖最近 N 次报告近似裁剪。",
+        "总览优先复用知识运行窗口内的品牌表现与引用来源结果，不再回到旧报告近似窗口。"
+      ]
+    },
+    "dataAvailability": {
+      "status": "partial",
+      "message": "最近一轮未开启联网搜索，当前无可展示引用证据",
+      "reasonCode": "citation_search_disabled",
+      "hasCompletedReport": true,
+      "hasRunningRun": false,
+      "latestRunId": "demo-run-20261020",
+      "latestReportId": "demo-a70fb0a0672c",
+      "missingFields": [
+        "sourceCitations"
+      ],
+      "missingFieldDetails": {
+        "sourceCitations": [
+          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+        ]
+      }
+    },
+    "cards": [
+      {
+        "cardKey": "current_performance",
+        "title": "当前表现",
+        "primary": "7.00",
+        "secondary": "AI 推荐率 0.00% | AI 提及率 20.00%",
+        "detailRouteKey": "engine"
+      },
+      {
+        "cardKey": "trend",
+        "title": "变化趋势",
+        "primary": "趋势样本不足",
+        "secondary": "等待下一轮对比",
+        "detailRouteKey": "engine"
+      },
+      {
+        "cardKey": "priorities",
+        "title": "优先关注",
+        "primary": "竞品压制仍在扩大",
+        "secondary": "先看竞品对比，确认为什么 UGREEN 仍领先。",
+        "detailRouteKey": "probe_analysis"
+      },
+      {
+        "cardKey": "competitor_rank",
+        "title": "竞品排名",
+        "primary": "#1",
+        "secondary": "推荐率领先 Baseus 0.00",
+        "detailRouteKey": "engine"
+      },
+      {
+        "cardKey": "source_citations",
+        "title": "引用信源",
+        "primary": "暂无引用数据",
+        "secondary": "去引用来源查看",
+        "detailRouteKey": "sources"
+      },
+      {
+        "cardKey": "model_performance",
+        "title": "模型表现",
+        "primary": "豆包",
+        "secondary": "可见度 7.00 | 近 1 份报告",
+        "detailRouteKey": "engine"
+      }
+    ],
+    "currentPerformance": {
+      "visibilityScore": 7.0,
+      "competitorVisibilityAverage": 0.0,
+      "recommendRate": 0.0,
+      "mentionRate": 20.0,
+      "top3Rate": 0.0,
+      "abvGrade": null,
+      "headline": "品牌已进入候选池前列，下一步要围绕USB-C充电器选购场景巩固优势。",
+      "generatedAt": "2026-10-20T00:55:47"
+    },
+    "latestInsight": {
+      "generatedAt": "2026-10-20T00:55:47",
+      "engineVersion": "5.0",
+      "runId": "demo-run-20261020",
+      "reportId": "demo-a70fb0a0672c",
+      "insightSource": "knowledge_window_projection",
+      "sampleSize": 5,
+      "headline": "品牌已进入候选池前列，下一步要围绕USB-C充电器选购场景巩固优势。",
+      "items": [
+        {
+          "title": "竞品压制仍在扩大",
+          "evidence": "UGREEN 在当前窗口的心智份额比目标品牌高 80.00 个点。",
+          "evidenceSummary": "UGREEN 在当前窗口的心智份额比目标品牌高 80.00 个点。",
+          "recommendation": "先看竞品对比，确认为什么 UGREEN 仍领先。",
+          "nextStepLabel": "去品牌表现",
+          "nextStepText": "先看竞品对比，确认为什么 UGREEN 仍领先。",
+          "nextStepRouteKey": "engine"
+        }
+      ]
+    },
+    "trend": {
+      "direction": "none",
+      "deltaVisibilityScore": null,
+      "deltaRecommendRate": null,
+      "deltaMentionRate": null,
+      "points": [
+        {
+          "reportId": "demo-a70fb0a0672c",
+          "runId": "demo-run-20261020",
+          "label": "2026-10-20",
+          "generatedAt": "2026-10-20T00:00:00",
+          "visibilityScore": 7.0,
+          "recommendRate": 0.0,
+          "mentionRate": 20.0,
+          "top3Rate": 0.0
+        }
+      ]
+    },
+    "priorities": [
+      {
+        "id": "knowledge_competitor_gap",
+        "title": "竞品压制仍在扩大",
+        "summary": "先看竞品对比，确认为什么 UGREEN 仍领先。",
+        "reason": "UGREEN 在当前窗口的心智份额比目标品牌高 80.00 个点。",
+        "detailRouteKey": "engine"
+      }
+    ],
+    "competitorRows": [
+      {
+        "id": "demo-anker",
+        "brandName": "Anker",
+        "rank": 1,
+        "isTarget": true,
+        "visibilityScore": 7.0,
+        "displayScore": 0.0,
+        "rankingMetric": "recommendRate",
+        "recommendRate": 0.0,
+        "mentionRate": 20.0,
+        "positiveRate": 0.0
+      },
+      {
+        "id": "competitor_baseus",
+        "brandName": "Baseus",
+        "rank": 1,
+        "isTarget": false,
+        "visibilityScore": null,
+        "displayScore": 0.0,
+        "rankingMetric": "recommendRate",
+        "recommendRate": 0.0,
+        "mentionRate": 80.0,
+        "positiveRate": 0.0
+      },
+      {
+        "id": "competitor_ugreen",
+        "brandName": "UGREEN",
+        "rank": 1,
+        "isTarget": false,
+        "visibilityScore": null,
+        "displayScore": 0.0,
+        "rankingMetric": "recommendRate",
+        "recommendRate": 0.0,
+        "mentionRate": 100.0,
+        "positiveRate": 0.0
+      },
+      {
+        "id": "competitor_belkin",
+        "brandName": "Belkin",
+        "rank": 4,
+        "isTarget": false,
+        "visibilityScore": null,
+        "displayScore": null,
+        "rankingMetric": null,
+        "recommendRate": null,
+        "mentionRate": null,
+        "positiveRate": null
+      }
+    ],
+    "sourceRows": [],
+    "modelPerformance": [
+      {
+        "id": "豆包",
+        "label": "豆包",
+        "visibilityScore": 7.0,
+        "recommendRate": 0.0,
+        "mentionRate": 20.0,
+        "deltaVisibilityScore": null,
+        "reportCount": 1,
+        "primary": true
+      }
+    ],
+    "detailRoutes": {
+      "sources": "/sources",
+      "engine": "/engine",
+      "probe_analysis": "/probe-analysis"
+    }
+  },
+  "/workbench/brand-performance": {
+    "identity": {
+      "brandSpaceId": "demo-anker",
+      "brandId": "demo-71e3b2fa3bda",
+      "brandName": "Anker",
+      "category": "USB-C充电器",
+      "officialWebsite": "https://www.anker.com/",
+      "primaryDomain": "www.anker.com"
+    },
+    "brandSpaceId": "demo-anker",
+    "brandId": "demo-71e3b2fa3bda",
+    "brandName": "Anker",
+    "category": "USB-C充电器",
+    "officialWebsite": "https://www.anker.com/",
+    "primaryDomain": "www.anker.com",
+    "brandSpaceStatus": "active",
+    "latestRunId": "demo-run-20261020",
+    "latestReportId": "demo-a70fb0a0672c",
+    "lastGeneratedAt": "2026-10-20T00:55:47",
+    "analysisContext": {
+      "timePreset": "last_14_days",
+      "dateFrom": "2026-10-07",
+      "dateTo": "2026-10-20",
+      "windowKey": "last_14_days",
+      "comparison": "previous_period",
+      "frequency": "day",
+      "platforms": [],
+      "availablePlatforms": [
+        "豆包"
+      ],
+      "channelFilters": {},
+      "supportedDimensions": [
+        "timeRange",
+        "platforms",
+        "comparison",
+        "frequency",
+        "competitors",
+        "metrics"
+      ],
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
+      "truthSource": "configuration+knowledge_window_query+knowledge_snapshot",
+      "sourceWindowKey": "last_14_days",
+      "notes": [
+        "当前结果先按自然时间窗口查询知识运行，不再依赖最近 N 次报告近似裁剪。",
+        "品牌表现优先基于知识运行窗口内的快照与指标结果回投，不再直接读取业务库旧报告。"
+      ]
+    },
+    "dataAvailability": {
+      "status": "partial",
+      "message": null,
+      "reasonCode": "partial_contract_gap",
+      "hasCompletedReport": true,
+      "hasRunningRun": false,
+      "latestRunId": "demo-run-20261020",
+      "latestReportId": "demo-a70fb0a0672c",
+      "missingFields": [
+        "averagePosition",
+        "competitorAveragePosition",
+        "trendPoints"
+      ],
+      "missingFieldDetails": {
+        "averagePosition": [
+          "当前窗口只有提及/推荐信号，未记录回答中的出现位次，因此不能计算当前品牌平均位次。"
+        ],
+        "competitorAveragePosition": [
+          "当前窗口竞品只有提及/推荐信号，未记录回答中的出现位次，因此不能计算竞品平均位次。"
+        ]
+      }
+    },
+    "summary": {
+      "visibilityScore": 7.0,
+      "recommendRate": 0.0,
+      "mentionRate": 20.0,
+      "top3Rate": 0.0,
+      "abvGrade": null,
+      "sampleSize": 5,
+      "generatedAt": "2026-10-20T00:55:47",
+      "visibilityRank": 1,
+      "visibilityRankDelta": null,
+      "shareOfVoice": 20.0,
+      "shareOfVoiceDelta": null,
+      "averagePosition": null,
+      "averagePositionDelta": null,
+      "headline": "品牌已进入候选池前列，下一步要围绕USB-C充电器选购场景巩固优势。",
+      "issueCount": 0,
+      "evidenceCount": 0,
+      "topTopicLabels": [
+        "认知异常",
+        "目标导向",
+        "价值驱动"
+      ]
+    },
+    "competitorRows": [
+      {
+        "id": "demo-anker",
+        "brandName": "Anker",
+        "rank": 1,
+        "isTarget": true,
+        "visibilityScore": 7.0,
+        "recommendRate": 0.0,
+        "mentionRate": 20.0,
+        "positiveRate": 0.0,
+        "top3Rate": 0.0,
+        "rankDelta": null,
+        "shareOfVoice": 20.0,
+        "shareOfVoiceDelta": null,
+        "averagePosition": null,
+        "averagePositionDelta": null,
+        "mentionCount": 0
+      },
+      {
+        "id": "competitor_ugreen",
+        "brandName": "UGREEN",
+        "rank": 2,
+        "isTarget": false,
+        "visibilityScore": null,
+        "recommendRate": 0.0,
+        "mentionRate": 100.0,
+        "positiveRate": 0.0,
+        "top3Rate": null,
+        "rankDelta": null,
+        "shareOfVoice": 100.0,
+        "shareOfVoiceDelta": null,
+        "averagePosition": null,
+        "averagePositionDelta": null,
+        "mentionCount": 5
+      },
+      {
+        "id": "competitor_baseus",
+        "brandName": "Baseus",
+        "rank": 3,
+        "isTarget": false,
+        "visibilityScore": null,
+        "recommendRate": 0.0,
+        "mentionRate": 80.0,
+        "positiveRate": 0.0,
+        "top3Rate": null,
+        "rankDelta": null,
+        "shareOfVoice": 80.0,
+        "shareOfVoiceDelta": null,
+        "averagePosition": null,
+        "averagePositionDelta": null,
+        "mentionCount": 4
+      },
+      {
+        "id": "competitor_belkin",
+        "brandName": "Belkin",
+        "rank": 4,
+        "isTarget": false,
+        "visibilityScore": null,
+        "recommendRate": null,
+        "mentionRate": null,
+        "positiveRate": null,
+        "top3Rate": null,
+        "rankDelta": null,
+        "shareOfVoice": null,
+        "shareOfVoiceDelta": null,
+        "averagePosition": null,
+        "averagePositionDelta": null,
+        "mentionCount": 0
+      }
+    ],
+    "modelPerformance": [
+      {
+        "id": "豆包",
+        "label": "豆包",
+        "primary": true,
+        "reportCount": 1,
+        "latestRunId": "demo-run-20261020",
+        "latestReportId": "demo-a70fb0a0672c",
+        "visibilityScore": 7.0,
+        "recommendRate": 0.0,
+        "mentionRate": 20.0,
+        "top3Rate": 0.0,
+        "deltaVisibilityScore": null
+      }
+    ],
+    "topicSummaries": [
+      {
+        "topicId": "ka-topic-demo-anker-demo-61b727a69373",
+        "topicName": "USB-C充电器选购场景",
+        "seqNo": 1,
+        "enabled": true,
+        "sampleSize": 1,
+        "visibilityScore": 35.0,
+        "mentionRate": 100.0,
+        "recommendRate": 0.0,
+        "top3Rate": 0.0,
+        "averagePosition": null,
+        "mentionCount": 1,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "USB-C充电器怎么选，哪些品牌更值得先加入候选？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-65eebbfd3f50",
+        "topicName": "竞品对比",
+        "seqNo": 2,
+        "enabled": true,
+        "sampleSize": 1,
+        "visibilityScore": 0.0,
+        "mentionRate": 0.0,
+        "recommendRate": 0.0,
+        "top3Rate": 0.0,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "Anker和UGREEN相比，谁更适合大多数USB-C充电器用户？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-d3bbdd502be5",
+        "topicName": "官网与信任线索",
+        "seqNo": 3,
+        "enabled": true,
+        "sampleSize": 1,
+        "visibilityScore": 0.0,
+        "mentionRate": 0.0,
+        "recommendRate": 0.0,
+        "top3Rate": 0.0,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "判断一个USB-C充电器品牌是否靠谱，应该优先看官网、资质还是第三方口碑？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-9a7fefd7c9b4",
+        "topicName": "真实体验口碑",
+        "seqNo": 4,
+        "enabled": true,
+        "sampleSize": 1,
+        "visibilityScore": 0.0,
+        "mentionRate": 0.0,
+        "recommendRate": 0.0,
+        "top3Rate": 0.0,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "用户讨论USB-C充电器品牌时，最常提到的优缺点和风险点是什么？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-5abb41eb0177",
+        "topicName": "价格与性价比",
+        "seqNo": 5,
+        "enabled": true,
+        "sampleSize": 1,
+        "visibilityScore": 0.0,
+        "mentionRate": 0.0,
+        "recommendRate": 0.0,
+        "top3Rate": 0.0,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "同价位USB-C充电器里，哪些品牌更容易被认为性价比高？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-35b5d3382cd1",
+        "topicName": "人群与使用场景",
+        "seqNo": 6,
+        "enabled": true,
+        "sampleSize": 0,
+        "visibilityScore": null,
+        "mentionRate": null,
+        "recommendRate": null,
+        "top3Rate": null,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "什么人、什么使用场景更需要优先看USB-C充电器品牌的适配度？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-546095e57814",
+        "topicName": "USB-C充电器核心卖点",
+        "seqNo": 7,
+        "enabled": true,
+        "sampleSize": 0,
+        "visibilityScore": null,
+        "mentionRate": null,
+        "recommendRate": null,
+        "top3Rate": null,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "在USB-C充电器里，哪些卖点最容易真正影响选择，而不只是宣传口号？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-671748162f56",
+        "topicName": "决策顾虑",
+        "seqNo": 8,
+        "enabled": true,
+        "sampleSize": 0,
+        "visibilityScore": null,
+        "mentionRate": null,
+        "recommendRate": null,
+        "top3Rate": null,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "用户在买USB-C充电器时最怕踩哪些坑，Anker通常会不会被拿来对比？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-7e5feb4957cf",
+        "topicName": "推荐与替代品牌",
+        "seqNo": 9,
+        "enabled": true,
+        "sampleSize": 0,
+        "visibilityScore": null,
+        "mentionRate": null,
+        "recommendRate": null,
+        "top3Rate": null,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "如果不指定品牌，AI 会推荐Anker还是其他USB-C充电器品牌？"
+        ]
+      },
+      {
+        "topicId": "ka-topic-demo-anker-demo-631804fc772f",
+        "topicName": "购买决策阻力",
+        "seqNo": 10,
+        "enabled": true,
+        "sampleSize": 0,
+        "visibilityScore": null,
+        "mentionRate": null,
+        "recommendRate": null,
+        "top3Rate": null,
+        "averagePosition": null,
+        "mentionCount": 0,
+        "promptCount": 1,
+        "enabledPromptCount": 1,
+        "promptShare": 10.0,
+        "signalCount": 0,
+        "signalShare": null,
+        "sampleQuestions": [
+          "用户在考虑USB-C充电器时，最常见的顾虑和劝退点是什么？"
+        ]
+      }
+    ]
+  },
+  "/workbench/citation-sources": {
+    "identity": {
+      "brandSpaceId": "demo-anker",
+      "brandId": "demo-71e3b2fa3bda",
+      "brandName": "Anker",
+      "category": "USB-C充电器",
+      "officialWebsite": "https://www.anker.com/",
+      "primaryDomain": "www.anker.com"
+    },
+    "brandSpaceId": "demo-anker",
+    "brandId": "demo-71e3b2fa3bda",
+    "brandName": "Anker",
+    "category": "USB-C充电器",
+    "officialWebsite": "https://www.anker.com/",
+    "primaryDomain": "www.anker.com",
+    "brandSpaceStatus": "active",
+    "latestRunId": "demo-run-20261020",
+    "latestReportId": "demo-a70fb0a0672c",
+    "lastGeneratedAt": "2026-10-20T00:55:47",
+    "analysisContext": {
+      "timePreset": "last_14_days",
+      "dateFrom": "2026-10-07",
+      "dateTo": "2026-10-20",
+      "windowKey": "last_14_days",
+      "comparison": "previous_period",
+      "frequency": "day",
+      "platforms": [],
+      "availablePlatforms": [
+        "豆包"
+      ],
+      "channelFilters": {},
+      "supportedDimensions": [
+        "timeRange",
+        "platforms",
+        "comparison",
+        "frequency",
+        "sourceTypes",
+        "domains"
+      ],
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
+      "truthSource": "configuration+knowledge_window_query+knowledge_evidence",
+      "sourceWindowKey": "last_14_days",
+      "notes": [
+        "当前结果先按自然时间窗口查询知识运行，不再依赖最近 N 次报告近似裁剪。",
+        "来源结构、域名、URL 与趋势优先来自知识资产引用证据，而不是旧报告摘要回放。"
+      ]
+    },
+    "dataAvailability": {
+      "status": "partial",
+      "message": "最近一轮未开启联网搜索，当前无可展示引用证据",
+      "reasonCode": "citation_search_disabled",
+      "hasCompletedReport": true,
+      "hasRunningRun": false,
+      "latestRunId": "demo-run-20261020",
+      "latestReportId": "demo-a70fb0a0672c",
+      "missingFields": [
+        "domains",
+        "urls",
+        "categories"
+      ],
+      "missingFieldDetails": {
+        "domains": [
+          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+        ],
+        "urls": [
+          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+        ],
+        "categories": [
+          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+        ]
+      }
+    },
+    "summary": {
+      "totalCitations": 0,
+      "ownedShare": 0.0,
+      "thirdPartyShare": 0.0,
+      "competitorShare": null,
+      "dominantLabel": null,
+      "dominantShare": null
+    },
+    "categorySlices": [],
+    "domainRows": [],
+    "urlRows": [],
+    "ownership": {
+      "summary": null,
+      "slices": []
+    },
+    "domainDetails": []
+  },
+  "/workbench/problem-analysis": {
+    "identity": {
+      "brandSpaceId": "demo-anker",
+      "brandId": "demo-71e3b2fa3bda",
+      "brandName": "Anker",
+      "category": "USB-C充电器",
+      "officialWebsite": "https://www.anker.com/",
+      "primaryDomain": "www.anker.com"
+    },
+    "brandSpaceId": "demo-anker",
+    "brandId": "demo-71e3b2fa3bda",
+    "brandName": "Anker",
+    "category": "USB-C充电器",
+    "officialWebsite": "https://www.anker.com/",
+    "primaryDomain": "www.anker.com",
+    "brandSpaceStatus": "active",
+    "latestRunId": "demo-run-20261020",
+    "latestReportId": "demo-a70fb0a0672c",
+    "lastGeneratedAt": "2026-10-20T00:55:47",
+    "analysisContext": {
+      "timePreset": "last_14_days",
+      "dateFrom": "2026-10-07",
+      "dateTo": "2026-10-20",
+      "windowKey": "last_14_days",
+      "comparison": "previous_period",
+      "frequency": "day",
+      "platforms": [],
+      "availablePlatforms": [
+        "豆包"
+      ],
+      "channelFilters": {
+        "topicNames": [],
+        "problemSpaceBuckets": []
+      },
+      "supportedDimensions": [
+        "timeRange",
+        "platforms",
+        "comparison",
+        "frequency",
+        "topicNames",
+        "problemSpaceBuckets"
+      ],
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
+      "truthSource": "configuration+knowledge_window_query+knowledge_evidence",
+      "sourceWindowKey": "last_14_days",
+      "notes": [
+        "当前结果来自知识资产正式查询，目录层、运行时证据层与深层 rich 视图不再直接依赖旧报告快照。"
+      ]
+    },
+    "dataAvailability": {
+      "status": "raw_only",
+      "message": "真实问答已接通，但结构化问题分析仍在补齐",
+      "reasonCode": "problem_analysis_raw_only",
+      "hasCompletedReport": true,
+      "hasRunningRun": false,
+      "latestRunId": "demo-run-20261020",
+      "latestReportId": "demo-a70fb0a0672c",
+      "missingFields": [
+        "topics",
+        "prompts",
+        "problemClusters",
+        "evidenceRows",
+        "probeTopicMapping"
+      ],
+      "missingFieldDetails": {
+        "topics": [
+          "当前模块缺少字段：topics"
+        ],
+        "prompts": [
+          "当前模块缺少字段：prompts"
+        ],
+        "problemClusters": [
+          "当前模块缺少字段：problemClusters"
+        ],
+        "evidenceRows": [
+          "当前模块缺少字段：evidenceRows"
+        ],
+        "probeTopicMapping": [
+          "问题分析结果仍在补齐，问题、回答和证据暂未完全对应。"
+        ]
+      }
+    },
+    "summary": {
+      "topicCount": 0,
+      "promptCount": 0,
+      "enabledPromptCount": 0,
+      "problemClusterCount": 0,
+      "probeCount": 5,
+      "attemptCount": 5,
+      "linkedProbeCount": 0,
+      "evidenceCount": 0,
+      "linkedEvidenceCount": 0,
+      "rawAnswerCount": 5,
+      "linkedPromptCount": 0
+    },
+    "catalog": {
+      "problemSpaceBuckets": [
+        {
+          "key": "brand-awareness",
+          "label": "品牌认知",
+          "description": "用户先确认品牌是谁、定位如何、值不值得进入候选池。",
+          "topicCount": 0,
+          "promptCount": 2,
+          "volume": 2
+        },
+        {
+          "key": "capability-validation",
+          "label": "能力确认",
+          "description": "用户在确认产品性能、功能、核心能力到底能不能打。",
+          "topicCount": 0,
+          "promptCount": 1,
+          "volume": 1
+        },
+        {
+          "key": "risk-objection",
+          "label": "风险异议",
+          "description": "用户在提前排雷，验证质量、售后、稳定性与负面风险。",
+          "topicCount": 0,
+          "promptCount": 2,
+          "volume": 2
+        }
+      ]
+    },
+    "topicRows": [],
+    "promptRows": [],
+    "problemClusters": [],
+    "probeRows": [
+      {
+        "probeId": "demo-37485b10017f",
+        "probeRef": "demo-83952ac9c239",
+        "seqNo": 1,
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "risk-objection",
+        "promptId": null,
+        "promptText": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+        "renderText": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+        "status": "running",
+        "evidenceCount": 0,
+        "hasRawAnswer": true,
+        "latestAttemptId": "demo-dede1f4914d3",
+        "model": "doubao-seed-2-0-lite-260428",
+        "answerPreview": "但要分场景选，才能做到100%不踩使用体验的坑，直接给你不用纠结的选择标准：",
+        "rawAnswer": "但要分场景选，才能做到100%不踩使用体验的坑，直接给你不用纠结的选择标准：",
+        "visibilityScore": 90.0,
+        "averagePosition": null,
+        "sentimentScore": 24,
+        "mentionCount": 1
+      },
+      {
+        "probeId": "demo-cad824f8f56f",
+        "probeRef": "demo-2011bb2a526b",
+        "seqNo": 2,
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "capability-validation",
+        "promptId": null,
+        "promptText": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+        "renderText": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+        "status": "running",
+        "evidenceCount": 0,
+        "hasRawAnswer": true,
+        "latestAttemptId": "demo-9f8430576049",
+        "model": "doubao-seed-2-0-lite-260428",
+        "answerPreview": "你完全不用懵，不用上来直接比品牌，按「优先级从高到低」的顺序筛，先看最影响你使用的核心差异，90%的纠结直接就消了：",
+        "rawAnswer": "你完全不用懵，不用上来直接比品牌，按「优先级从高到低」的顺序筛，先看最影响你使用的核心差异，90%的纠结直接就消了：",
+        "visibilityScore": 0.0,
+        "averagePosition": null,
+        "sentimentScore": null,
+        "mentionCount": 0
+      },
+      {
+        "probeId": "demo-574c79a1fd54",
+        "probeRef": "demo-5bf80c2aff38",
+        "seqNo": 3,
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "risk-objection",
+        "promptId": null,
+        "promptText": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+        "renderText": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+        "status": "running",
+        "evidenceCount": 0,
+        "hasRawAnswer": true,
+        "latestAttemptId": "demo-6f6262393d08",
+        "model": "doubao-seed-2-0-lite-260428",
+        "answerPreview": "挑绿联（UGREEN）和倍思（Baseus）的USB-C充电器，完全不用纠结谁绝对更好，按下面4步走，既能卡准性价比，还能避开两家各自的减配/历史雷区：",
+        "rawAnswer": "挑绿联（UGREEN）和倍思（Baseus）的USB-C充电器，完全不用纠结谁绝对更好，按下面4步走，既能卡准性价比，还能避开两家各自的减配/历史雷区：",
+        "visibilityScore": 0.0,
+        "averagePosition": null,
+        "sentimentScore": null,
+        "mentionCount": 0
+      },
+      {
+        "probeId": "demo-c64402acf33d",
+        "probeRef": "demo-80a4501ff6f8",
+        "seqNo": 4,
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "brand-awareness",
+        "promptId": null,
+        "promptText": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+        "renderText": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+        "status": "running",
+        "evidenceCount": 0,
+        "hasRawAnswer": true,
+        "latestAttemptId": "demo-e39d1bf9d845",
+        "model": "doubao-seed-2-0-lite-260428",
+        "answerPreview": "此回答未在公开案例中展示。",
+        "rawAnswer": "此回答未在公开案例中展示。",
+        "visibilityScore": 0.0,
+        "averagePosition": null,
+        "sentimentScore": null,
+        "mentionCount": 0
+      },
+      {
+        "probeId": "demo-b57757d497b7",
+        "probeRef": "demo-f298502e0b28",
+        "seqNo": 5,
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "brand-awareness",
+        "promptId": null,
+        "promptText": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+        "renderText": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+        "status": "running",
+        "evidenceCount": 0,
+        "hasRawAnswer": true,
+        "latestAttemptId": "demo-bf74d5522e3f",
+        "model": "doubao-seed-2-0-lite-260428",
+        "answerPreview": "选绿联（UGREEN）和倍思（Baseus）的USB-C充电器，大家基本上都是先锚定自己的使用场景，先筛核心参数，再对应两家各自口碑最稳的产品线，很少盲目堆高功率，整理下大家公认的优先级筛选逻辑和值得入的高性价比选项：",
+        "rawAnswer": "选绿联（UGREEN）和倍思（Baseus）的USB-C充电器，大家基本上都是先锚定自己的使用场景，先筛核心参数，再对应两家各自口碑最稳的产品线，很少盲目堆高功率，整理下大家公认的优先级筛选逻辑和值得入的高性价比选项：",
+        "visibilityScore": 0.0,
+        "averagePosition": null,
+        "sentimentScore": null,
+        "mentionCount": 0
+      }
+    ],
+    "evidenceRows": [],
+    "rich": {
+      "volume": {
+        "summary": {
+          "demandTotal": 395,
+          "demandDelta": 0.0,
+          "activeTopicCount": 1,
+          "activePlatformCount": 1
+        },
+        "platformRows": [
+          {
+            "platform": "豆包",
+            "value": 5,
+            "share": 100.0,
+            "delta": 0.0
+          }
+        ],
+        "promptOpportunityRows": [
+          {
+            "prompt": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "capability-validation",
+            "demandIndex": 58,
+            "projection": 68,
+            "competitionScore": 100,
+            "relevanceScore": 10,
+            "opportunityScore": 64,
+            "intentLabel": "购买决策",
+            "trendDelta": 0.0
+          },
+          {
+            "prompt": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "demandIndex": 58,
+            "projection": 68,
+            "competitionScore": 100,
+            "relevanceScore": 10,
+            "opportunityScore": 64,
+            "intentLabel": "成本评估",
+            "trendDelta": 0.0
+          },
+          {
+            "prompt": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "brand-awareness",
+            "demandIndex": 58,
+            "projection": 68,
+            "competitionScore": 100,
+            "relevanceScore": 10,
+            "opportunityScore": 64,
+            "intentLabel": "购买决策",
+            "trendDelta": 0.0
+          },
+          {
+            "prompt": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "brand-awareness",
+            "demandIndex": 58,
+            "projection": 68,
+            "competitionScore": 100,
+            "relevanceScore": 10,
+            "opportunityScore": 64,
+            "intentLabel": "信息探索",
+            "trendDelta": 0.0
+          },
+          {
+            "prompt": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "demandIndex": 163,
+            "projection": 192,
+            "competitionScore": 50,
+            "relevanceScore": 60,
+            "opportunityScore": 43,
+            "intentLabel": "购买决策",
+            "trendDelta": 0.0
+          }
+        ],
+        "promptProjectionSummary": {
+          "promptCount": 5,
+          "totalProjection": 464,
+          "highValuePromptCount": 0
+        },
+        "promptProjectionRows": [
+          {
+            "prompt": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+            "projection": 68,
+            "share": 14.66,
+            "intentLabel": "购买决策",
+            "action": "保留观察"
+          },
+          {
+            "prompt": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+            "projection": 68,
+            "share": 14.66,
+            "intentLabel": "成本评估",
+            "action": "保留观察"
+          },
+          {
+            "prompt": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+            "projection": 68,
+            "share": 14.66,
+            "intentLabel": "购买决策",
+            "action": "保留观察"
+          },
+          {
+            "prompt": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+            "projection": 68,
+            "share": 14.66,
+            "intentLabel": "信息探索",
+            "action": "保留观察"
+          },
+          {
+            "prompt": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+            "projection": 192,
+            "share": 41.38,
+            "intentLabel": "购买决策",
+            "action": "低优先级"
+          }
+        ],
+        "promptLoopSummary": {
+          "coverage": 0.0,
+          "gapCount": 4,
+          "highOpportunityCount": 0
+        },
+        "promptLoopRows": [
+          {
+            "id": "prompt_prompt_我现在挑usb_c充电器挑得有点懵_ugreen和baseus两款都在备选里_按什么思路挑_哪几块差别最该先看清呀_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "capability-validation",
+            "prompt": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+            "status": "竞品被引（我方缺口）",
+            "citedTarget": "UGREEN",
+            "opportunity": 64,
+            "action": "补对比页 + FAQ + 第三方证据",
+            "targetBrandCited": false,
+            "citationCoverage": 0.0,
+            "competitorLeadBrand": "UGREEN",
+            "citedBrandNames": [
+              "UGREEN",
+              "Baseus"
+            ],
+            "gapType": "competitor_gap"
+          },
+          {
+            "id": "prompt_prompt_挑usb_c充电器_拿ugreen和baseus比的话_从哪几步看起性价比高还不容易踩坑_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "prompt": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+            "status": "竞品被引（我方缺口）",
+            "citedTarget": "Baseus",
+            "opportunity": 64,
+            "action": "补对比页 + FAQ + 第三方证据",
+            "targetBrandCited": false,
+            "citationCoverage": 0.0,
+            "competitorLeadBrand": "Baseus",
+            "citedBrandNames": [
+              "Baseus",
+              "UGREEN"
+            ],
+            "gapType": "competitor_gap"
+          },
+          {
+            "id": "prompt_prompt_ugreen和baseus的usb_c充电器_看谁家官网的信息更靠谱_选出来的款不会太普通_我直接选哪个更稳_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "brand-awareness",
+            "prompt": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+            "status": "竞品被引（我方缺口）",
+            "citedTarget": "UGREEN",
+            "opportunity": 64,
+            "action": "补对比页 + FAQ + 第三方证据",
+            "targetBrandCited": false,
+            "citationCoverage": 0.0,
+            "competitorLeadBrand": "UGREEN",
+            "citedBrandNames": [
+              "UGREEN",
+              "Baseus"
+            ],
+            "gapType": "competitor_gap"
+          },
+          {
+            "id": "prompt_prompt_刚打算挑usb_c充电器_ugreen和baseus这些里面_大家一般都会先看看哪些值得关注的选项呀_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "brand-awareness",
+            "prompt": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+            "status": "竞品被引（我方缺口）",
+            "citedTarget": "UGREEN",
+            "opportunity": 64,
+            "action": "补对比页 + FAQ + 第三方证据",
+            "targetBrandCited": false,
+            "citationCoverage": 0.0,
+            "competitorLeadBrand": "UGREEN",
+            "citedBrandNames": [
+              "UGREEN",
+              "Baseus"
+            ],
+            "gapType": "competitor_gap"
+          },
+          {
+            "id": "prompt_prompt_下单前想确认下_anker的usb_c充电器和ugreen比_直接拿哪个更稳不容易踩坑_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "prompt": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+            "status": "待强化",
+            "citedTarget": "UGREEN",
+            "opportunity": 43,
+            "action": "补官网证据并细化标准说法",
+            "targetBrandCited": true,
+            "citationCoverage": 0.0,
+            "competitorLeadBrand": "UGREEN",
+            "citedBrandNames": [
+              "UGREEN"
+            ],
+            "gapType": "needs_reinforcement"
+          }
+        ]
+      },
+      "intent": {
+        "intents": [
+          {
+            "key": "decision",
+            "label": "购买决策",
+            "count": 3,
+            "share": 60.0,
+            "examples": [
+              "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+              "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+              "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？"
+            ]
+          },
+          {
+            "key": "cost",
+            "label": "成本评估",
+            "count": 1,
+            "share": 20.0,
+            "examples": [
+              "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？"
+            ]
+          },
+          {
+            "key": "discovery",
+            "label": "信息探索",
+            "count": 1,
+            "share": 20.0,
+            "examples": [
+              "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？"
+            ]
+          }
+        ],
+        "subIntents": [
+          {
+            "key": "decision::型号选择",
+            "parent": "decision",
+            "parentLabel": "购买决策",
+            "label": "型号选择",
+            "count": 2,
+            "share": 40.0,
+            "change": 100.0
+          },
+          {
+            "key": "decision::购买路径",
+            "parent": "decision",
+            "parentLabel": "购买决策",
+            "label": "购买路径",
+            "count": 1,
+            "share": 20.0,
+            "change": 100.0
+          },
+          {
+            "key": "cost::预算控制",
+            "parent": "cost",
+            "parentLabel": "成本评估",
+            "label": "预算控制",
+            "count": 1,
+            "share": 20.0,
+            "change": 100.0
+          },
+          {
+            "key": "discovery::需求识别",
+            "parent": "discovery",
+            "parentLabel": "信息探索",
+            "label": "需求识别",
+            "count": 1,
+            "share": 20.0,
+            "change": 100.0
+          }
+        ]
+      },
+      "audience": {
+        "roleRows": [
+          {
+            "label": "风险规避",
+            "share": 40.0
+          },
+          {
+            "label": "新手入门",
+            "share": 40.0
+          },
+          {
+            "label": "效率决策",
+            "share": 20.0
+          }
+        ],
+        "budgetRows": [
+          {
+            "label": "平衡取舍",
+            "share": 60.0
+          },
+          {
+            "label": "效率优先",
+            "share": 20.0
+          },
+          {
+            "label": "预算敏感",
+            "share": 20.0
+          }
+        ],
+        "platformRows": [
+          {
+            "platform": "豆包",
+            "score": 100.0,
+            "confidence": 95.0
+          }
+        ]
+      },
+      "hierarchy": {
+        "topics": [
+          {
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "demandIndex": 395,
+            "clusters": [
+              {
+                "label": "核心问法",
+                "count": 3,
+                "samples": [
+                  "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+                  "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+                  "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？"
+                ]
+              },
+              {
+                "label": "决策问法",
+                "count": 3,
+                "samples": [
+                  "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+                  "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+                  "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？"
+                ]
+              },
+              {
+                "label": "长尾延展",
+                "count": 3,
+                "samples": [
+                  "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+                  "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+                  "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "fanout": {
+        "promptRows": [
+          {
+            "id": "prompt_prompt_下单前想确认下_anker的usb_c充电器和ugreen比_直接拿哪个更稳不容易踩坑_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "prompt": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+            "queryCount": 1,
+            "avgQueriesPerExecution": 1.0,
+            "variations": [
+              {
+                "id": "prompt_prompt_下单前想确认下_anker的usb_c充电器和ugreen比_直接拿哪个更稳不容易踩坑_::下单前想确认下_anker的usb_c充电器和ugreen比_直接拿哪个更稳不容易踩坑_",
+                "prompt": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+                "queryCount": 1,
+                "delta": 1.0
+              }
+            ],
+            "platformRows": [
+              {
+                "platform": "豆包",
+                "queryCount": 1,
+                "share": 100.0
+              }
+            ]
+          },
+          {
+            "id": "prompt_prompt_我现在挑usb_c充电器挑得有点懵_ugreen和baseus两款都在备选里_按什么思路挑_哪几块差别最该先看清呀_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "capability-validation",
+            "prompt": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+            "queryCount": 1,
+            "avgQueriesPerExecution": 1.0,
+            "variations": [
+              {
+                "id": "prompt_prompt_我现在挑usb_c充电器挑得有点懵_ugreen和baseus两款都在备选里_按什么思路挑_哪几块差别最该先看清呀_::我现在挑usb_c充电器挑得有点懵_ugreen和baseus两款都在备选里_按什么思路挑_哪几块差别最该先看清呀_",
+                "prompt": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+                "queryCount": 1,
+                "delta": 1.0
+              }
+            ],
+            "platformRows": [
+              {
+                "platform": "豆包",
+                "queryCount": 1,
+                "share": 100.0
+              }
+            ]
+          },
+          {
+            "id": "prompt_prompt_挑usb_c充电器_拿ugreen和baseus比的话_从哪几步看起性价比高还不容易踩坑_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "risk-objection",
+            "prompt": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+            "queryCount": 1,
+            "avgQueriesPerExecution": 1.0,
+            "variations": [
+              {
+                "id": "prompt_prompt_挑usb_c充电器_拿ugreen和baseus比的话_从哪几步看起性价比高还不容易踩坑_::挑usb_c充电器_拿ugreen和baseus比的话_从哪几步看起性价比高还不容易踩坑_",
+                "prompt": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+                "queryCount": 1,
+                "delta": 1.0
+              }
+            ],
+            "platformRows": [
+              {
+                "platform": "豆包",
+                "queryCount": 1,
+                "share": 100.0
+              }
+            ]
+          },
+          {
+            "id": "prompt_prompt_ugreen和baseus的usb_c充电器_看谁家官网的信息更靠谱_选出来的款不会太普通_我直接选哪个更稳_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "brand-awareness",
+            "prompt": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+            "queryCount": 1,
+            "avgQueriesPerExecution": 1.0,
+            "variations": [
+              {
+                "id": "prompt_prompt_ugreen和baseus的usb_c充电器_看谁家官网的信息更靠谱_选出来的款不会太普通_我直接选哪个更稳_::ugreen和baseus的usb_c充电器_看谁家官网的信息更靠谱_选出来的款不会太普通_我直接选哪个更稳_",
+                "prompt": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+                "queryCount": 1,
+                "delta": 1.0
+              }
+            ],
+            "platformRows": [
+              {
+                "platform": "豆包",
+                "queryCount": 1,
+                "share": 100.0
+              }
+            ]
+          },
+          {
+            "id": "prompt_prompt_刚打算挑usb_c充电器_ugreen和baseus这些里面_大家一般都会先看看哪些值得关注的选项呀_",
+            "topic": "未分组问题",
+            "problemSpaceBucket": "brand-awareness",
+            "prompt": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+            "queryCount": 1,
+            "avgQueriesPerExecution": 1.0,
+            "variations": [
+              {
+                "id": "prompt_prompt_刚打算挑usb_c充电器_ugreen和baseus这些里面_大家一般都会先看看哪些值得关注的选项呀_::刚打算挑usb_c充电器_ugreen和baseus这些里面_大家一般都会先看看哪些值得关注的选项呀_",
+                "prompt": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+                "queryCount": 1,
+                "delta": 1.0
+              }
+            ],
+            "platformRows": [
+              {
+                "platform": "豆包",
+                "queryCount": 1,
+                "share": 100.0
+              }
+            ]
+          }
+        ],
+        "platformRows": [
+          {
+            "rank": 1,
+            "platform": "豆包",
+            "avgQueriesPerExecution": 1.0,
+            "delta": 1.0
+          }
+        ]
+      }
+    },
+    "attemptRows": [
+      {
+        "attemptId": "demo-6f6262393d08",
+        "probeId": "demo-574c79a1fd54",
+        "probeRef": "demo-5bf80c2aff38",
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "risk-objection",
+        "promptId": null,
+        "promptText": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+        "provider": "doubao",
+        "model": "doubao-seed-2-0-lite-260428",
+        "status": "running",
+        "createdAt": "2026-10-19T16:55:46",
+        "query": "挑USB-C充电器，拿UGREEN和Baseus比的话，从哪几步看起性价比高还不容易踩坑？",
+        "answerPreview": "挑绿联（UGREEN）和倍思（Baseus）的USB-C充电器，完全不用纠结谁绝对更好，按下面4步走，既能卡准性价比，还能避开两家各自的减配/历史雷区：",
+        "rawAnswer": "挑绿联（UGREEN）和倍思（Baseus）的USB-C充电器，完全不用纠结谁绝对更好，按下面4步走，既能卡准性价比，还能避开两家各自的减配/历史雷区：",
+        "summaryBullets": [
+          "暂无引用源",
+          "命中品牌 2 个"
+        ],
+        "brandHits": [
+          {
+            "brandName": "Baseus",
+            "score": 86.0
+          },
+          {
+            "brandName": "UGREEN",
+            "score": 86.0
+          }
+        ],
+        "citations": []
+      },
+      {
+        "attemptId": "demo-dede1f4914d3",
+        "probeId": "demo-37485b10017f",
+        "probeRef": "demo-83952ac9c239",
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "risk-objection",
+        "promptId": null,
+        "promptText": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+        "provider": "doubao",
+        "model": "doubao-seed-2-0-lite-260428",
+        "status": "running",
+        "createdAt": "2026-10-19T16:55:46",
+        "query": "下单前想确认下，Anker的USB-C充电器和UGREEN比，直接拿哪个更稳不容易踩坑？",
+        "answerPreview": "但要分场景选，才能做到100%不踩使用体验的坑，直接给你不用纠结的选择标准：",
+        "rawAnswer": "但要分场景选，才能做到100%不踩使用体验的坑，直接给你不用纠结的选择标准：",
+        "summaryBullets": [
+          "暂无引用源",
+          "命中品牌 2 个"
+        ],
+        "brandHits": [
+          {
+            "brandName": "Anker",
+            "score": 90.0
+          },
+          {
+            "brandName": "UGREEN",
+            "score": 78.0
+          }
+        ],
+        "citations": []
+      },
+      {
+        "attemptId": "demo-e39d1bf9d845",
+        "probeId": "demo-c64402acf33d",
+        "probeRef": "demo-80a4501ff6f8",
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "brand-awareness",
+        "promptId": null,
+        "promptText": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+        "provider": "doubao",
+        "model": "doubao-seed-2-0-lite-260428",
+        "status": "running",
+        "createdAt": "2026-10-19T16:55:46",
+        "query": "UGREEN和Baseus的USB-C充电器，看谁家官网的信息更靠谱，选出来的款不会太普通，我直接选哪个更稳？",
+        "answerPreview": "此回答未在公开案例中展示。",
+        "rawAnswer": "此回答未在公开案例中展示。",
+        "summaryBullets": [
+          "暂无引用源",
+          "命中品牌 2 个"
+        ],
+        "brandHits": [
+          {
+            "brandName": "UGREEN",
+            "score": 78.0
+          },
+          {
+            "brandName": "Baseus",
+            "score": 78.0
+          }
+        ],
+        "citations": []
+      },
+      {
+        "attemptId": "demo-9f8430576049",
+        "probeId": "demo-cad824f8f56f",
+        "probeRef": "demo-2011bb2a526b",
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "capability-validation",
+        "promptId": null,
+        "promptText": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+        "provider": "doubao",
+        "model": "doubao-seed-2-0-lite-260428",
+        "status": "running",
+        "createdAt": "2026-10-19T16:55:46",
+        "query": "我现在挑USB-C充电器挑得有点懵，UGREEN和Baseus两款都在备选里，按什么思路挑、哪几块差别最该先看清呀？",
+        "answerPreview": "你完全不用懵，不用上来直接比品牌，按「优先级从高到低」的顺序筛，先看最影响你使用的核心差异，90%的纠结直接就消了：",
+        "rawAnswer": "你完全不用懵，不用上来直接比品牌，按「优先级从高到低」的顺序筛，先看最影响你使用的核心差异，90%的纠结直接就消了：",
+        "summaryBullets": [
+          "暂无引用源",
+          "命中品牌 2 个"
+        ],
+        "brandHits": [
+          {
+            "brandName": "UGREEN",
+            "score": 78.0
+          },
+          {
+            "brandName": "Baseus",
+            "score": 78.0
+          }
+        ],
+        "citations": []
+      },
+      {
+        "attemptId": "demo-bf74d5522e3f",
+        "probeId": "demo-b57757d497b7",
+        "probeRef": "demo-f298502e0b28",
+        "topicId": null,
+        "topicName": null,
+        "problemSpaceBucket": "brand-awareness",
+        "promptId": null,
+        "promptText": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+        "provider": "doubao",
+        "model": "doubao-seed-2-0-lite-260428",
+        "status": "running",
+        "createdAt": "2026-10-19T16:55:46",
+        "query": "刚打算挑USB-C充电器，UGREEN和Baseus这些里面，大家一般都会先看看哪些值得关注的选项呀？",
+        "answerPreview": "选绿联（UGREEN）和倍思（Baseus）的USB-C充电器，大家基本上都是先锚定自己的使用场景，先筛核心参数，再对应两家各自口碑最稳的产品线，很少盲目堆高功率，整理下大家公认的优先级筛选逻辑和值得入的高性价比选项：",
+        "rawAnswer": "选绿联（UGREEN）和倍思（Baseus）的USB-C充电器，大家基本上都是先锚定自己的使用场景，先筛核心参数，再对应两家各自口碑最稳的产品线，很少盲目堆高功率，整理下大家公认的优先级筛选逻辑和值得入的高性价比选项：",
+        "summaryBullets": [
+          "暂无引用源",
+          "命中品牌 2 个"
+        ],
+        "brandHits": [
+          {
+            "brandName": "UGREEN",
+            "score": 86.0
+          },
+          {
+            "brandName": "Baseus",
+            "score": 86.0
+          }
+        ],
+        "citations": []
+      }
+    ]
+  }
+}

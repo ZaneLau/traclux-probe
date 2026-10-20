@@ -2,13 +2,13 @@
 
 **用 CSSM-HI 生成探针，接入模型执行，在工作台查看和分析回答。**
 
-[**免 Key 真实案例演示**](https://zanelau.github.io/traclux-probe/demo/) · [English](README.md) · [启动与功能说明](docs/community/README.md) · [来源清单](docs/community/source-manifest.json) · [安全政策](SECURITY.md)
+[**免登录工作台演示**](https://zanelau.github.io/traclux-probe/demo/) · [English](README.md) · [启动与功能说明](docs/community/README.md) · [来源清单](docs/community/source-manifest.json) · [安全政策](SECURITY.md)
 
 这是 **v0.2.0 社区预览版**，包含 Spring Boot 后端和 Nuxt 工作台，采用 Apache-2.0 许可。部署后接入自己的模型服务即可运行。
 
-[![真实探针案例：点选问题查看回答摘录](docs/demo/preview.png)](https://zanelau.github.io/traclux-probe/demo/)
+[![只读工作台：浏览保存的 Anker 案例](docs/demo/workbench-demo.png)](https://zanelau.github.io/traclux-probe/demo/)
 
-先打开[只读案例](https://zanelau.github.io/traclux-probe/demo/)，无需注册或 API Key，就能看这次实际生成的问题、执行状态和回答摘录。生成新问题和运行完整工作台，请按下方说明部署。
+先打开[只读工作台](https://zanelau.github.io/traclux-probe/demo/)，无需注册或 API Key，即可浏览这次案例的总览、品牌表现、问题记录与运行详情。生成新问题和运行完整工作台，请按下方说明部署。
 
 ## CSSM-HI 的特色：同一个品牌，不同状态的人会怎样问？
 
@@ -33,7 +33,7 @@ Anker · USB-C 充电器
 | D5 · 时间 | 有多着急？ | 急着用，马上要买到 |
 | D6 · 交互 | 怎样提问？ | 对着参数详情挨个比对 |
 
-**建议先点演示里的 [#1、#2、#5](https://zanelau.github.io/traclux-probe/demo/#explore)**：分别看看临下单确认、找比较方法、刚开始了解时的问题有何不同。右侧会一起切换实际状态标签和回答摘录，还能展开原始编码或[下载公开 JSON](docs/demo/case.json)。
+**建议先点演示里的 [#1、#2、#5](https://zanelau.github.io/traclux-probe/demo/case-study/#explore)**：分别看看临下单确认、找比较方法、刚开始了解时的问题有何不同。右侧会一起切换实际状态标签和回答摘录，还能展开原始编码或[下载公开 JSON](docs/demo/case.json)。
 
 [生成过程与源码导读](docs/community/generation-walkthrough.md)把固定状态、品类翻译、覆盖选点、问句生成与质量检查对应到具体代码。五条样例展示了生成过程，算法效果还需要对照实验评估。
 

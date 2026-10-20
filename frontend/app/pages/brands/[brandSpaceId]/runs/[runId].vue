@@ -11,6 +11,7 @@ definePageMeta({
 })
 
 const route = useRoute()
+const demoMode = useRuntimeConfig().public.demoMode === true
 const brandSpacesApi = useBrandSpacesApi()
 const {
   workbenchRef,
@@ -572,7 +573,7 @@ onMounted(async () => {
           </div>
         </section>
 
-        <section class="surface section-surface detail-section">
+        <section v-if="!demoMode" class="surface section-surface detail-section">
           <div class="surface-head surface-head--compact">
             <div class="surface-head__title">
               <strong>原始记录</strong>

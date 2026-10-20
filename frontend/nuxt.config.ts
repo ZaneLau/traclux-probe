@@ -17,6 +17,8 @@ function resolveBooleanEnv(value: string | undefined, fallback: boolean) {
   return fallback
 }
 
+const demoMode = process.env.NUXT_PUBLIC_DEMO_MODE === 'true'
+
 const engineTheaterEnabled = resolveBooleanEnv(
   process.env.NUXT_PUBLIC_ENABLE_ENGINE_THEATER,
   process.env.NODE_ENV !== 'production'
@@ -29,6 +31,11 @@ const linkedDependencyWorkspaceRoot = resolve(linkedNodeModulesRoot, '..')
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ...(demoMode ? {
+    ssr: false,
+    router: { options: { hashMode: true } },
+    icon: { clientBundle: { scan: true } }
+  } : {}),
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
@@ -47,6 +54,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiProxyTarget: 'http://127.0.0.1:8080',
     public: {
+      demoMode,
       apiBase: process.env.NUXT_PUBLIC_API_BASE || '/api/v1',
       engineTheaterEnabled,
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || ''
@@ -54,7 +62,7 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    '/': { redirect: '/login' },
+    ...(!demoMode ? { '/': { redirect: '/login' } } : {}),
     '/dashboard': { ssr: false },
     '/brands': { ssr: false },
     '/brands/**': { ssr: false },

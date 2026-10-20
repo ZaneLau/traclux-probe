@@ -1,5 +1,5 @@
 {
-  "scope": "Traclux user workbench and supporting backend; internal operations console excluded",
+  "scope": "Traclux user workbench and supporting backend",
   "source_snapshots": [
     {
       "component": "backend",
@@ -3521,7 +3521,7 @@
         {
           "path": "frontend/app/app.vue",
           "sha256": "7baeca49b874080abb017a00f150cf6edd3f82159abd5faaa3de2d086af02c3d",
-          "exported_sha256": "7baeca49b874080abb017a00f150cf6edd3f82159abd5faaa3de2d086af02c3d"
+          "exported_sha256": "b8ade243ca612ce0f7a204d1c8405ad9dd83297823e65cfa20dfa8e669174d2a"
         },
         {
           "path": "frontend/app/assets/css/engine-shell.css",
@@ -3581,7 +3581,7 @@
         {
           "path": "frontend/app/components/GeoWorkbenchSidebar.vue",
           "sha256": "b68e551dcbea8896ddd0b94f95a804f95fa42078bf33803e1ecd52f0031e846e",
-          "exported_sha256": "b68e551dcbea8896ddd0b94f95a804f95fa42078bf33803e1ecd52f0031e846e"
+          "exported_sha256": "9a3c8e40498262f1ce67bbcbde018a1ef457f380ec77831ee8e11f0c961bcb96"
         },
         {
           "path": "frontend/app/components/GeoWorkspaceHeader.vue",
@@ -3676,7 +3676,7 @@
         {
           "path": "frontend/app/components/engine/ChatEvidenceOverlay.vue",
           "sha256": "bfb54124a67cfd3dbde5543ea47997167883e44c58c44bfd18c7c4ac23d7bea6",
-          "exported_sha256": "bfb54124a67cfd3dbde5543ea47997167883e44c58c44bfd18c7c4ac23d7bea6"
+          "exported_sha256": "a28df46af1b0c5730509c2eeb056300b69b5cc154cb9fbe292039b49a8b320c0"
         },
         {
           "path": "frontend/app/components/engine/EnginePlatformsTab.vue",
@@ -3831,7 +3831,7 @@
         {
           "path": "frontend/app/components/workbench/WorkbenchAnalysisToolbar.vue",
           "sha256": "065800bb00c92d089eede9dbce4f3e32cf7493a31768d89ed25ce20acf6e9ad0",
-          "exported_sha256": "065800bb00c92d089eede9dbce4f3e32cf7493a31768d89ed25ce20acf6e9ad0"
+          "exported_sha256": "03d9eb8252fb64767afd923300d65f78e1d93c158fb8407e0fc357c07f3fb6fd"
         },
         {
           "path": "frontend/app/components/workbench/WorkbenchDataProvenanceCard.vue",
@@ -3841,7 +3841,7 @@
         {
           "path": "frontend/app/components/workbench/WorkbenchProblemAnalysisRichTabs.vue",
           "sha256": "ae79448593427e43b9a05345a3c3159aaac59347cedd18b5411015173b8518cc",
-          "exported_sha256": "ae79448593427e43b9a05345a3c3159aaac59347cedd18b5411015173b8518cc"
+          "exported_sha256": "4c4c20b685d951871bfa2bdda148b90bc70b537ce4eb597c85c4a21a11131368"
         },
         {
           "path": "frontend/app/components/workbench/filters/WorkbenchDateRangePopover.vue",
@@ -3951,7 +3951,7 @@
         {
           "path": "frontend/app/composables/useAuthSnapshot.ts",
           "sha256": "1abba389a80d4d0733df12de19af81a801f65af397ccfce5824181539c57c656",
-          "exported_sha256": "1abba389a80d4d0733df12de19af81a801f65af397ccfce5824181539c57c656"
+          "exported_sha256": "f38c293b85f639e8ef30e95091a9b94d2fb1661f0d9b92b727277baeb60718be"
         },
         {
           "path": "frontend/app/composables/useBrandSpacesApi.ts",
@@ -3981,7 +3981,7 @@
         {
           "path": "frontend/app/composables/useGeoApi.ts",
           "sha256": "fe2b92416ea763145c364deb3464eca8957d750e1641e0c9a8af460eff32ae29",
-          "exported_sha256": "fe2b92416ea763145c364deb3464eca8957d750e1641e0c9a8af460eff32ae29"
+          "exported_sha256": "6c14f17888adcfc825e03a307cf2fae45f72cd0960c62ae86a51e3fd23efc810"
         },
         {
           "path": "frontend/app/composables/useLazyChart.ts",
@@ -4001,7 +4001,7 @@
         {
           "path": "frontend/app/composables/useServiceAccessApi.ts",
           "sha256": "817db1d56f5108f8af7a20befb4c77533f5b3a3061f0bbd3af9e5fb8793dfba3",
-          "exported_sha256": "817db1d56f5108f8af7a20befb4c77533f5b3a3061f0bbd3af9e5fb8793dfba3"
+          "exported_sha256": "d061acfe334737b059ffe7dc430b00600c1072a5c7c7808ccec5eec147cff9af"
         },
         {
           "path": "frontend/app/composables/useWikiDrawer.ts",
@@ -4016,7 +4016,7 @@
         {
           "path": "frontend/app/composables/useWorkbenchAnalysisFilters.ts",
           "sha256": "a0ea6ace10ae1d11c53a4b866b4195e8e9942fffe292f721a17cf5367db2eb32",
-          "exported_sha256": "a0ea6ace10ae1d11c53a4b866b4195e8e9942fffe292f721a17cf5367db2eb32"
+          "exported_sha256": "567d3f60e4278ee5ef4fbcfb8f627e07263b12d72494f58f062253c6d8de0320"
         },
         {
           "path": "frontend/app/composables/useWorkbenchApi.ts",
@@ -4131,12 +4131,12 @@
         {
           "path": "frontend/app/pages/brands/[brandSpaceId]/runs/[runId].vue",
           "sha256": "c315599ca5e20cc6aa91f92070158d7e9e435f725959d3352fbe29e9e2f36e8a",
-          "exported_sha256": "c315599ca5e20cc6aa91f92070158d7e9e435f725959d3352fbe29e9e2f36e8a"
+          "exported_sha256": "77f2d81de23dcb108d38c5a27f0ba19c628ceccf8a7b6692dc5bbc47d8a8e75a"
         },
         {
           "path": "frontend/app/pages/brands/[brandSpaceId]/runs/index.vue",
           "sha256": "b6afb8b31bd10a21429eaf5c3f545bf25be5603ce3f63b7a0175bc47cf66ae42",
-          "exported_sha256": "b6afb8b31bd10a21429eaf5c3f545bf25be5603ce3f63b7a0175bc47cf66ae42"
+          "exported_sha256": "03f10073df32b44562a37d54da372b8f06536c90ade4064fee008625e9e679da"
         },
         {
           "path": "frontend/app/pages/brands/[brandSpaceId]/settings.vue",
@@ -4171,7 +4171,7 @@
         {
           "path": "frontend/app/pages/index.vue",
           "sha256": "bfe38767e9ab1d107779ffacbb1af785f081485cb06241dd1814ab8e3dd06da6",
-          "exported_sha256": "bfe38767e9ab1d107779ffacbb1af785f081485cb06241dd1814ab8e3dd06da6"
+          "exported_sha256": "a01af75f836e8f56fa9ff04d3914013fe3deb42762c13eec44f1f32b51d785c7"
         },
         {
           "path": "frontend/app/pages/login.vue",
@@ -4181,7 +4181,7 @@
         {
           "path": "frontend/app/pages/probe-analysis.vue",
           "sha256": "da9c4f8078661c24fd81c2c886ba003073e426109e8f0c944378e0bdd7350677",
-          "exported_sha256": "da9c4f8078661c24fd81c2c886ba003073e426109e8f0c944378e0bdd7350677"
+          "exported_sha256": "083cd53a0f0de8fcab3e63a464f287b7dd4d6835f0e957621424501b56f26f3e"
         },
         {
           "path": "frontend/app/pages/sources.vue",
@@ -4256,12 +4256,12 @@
         {
           "path": "frontend/nuxt.config.ts",
           "sha256": "9282d804e70ea963dd9120d67680fdb8b975f5f7f851929f7afcd50902d4b834",
-          "exported_sha256": "1cbc733ec2de44cab025d3efaa52f1e6f405e5a41e3a1b1f99badb8b59965279"
+          "exported_sha256": "b6d0df36c52edcdfa2b1a7c9f13ec6d6d6aaf5b43d3d8e4258df1bd850d5b755"
         },
         {
           "path": "frontend/package.json",
           "sha256": "596903e63f8e32e05a34e807f1b05d0de25b841b4634ff1f16c7379277fd8209",
-          "exported_sha256": "7d5f15f2397d9a9c4684236926320baca3d3fffe0b005eadeebb186a64a6f2ee"
+          "exported_sha256": "00aa0e98960391213b3da6cbca4b81e26e163047207ed81cc781b0f1d2dca0b0"
         },
         {
           "path": "frontend/pnpm-lock.yaml",
@@ -4740,7 +4740,8 @@
     "Point container source labels to this repository; add self-hosted Compose and local credential initialization",
     "Make yesterday scheduler test fixtures stable near midnight; retain scheduler behavior and assertions",
     "Restore original Lombok qualifier-copying build configuration and include it in the Docker build; add a real repository routing regression test for the two-database setup",
-    "2026-10-20 release preview: frontend Nuxt/Vue/ECharts security updates and h3 type alignment; package-specific SCA false-positive review. See docs/community/security-review.md."
+    "2026-10-20 release preview: frontend Nuxt/Vue/ECharts security updates and h3 type alignment; package-specific SCA false-positive review. See docs/community/security-review.md.",
+    "Add a separately compiled, static read-only workbench demo with reviewed presentation snapshots; retain authentication in normal builds"
   ],
   "hash_note": "sha256 is the original committed source; exported_sha256 is this candidate after the listed derivative edits. New community files are additions, not represented as original source."
 }

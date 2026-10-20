@@ -77,6 +77,12 @@ export function useAuthSnapshot(options: UseAuthSnapshotOptions = {}) {
   }
 
   async function load(force = false) {
+    if (runtimeConfig.public.demoMode === true) {
+      auth.value = { userId: 'demo-visitor', username: '只读演示', role: 0, token: null }
+      hydrated.value = true
+      return auth.value
+    }
+
     const previousUserId = auth.value?.userId || ''
 
     if (import.meta.server) {

@@ -97,10 +97,11 @@ export function buildWorkbenchPlatformOptions(values: Array<string | null | unde
 }
 
 export function useWorkbenchAnalysisFilters() {
-  const defaultPreset: WorkbenchTimePreset = 'last_14_days'
+  const demoMode = useRuntimeConfig().public.demoMode === true
+  const defaultPreset: WorkbenchTimePreset = demoMode ? 'custom' : 'last_14_days'
   const selectedTimePreset = useState<WorkbenchTimePreset>('workbench-analysis-time-preset', () => defaultPreset)
-  const customDateFrom = useState<string>('workbench-analysis-date-from', () => '')
-  const customDateTo = useState<string>('workbench-analysis-date-to', () => '')
+  const customDateFrom = useState<string>('workbench-analysis-date-from', () => demoMode ? '2026-10-07' : '')
+  const customDateTo = useState<string>('workbench-analysis-date-to', () => demoMode ? '2026-10-20' : '')
   const selectedPlatforms = useState<string[]>('workbench-analysis-platforms', () => [])
 
   const hasCustomRange = computed(() => selectedTimePreset.value === 'custom')

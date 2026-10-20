@@ -72,6 +72,10 @@ const emit = defineEmits<{
 }>()
 
 const activeView = ref<RichViewTab>('volume')
+
+watch(() => [props.hasPromptCoverage, props.recordRows?.length] as const, ([covered, count]) => {
+  if (!covered && count) activeView.value = 'records'
+}, { immediate: true })
 const brandGapOnly = ref(false)
 const minOpportunity = ref(60)
 const promptOpportunitySearch = ref('')
@@ -957,7 +961,7 @@ function formatSigned(value?: number | null) {
       </div>
 
     <div
-      v-if="!props.hasPromptCoverage"
+      v-if="!props.hasPromptCoverage && !props.recordRows?.length"
       class="state-block"
     >
       {{ props.emptyCoverageMessage || '当前品牌暂无可展示的真实问题清单' }}
