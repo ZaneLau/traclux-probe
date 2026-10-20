@@ -31,7 +31,7 @@
           "triggerMode": "create_initial_run",
           "targetProbeCount": 5,
           "coverageStrategy": "cold_start_wide_coverage",
-          "schedulingReason": "今天是新品牌首跑，优先做宽覆盖；今天因为可用积分有限，部分主题延后到后续轮次",
+          "schedulingReason": "首次运行覆盖 5 个主题，其余主题留待后续运行。",
           "selectedTopicCount": 5,
           "selectedTopicNames": [
             "USB-C充电器选购场景",
@@ -666,7 +666,7 @@
         "failedProbeCount": 0,
         "coverageTopicCount": 5,
         "evidenceCount": 0,
-        "schedulingReason": "今天是新品牌首跑，优先做宽覆盖；今天因为可用积分有限，部分主题延后到后续轮次",
+        "schedulingReason": "首次运行覆盖 5 个主题，其余主题留待后续运行。",
         "planTrace": {
           "planVersionId": "demo-3aebb82070a7",
           "planVersionNo": 1,
@@ -994,7 +994,7 @@
           "type": "aggregation_completed",
           "label": "聚合完成",
           "createdAt": "2026-10-20T00:55:47",
-          "summary": "demo-a70fb0a0672c"
+          "summary": null
         },
         {
           "type": "run_completed",
@@ -1003,47 +1003,6 @@
         }
       ]
     }
-  },
-  "/runs/demo-run-20261020": {
-    "runId": "demo-run-20261020",
-    "brandSpaceId": "demo-anker",
-    "brandName": "Anker",
-    "status": "completed",
-    "progressPercent": 100.0,
-    "currentStep": "completed",
-    "currentStepLabel": "诊断完成，报告已可查看",
-    "startedAt": "2026-10-20T00:52:54",
-    "completedAt": "2026-10-20T00:55:47",
-    "latestEventSeq": 22
-  },
-  "/runs/demo-run-20261020/events": {
-    "events": [
-      {
-        "seq": 1,
-        "type": "run_started",
-        "provisional": false,
-        "createdAt": "2026-10-20T00:52:54"
-      },
-      {
-        "seq": 2,
-        "type": "step_changed",
-        "provisional": false,
-        "createdAt": "2026-10-19T16:55:46"
-      },
-      {
-        "seq": 12,
-        "type": "aggregation_completed",
-        "provisional": false,
-        "createdAt": "2026-10-20T00:55:47"
-      },
-      {
-        "seq": 22,
-        "type": "run_completed",
-        "provisional": false,
-        "createdAt": "2026-10-20T00:55:47"
-      }
-    ],
-    "nextSeq": 22
   },
   "/workbench/overview": {
     "brandSpaceId": "demo-anker",
@@ -1075,13 +1034,7 @@
         "frequency",
         "metrics"
       ],
-      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
-      "truthSource": "configuration+knowledge_window_query+knowledge_projection",
-      "sourceWindowKey": "last_14_days",
-      "notes": [
-        "当前结果先按自然时间窗口查询知识运行，不再依赖最近 N 次报告近似裁剪。",
-        "总览优先复用知识运行窗口内的品牌表现与引用来源结果，不再回到旧报告近似窗口。"
-      ]
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary"
     },
     "dataAvailability": {
       "status": "partial",
@@ -1096,7 +1049,7 @@
       ],
       "missingFieldDetails": {
         "sourceCitations": [
-          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+          "本案例未开启联网搜索，没有引用来源。"
         ]
       }
     },
@@ -1309,13 +1262,7 @@
         "competitors",
         "metrics"
       ],
-      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
-      "truthSource": "configuration+knowledge_window_query+knowledge_snapshot",
-      "sourceWindowKey": "last_14_days",
-      "notes": [
-        "当前结果先按自然时间窗口查询知识运行，不再依赖最近 N 次报告近似裁剪。",
-        "品牌表现优先基于知识运行窗口内的快照与指标结果回投，不再直接读取业务库旧报告。"
-      ]
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary"
     },
     "dataAvailability": {
       "status": "partial",
@@ -1699,13 +1646,7 @@
         "sourceTypes",
         "domains"
       ],
-      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
-      "truthSource": "configuration+knowledge_window_query+knowledge_evidence",
-      "sourceWindowKey": "last_14_days",
-      "notes": [
-        "当前结果先按自然时间窗口查询知识运行，不再依赖最近 N 次报告近似裁剪。",
-        "来源结构、域名、URL 与趋势优先来自知识资产引用证据，而不是旧报告摘要回放。"
-      ]
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary"
     },
     "dataAvailability": {
       "status": "partial",
@@ -1722,13 +1663,13 @@
       ],
       "missingFieldDetails": {
         "domains": [
-          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+          "本案例未开启联网搜索，没有引用来源。"
         ],
         "urls": [
-          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+          "本案例未开启联网搜索，没有引用来源。"
         ],
         "categories": [
-          "引用来源证据仍在补齐，当前还不足以完整展开来源结构。"
+          "本案例未开启联网搜索，没有引用来源。"
         ]
       }
     },
@@ -1791,16 +1732,11 @@
         "topicNames",
         "problemSpaceBuckets"
       ],
-      "samplePolicy": "natural_time_window_only;knowledge_window_primary",
-      "truthSource": "configuration+knowledge_window_query+knowledge_evidence",
-      "sourceWindowKey": "last_14_days",
-      "notes": [
-        "当前结果来自知识资产正式查询，目录层、运行时证据层与深层 rich 视图不再直接依赖旧报告快照。"
-      ]
+      "samplePolicy": "natural_time_window_only;knowledge_window_primary"
     },
     "dataAvailability": {
       "status": "raw_only",
-      "message": "真实问答已接通，但结构化问题分析仍在补齐",
+      "message": "本案例包含已保存的问答记录，尚未完成主题分组。",
       "reasonCode": "problem_analysis_raw_only",
       "hasCompletedReport": true,
       "hasRunningRun": false,
@@ -1815,19 +1751,19 @@
       ],
       "missingFieldDetails": {
         "topics": [
-          "当前模块缺少字段：topics"
+          "本案例尚未完成问题与主题的关联分组。"
         ],
         "prompts": [
-          "当前模块缺少字段：prompts"
+          "本案例尚未完成问题与主题的关联分组。"
         ],
         "problemClusters": [
-          "当前模块缺少字段：problemClusters"
+          "本案例尚未完成问题与主题的关联分组。"
         ],
         "evidenceRows": [
-          "当前模块缺少字段：evidenceRows"
+          "本案例未收录引用证据，可查看已保存的回答摘录。"
         ],
         "probeTopicMapping": [
-          "问题分析结果仍在补齐，问题、回答和证据暂未完全对应。"
+          "本案例尚未完成问题与主题的关联分组。"
         ]
       }
     },

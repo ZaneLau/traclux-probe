@@ -59,6 +59,7 @@ interface EditableRunSettingsDraft {
   autoRunEnabled: boolean
 }
 
+const demoMode = useRuntimeConfig().public.demoMode === true
 const route = useRoute()
 const brandSpacesApi = useBrandSpacesApi()
 const serviceAccessApi = useServiceAccessApi()
@@ -1018,6 +1019,7 @@ async function loadServiceAccess() {
 }
 
 async function loadCreditBalance() {
+  if (demoMode) return
   try {
     const response = await creditsApi.getBalance()
     creditBalance.value = typeof response?.creditsRemaining === 'number'
@@ -1333,8 +1335,8 @@ watch(currentBrandSpace, () => {
       >
         <section class="surface notice-surface notice-surface--muted">
           <div class="notice-copy">
-            <strong>这里管理的是品牌空间的长期配置</strong>
-            <span>你在这里调整的 topic 和自定义 prompt，会用于后续分析。</span>
+            <strong>{{ demoMode ? '本案例的品牌与探针配置' : '这里管理的是品牌空间的长期配置' }}</strong>
+            <span v-if="!demoMode">你在这里调整的 topic 和自定义 prompt，会用于后续分析。</span>
           </div>
         </section>
 
@@ -1561,9 +1563,9 @@ watch(currentBrandSpace, () => {
           <div class="surface-head surface-head--compact">
             <div class="surface-head__title">
               <strong>运行设置</strong>
-              <span>模型、探针数、运行方式与积分预估</span>
+              <span>{{ demoMode ? '本案例使用的模型、探针数与运行方式' : '模型、探针数、运行方式与积分预估' }}</span>
             </div>
-            <GeoInfoPopover text="运行设置会同时影响手动首跑和后续每日自动运行，所有消耗都按统一积分结算。" />
+            <GeoInfoPopover v-if="!demoMode" text="运行设置会同时影响手动首跑和后续每日自动运行，所有消耗都按统一积分结算。" />
 
             <div class="surface-inline-actions">
               <button
@@ -1606,10 +1608,11 @@ watch(currentBrandSpace, () => {
           <div class="run-settings-grid">
             <section class="run-settings-block">
               <div class="surface-head surface-head--compact">
-                <strong>选择模型</strong>
-                <span>当前开放 3 个入口，仅豆包可用</span>
+                <strong>{{ demoMode ? '案例模型' : '选择模型' }}</strong>
+                <span v-if="!demoMode">当前开放 3 个入口，仅豆包可用</span>
               </div>
-              <div class="model-selection-grid">
+              <div v-if="demoMode" class="detail-card"><strong>豆包（Seed 2.0 Lite）</strong><span>本次运行未开启联网搜索</span></div>
+              <div v-else class="model-selection-grid">
                 <button
                   v-for="option in monitoringModelOptions"
                   :key="option.key"
@@ -1663,7 +1666,7 @@ watch(currentBrandSpace, () => {
                   >
                 </label>
               </div>
-              <div class="probe-cost-line">
+              <div v-if="!demoMode" class="probe-cost-line">
                 <span>{{ creditsPerProbe }} 积分 / 条探针</span>
                 <strong>{{ estimatedCreditsPerRun }} 积分</strong>
               </div>
@@ -1698,7 +1701,7 @@ watch(currentBrandSpace, () => {
               </div>
             </section>
 
-            <section class="run-settings-block">
+            <section v-if="!demoMode" class="run-settings-block">
               <div class="surface-head surface-head--compact">
                 <strong>结算预估</strong>
                 <span>提交前后端都会再次校验积分</span>
@@ -2070,7 +2073,7 @@ watch(currentBrandSpace, () => {
           </section>
         </section>
 
-        <section class="surface section-surface danger-surface">
+        <section v-if="!demoMode" class="surface section-surface danger-surface">
           <div class="surface-head surface-head--compact">
             <strong>移出当前账号</strong>
             <span>危险操作</span>

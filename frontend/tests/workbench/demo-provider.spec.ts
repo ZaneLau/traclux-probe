@@ -15,7 +15,7 @@ describe('static workbench demo boundary', () => {
   })
 
   it('fails closed for unknown reads, provider URLs and live action routes', () => {
-    for (const path of ['/auth/session', '/credits/balance', '/brand-spaces/demo-anker/probe-plan/execute-once', '/admin/overview', 'https://example.com/api']) {
+    for (const path of ['/runs/demo-run-20261020', '/runs/demo-run-20261020/events', '/auth/session', '/credits/balance', '/brand-spaces/demo-anker/probe-plan/execute-once', '/admin/overview', 'https://example.com/api']) {
       expect(() => readDemoResponse(path)).toThrow()
     }
   })
