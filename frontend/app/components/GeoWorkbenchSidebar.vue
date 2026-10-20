@@ -90,8 +90,8 @@ onMounted(() => {
     <section class="nav-account-card">
       <h2>{{ demoMode ? '公开案例' : '当前账号' }}</h2>
       <div class="nav-account-card__meta">
-        <span class="nav-account-card__name">{{ accountDisplayName }}</span>
-        <span class="nav-account-card__id">ID: {{ accountDisplayId }}</span>
+        <span class="nav-account-card__name">{{ demoMode ? 'Anker · USB-C 充电器' : accountDisplayName }}</span>
+        <span v-if="!demoMode" class="nav-account-card__id">ID: {{ accountDisplayId }}</span>
       </div>
       <div v-if="!demoMode" class="nav-account-card__actions">
         <button

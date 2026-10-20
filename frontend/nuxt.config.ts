@@ -36,6 +36,15 @@ export default defineNuxtConfig({
     router: { options: { hashMode: true } },
     icon: { clientBundle: { scan: true } }
   } : {}),
+  hooks: {
+    'pages:extend'(pages) {
+      if (!demoMode) return
+      const allowed = new Set(['/', '/dashboard', '/engine', '/sources', '/probe-analysis', '/brands', '/brands/:brandSpaceId()/settings', '/brands/:brandSpaceId()/runs', '/brands/:brandSpaceId()/runs/:runId()'])
+      for (let i = pages.length - 1; i >= 0; i--) {
+        if (!allowed.has(pages[i]!.path)) pages.splice(i, 1)
+      }
+    }
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
@@ -55,9 +64,9 @@ export default defineNuxtConfig({
     apiProxyTarget: 'http://127.0.0.1:8080',
     public: {
       demoMode,
-      apiBase: process.env.NUXT_PUBLIC_API_BASE || '/api/v1',
+      apiBase: demoMode ? '/api/v1' : (process.env.NUXT_PUBLIC_API_BASE || '/api/v1'),
       engineTheaterEnabled,
-      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || ''
+      turnstileSiteKey: demoMode ? '' : (process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY || '')
     }
   },
 

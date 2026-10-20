@@ -3581,7 +3581,7 @@
         {
           "path": "frontend/app/components/GeoWorkbenchSidebar.vue",
           "sha256": "b68e551dcbea8896ddd0b94f95a804f95fa42078bf33803e1ecd52f0031e846e",
-          "exported_sha256": "9a3c8e40498262f1ce67bbcbde018a1ef457f380ec77831ee8e11f0c961bcb96"
+          "exported_sha256": "6117bf4fc11edded88988c44e0d18c8850c51924f84d3340c0ad7f3630af8fa3"
         },
         {
           "path": "frontend/app/components/GeoWorkspaceHeader.vue",
@@ -4131,7 +4131,7 @@
         {
           "path": "frontend/app/pages/brands/[brandSpaceId]/runs/[runId].vue",
           "sha256": "c315599ca5e20cc6aa91f92070158d7e9e435f725959d3352fbe29e9e2f36e8a",
-          "exported_sha256": "77f2d81de23dcb108d38c5a27f0ba19c628ceccf8a7b6692dc5bbc47d8a8e75a"
+          "exported_sha256": "bdcb4c9e0f4ad5f2e12de9fb9a1d914978a2dd3293fb1bee4889d9d7d566fec8"
         },
         {
           "path": "frontend/app/pages/brands/[brandSpaceId]/runs/index.vue",
@@ -4141,12 +4141,12 @@
         {
           "path": "frontend/app/pages/brands/[brandSpaceId]/settings.vue",
           "sha256": "5ffd839582b4bf5f98141d88a2a8b7bad4a5b690c42de690fe08080aed5d6770",
-          "exported_sha256": "5ffd839582b4bf5f98141d88a2a8b7bad4a5b690c42de690fe08080aed5d6770"
+          "exported_sha256": "3f9e008740f32a78cea23a39874a3f3ad232e6436b88f1e91e76fac18d989853"
         },
         {
           "path": "frontend/app/pages/brands/index.vue",
           "sha256": "c6100fede5a26d359abf69ec6340de382d5158ef65b13d9beeef99a573926237",
-          "exported_sha256": "c6100fede5a26d359abf69ec6340de382d5158ef65b13d9beeef99a573926237"
+          "exported_sha256": "f24f92c6b5698f070d26ac2ab3ee2038c5268423ddb523cbdee533f16ec3c9c4"
         },
         {
           "path": "frontend/app/pages/brands/new.vue",
@@ -4166,7 +4166,7 @@
         {
           "path": "frontend/app/pages/engine.vue",
           "sha256": "62b31ff0d5830974ae406b286145f6d821e1f39922b15004c07d49eef7e1ce32",
-          "exported_sha256": "62b31ff0d5830974ae406b286145f6d821e1f39922b15004c07d49eef7e1ce32"
+          "exported_sha256": "f2c5f3fbc8482a1acee35ef183528615538dca7331911b7ede9854916d55776f"
         },
         {
           "path": "frontend/app/pages/index.vue",
@@ -4256,7 +4256,7 @@
         {
           "path": "frontend/nuxt.config.ts",
           "sha256": "9282d804e70ea963dd9120d67680fdb8b975f5f7f851929f7afcd50902d4b834",
-          "exported_sha256": "b6d0df36c52edcdfa2b1a7c9f13ec6d6d6aaf5b43d3d8e4258df1bd850d5b755"
+          "exported_sha256": "ab9b8471984534c8c9d4f958d79b9c4251f92695c89d4b713d881e564fe03614"
         },
         {
           "path": "frontend/package.json",

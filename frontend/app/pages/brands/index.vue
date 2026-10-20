@@ -35,6 +35,7 @@ function stateWeight(item: BrandSpaceListItem) {
 
 const brandSpacesApi = useBrandSpacesApi()
 const serviceAccessApi = useServiceAccessApi()
+const demoMode = useRuntimeConfig().public.demoMode === true
 const route = useRoute()
 const router = useRouter()
 const { isEngineTheaterEnabled } = useFeatureAvailability()
@@ -95,7 +96,7 @@ const consoleCards = computed(() => [
   {
     label: '全部品牌空间',
     value: `${totalCount.value}`,
-    detail: '当前账号下可管理的品牌空间。'
+    detail: demoMode ? '本演示收录的品牌案例。' : '当前账号下可管理的品牌空间。'
   },
   {
     label: '跟踪中',

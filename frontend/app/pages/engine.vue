@@ -31,6 +31,7 @@ useSeoMeta({
   title: `${resolveNavPageTitleByPath('/engine', '品牌表现')} · Traclux 探镜`
 })
 
+const demoMode = useRuntimeConfig().public.demoMode === true
 const route = useRoute()
 const workbenchApi = useWorkbenchApi()
 const brandSpaceDirectory = useWorkbenchBrandSpacesDirectory()
@@ -782,8 +783,11 @@ onBeforeUnmount(() => {
         v-if="!showBrandSpaceEmptyState && !showBrandSelectionPromptState && !brandSpaceDirectoryError && workbenchHasBlockingPartialState"
         class="sync-notice sync-notice--warn"
       >
-        品牌表现真实数据已接通，但当前仍缺少 {{ workbenchBlockingMissingFields.length ? workbenchBlockingMissingFields.join('、') : '部分结构化字段' }}。
-        {{ workbenchDataAvailability?.message || '这意味着页面里的部分结构仍然不能按真实品牌完整展开。' }}
+        <template v-if="demoMode">本案例仅有一轮运行结果，暂无趋势对比。</template>
+        <template v-else>
+          品牌表现真实数据已接通，但当前仍缺少 {{ workbenchBlockingMissingFields.length ? workbenchBlockingMissingFields.join('、') : '部分结构化字段' }}。
+          {{ workbenchDataAvailability?.message || '这意味着页面里的部分结构仍然不能按真实品牌完整展开。' }}
+        </template>
       </div>
       <div
         v-if="showBrandSelectionPromptState"

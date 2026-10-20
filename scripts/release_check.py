@@ -7,10 +7,12 @@ import sys
 
 from check_community_boundary import check
 from check_public_demo import check_case, check_viewer
+from check_workbench_privacy import check as check_workbench_privacy
 
 def main():
     root = Path(__file__).resolve().parent.parent
     findings = check(root)
+    findings.extend(check_workbench_privacy(root))
     files = subprocess.check_output(["git", "ls-files", "-z"], cwd=root).decode().split("\0")
     signature = re.compile(rb"sk-(?:proj-)?[A-Za-z0-9_-]{30,}|AKIA[0-9A-Z]{16}|xox[baprs]-[A-Za-z0-9-]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|ep-\d{12,}-[a-z0-9]{5,}")
     for name in filter(None, files):

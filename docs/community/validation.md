@@ -63,3 +63,5 @@ See [known limitations](known-limitations.md), [security review](security-review
 ## Static workbench demo
 
 The public demo reuses the Nuxt workbench pages. Its snapshot contains one captured brand and completed run, remapped identifiers and reviewed answer excerpts. No account credentials, provider configuration, billing snapshots or raw task payloads are included. Provider tests reject all mutation verbs and unknown reads, enforce the captured brand/window and verify snapshot isolation. The normal application build retains live authentication.
+
+The workbench privacy pass removes account-budget notes, unused run diagnostics and obsolete hosted-preview copy. The source gate includes adversarial checks for account fields, personal contact text, raw record IDs, private URLs and unreviewed answers; 20 Python tests and 18 frontend tests pass. The static build excludes unused login/creation/debug pages.

@@ -9,7 +9,7 @@ This review covers source scanning, default configuration, authentication checks
 | Local default | Only frontend `127.0.0.1:3100` is published by default Compose; backend, MySQL, PostgreSQL and Redis have no host ports |
 | Credentials | Initializer creates exclusive mode-0600 `.env` with random login, database passwords and JWT secret; preserves existing files. Model endpoint configuration required before use |
 | Authentication | Password login, authenticated user APIs, session and logout exercised. Existing backend authentication, cookie-origin and access tests retained; frontend does not store auth tokens in localStorage |
-| Public demo | Allowlisted case fields only, no fetch/provider calls, no private endpoint or account IDs. Text is rendered through `textContent`; JSON embedding escapes `<`. Static CSP disallows external scripts, connections and forms |
+| Public demo | Static workbench with reviewed saved-case projections; unknown reads and all writes rejected, no provider/API fallback. Vue text rendering; CSP restricts scripts/connections to the same origin and prevents form submission. Secondary case viewer retains its stricter disconnected policy |
 | Frontend dependencies | Nuxt 4.4.6 → 4.5.1, Vue 3.5.34 → 3.5.42, ECharts 6.0.0 → 6.1.0; h3 1.15.11 explicitly aligned to avoid duplicate-event-type errors. Docker build/runtime moves from Node 20 to Node 22, matching upgraded Nuxt requirements and CI. Typecheck, 13 tests and local production build passed |
 | Frontend production-dependency audit | Before: 6 critical / 48 high / 23 moderate / 7 low advisory entries. After the scoped upgrade, `pnpm audit --prod`: 0 critical / 16 high / 5 moderate / 2 low. This scope excludes development-only dependencies; see the full GitHub alert scope below. These are advisory entries, not a count of confirmed exploitable application paths |
 | Java SCA | Dependency-Check using the already-local NVD data cache passed CVSS >= 7 after the package-specific false-positive reviews below. Cache freshness is not established; this is not a fresh comprehensive advisory clearance |
@@ -41,3 +41,15 @@ Backend identity/authorization references: `backend/src/main/java/com/geoprobe/c
 Keep the default loopback binding for local use. Public multi-user hosting requires a separate review of access control, rate limits, provider access and the outstanding dependencies above.
 
 Local and CI source checks use `python3 scripts/release_check.py`; CI also builds/tests Java and Nuxt and rejects critical frontend **production-dependency** advisories. Development/test dependency alerts, other remaining advisories and SpotBugs warnings are documented, not silently counted as passed.
+
+## Workbench demo privacy review — 2026-10-20
+
+| Review | Result |
+| --- | --- |
+| Case data | One reviewed brand/run; answer excerpts match the approved case. No real user/account/contact fields, raw record UUIDs, private provider endpoints or credentials found in the current snapshot |
+| Removed remnants | Account-budget scheduling notes, unused debug-event projections and a redundant timeline record alias removed. Demo account ID, credit/settlement panels, account-removal action and old hosted-preview model availability copy no longer displayed; internal field-name warnings use case-specific explanations |
+| Build scope | Only reviewed workbench routes included; unused login, brand-creation and debug pages excluded. No client source maps generated |
+| Release check | Snapshot privacy checks run locally and in CI. New content still requires human review; pattern matching cannot recognize every kind of private information |
+| History boundary | Private credential comparison found no matches in reachable Git history. Two older versions of `validation.md` contained test run/brand record IDs; current files no longer contain them. They are identifiers, not credentials. This review does not rewrite repository history |
+
+The saved questions, public brand/model names and sample dates remain to explain the case. This privacy review does not close the unrelated dependency and hosting findings above.
