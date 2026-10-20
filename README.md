@@ -64,7 +64,7 @@ python3 scripts/community_init.py
 docker compose up --build -d
 ```
 
-Open **http://localhost:3100/login**. Read your generated `COMMUNITY_USERNAME` and `COMMUNITY_PASSWORD` in the local `.env`. Each instance gets fresh credentials. Configure a model endpoint before starting a run. Optional `SAMPLING_*` settings separate the model being measured from the generation/analysis model. See the [setup guide](docs/community/README.md) for adapter limitations and costs.
+Open [http://localhost:3100/login](http://localhost:3100/login). Read your generated `COMMUNITY_USERNAME` and `COMMUNITY_PASSWORD` in the local `.env`. Each instance gets fresh credentials. Configure a model endpoint before starting a run. Optional `SAMPLING_*` settings separate the model being measured from the generation/analysis model. See the [setup guide](docs/community/README.md) for adapter limitations and costs.
 
 ```bash
 python3 scripts/community_smoke.py

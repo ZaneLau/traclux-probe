@@ -62,7 +62,7 @@ python3 scripts/community_init.py
 docker compose up --build -d
 ```
 
-打开 **http://localhost:3100/login**。用户名和随机密码见你自己生成的 `.env` 中的 `COMMUNITY_USERNAME` / `COMMUNITY_PASSWORD`。不要提交或分享此文件。首次运行前需要配置可用的模型地址。可用 `SAMPLING_*` 单独配置被测模型；具体适配限制见[启动说明](docs/community/README.md)。
+打开 [http://localhost:3100/login](http://localhost:3100/login)。用户名和随机密码见你自己生成的 `.env` 中的 `COMMUNITY_USERNAME` / `COMMUNITY_PASSWORD`。不要提交或分享此文件。首次运行前需要配置可用的模型地址。可用 `SAMPLING_*` 单独配置被测模型；具体适配限制见[启动说明](docs/community/README.md)。
 
 ```bash
 python3 scripts/community_smoke.py
